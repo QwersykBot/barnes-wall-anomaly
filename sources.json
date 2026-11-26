@@ -91,6 +91,57 @@
       "source_status": "Preprint; full construction not independently validated here",
       "sha256_of_consulted_pdf": "6fe2ffeaaadc207ee6d2fc47f09b9cd03bc438061e000b32b52f5e1423f9c559",
       "bytes_of_consulted_pdf": 507556
+    },
+    {
+      "label": "Lam",
+      "authors": [
+        "Ching Hung Lam"
+      ],
+      "title": "Unitary forms for holomorphic vertex operator algebras of central charge 24",
+      "role": "unitary lattice automorphisms and twisted lattice modules; invariant-form convention",
+      "source_url": "https://arxiv.org/pdf/2211.15952v1",
+      "checked_version": "arXiv:2211.15952v1, 29 November 2022, 06:26:06 UTC",
+      "publication_url": "https://doi.org/10.1007/s11005-023-01652-4",
+      "publication_metadata_url": "https://link.springer.com/article/10.1007/s11005-023-01652-4",
+      "source_status": "Published in Letters in Mathematical Physics 113 (2023), article 28, 2 March 2023; cited numbering audited in pinned arXiv v1",
+      "sha256_of_consulted_pdf": "3652e2fadc6026c72551856f5272d51f39843e0671965219f64b402865658c4f",
+      "bytes_of_consulted_pdf": 324773,
+      "results_used": [
+        "Lemma 2.4, printed pp. 3-4: PCT-conjugate contragredient characterization of invariant sesquilinear forms",
+        "Theorem 3.1, printed p. 5: unitarity of positive definite lattice VOAs and ordinary lattice modules",
+        "Lemma 3.3, printed pp. 5-6: O(L-hat) preserves the natural positive Hermitian form",
+        "Section 3.2 and Lemma 3.8, printed pp. 6-11, statement p. 10: unitarity of the constructed irreducible twisted lattice modules"
+      ],
+      "scope_check": "Only rank-independent preliminary results are used; the central-charge-24 classification theorem is not used. The prescribed E elements are standard lifts, so the inner-shift parameter in Section 3.2 is beta=0."
+    },
+    {
+      "label": "Gui",
+      "authors": [
+        "Bin Gui"
+      ],
+      "title": "Geometric Positivity of the Fusion Products of Unitary Vertex Operator Algebra Modules",
+      "role": "strong unitarity of the fixed algebra and two unitary simple-current extensions",
+      "source_url": "https://arxiv.org/pdf/2306.11856v2",
+      "checked_version": "arXiv:2306.11856v2, 5 March 2024, 08:39:49 UTC; final revision, 69 pages",
+      "publication_url": "https://doi.org/10.1007/s00220-024-04959-y",
+      "publication_metadata_url": "https://link.springer.com/article/10.1007/s00220-024-04959-y",
+      "source_status": "Published in Communications in Mathematical Physics 405 (2024), article 72, 4 March 2024; cited numbering audited in pinned final arXiv v2",
+      "sha256_of_consulted_pdf": "ada8a142ddfef0ebaab3fea0b2e7333df076691f155425b8f95aaf2672af3dac",
+      "bytes_of_consulted_pdf": 697832,
+      "results_used": [
+        "Proposition 10.9, printed pp. 60-61: unitarity of all twisted parent modules implies strong unitarity of the rational C2-cofinite fixed algebra",
+        "Remark 10.10, printed p. 61: explicit confirmation of applicability to Lam's standard lattice lifts",
+        "Proof of Lemma 10.12, equation (10.5), printed p. 62: the PCT-conjugate contragredient transported module action",
+        "Definition 11.1, printed p. 63: preunitarizable means unitarizable as a module over the actual base VOA",
+        "Theorem 11.5, printed pp. 64-65: a preunitarizable simple-current extension of a unitary rational C2-cofinite CFT-type VOA is a unitary extension"
+      ],
+      "scope_check": "The cyclic-orbifold Theorem 10.4 and general complete-unitarity extension claims are not used for the nonabelian group E. Each application of Theorem 11.5 explicitly proves preunitarizability over its own base.",
+      "also_consulted": {
+        "source_url": "https://binguimath.github.io/Files/2023_Geometric_Positivity.pdf",
+        "checked_version": "Author-hosted 69-page PDF retrieved 26 November 2026",
+        "sha256_of_consulted_pdf": "43a285bd1748bb78873e3605776854a0b0c5c7ddde1534ffb12735a6bcb073a6",
+        "comparison": "Whitespace-normalized full Proposition 10.9 passage and full Theorem 11.5 passage, including proof, agree with the pinned arXiv v2 text. The author PDF and arXiv PDF have different bytes."
+      }
     }
   ]
 }
