@@ -86,7 +86,7 @@ theorem transportedPhase_comp
     transportedPhase L H (g.comp f) w x =
       transportedPhase L H f u x * transportedPhase L H g v (f x) := by
   simp only [transportedPhase, LinearMap.comp_apply, hcomp]
-  field_simp [globalTau_ne_zero L H x, globalTau_ne_zero L H (f x)] <;> ring
+  field_simp [globalTau_ne_zero L H x, globalTau_ne_zero L H (f x)]
 
 /-- Exact right-action composition after the single global cocycle change:
 the lift of `RS` is the lift of `S` after the lift of `R`. -/

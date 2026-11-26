@@ -20,8 +20,12 @@ MODULES = (
     "BarnesWall.BlockPhase",
     "BarnesWall.IntegerPhase",
     "BarnesWall.Lattice128",
+    "BarnesWall.KRRBlocks",
+    "BarnesWall.KRRPauli",
     "BarnesWall.CocycleTransport",
     "BarnesWall.LatticeComposition",
+    "BarnesWall.CanonicalLift",
+    "BarnesWall.CanonicalFaithfulness",
 )
 UPSTREAM_IMPORTS = {TARGET, "VOA.Foundations.Lattices", "Lean.Elab.Tactic.Omega"}
 PROBE = HERE / "LocalAxiomProbe.lean"
@@ -111,10 +115,13 @@ def main() -> None:
         "modules_sha256": inputs,
         "probe_sha256": probe_hash,
         "axioms": reports,
-        "scope": "Concrete rank-128 even positive coordinate lattice; generic integral phases, cocycle transport, conformal lifts, and full lattice-map composition.",
+        "scope": "Concrete rank-128 even positive coordinate lattice, KRR blocks and Pauli isometries; canonical matrix phases, coherent conformal lifts and faithful full-state maps.",
         "concrete_coordinate_lattice_formalized": True,
         "krr_tensor_formula_identification_formalized": False,
-        "krr_isometries_or_lifts_formalized": False,
+        "krr_pauli_isometries_formalized": True,
+        "canonical_matrix_lift_formalized": True,
+        "generic_lift_faithfulness_formalized": True,
+        "krr_q16_lift_formalized": False,
         "barnes_wall_anomaly_theorem_formalized": False,
     }
     rendered = json.dumps(receipt, indent=2, sort_keys=True) + "\n"

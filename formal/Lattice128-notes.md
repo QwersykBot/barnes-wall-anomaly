@@ -2,8 +2,10 @@
 
 Date: 2026-11-26.
 
-**Status: the complete source passed local Lean checking and a 15-declaration
-transitive axiom audit; independent CI integration is pending.** The file is
+**Status: the complete source passed local Lean checking, a 15-declaration
+transitive axiom audit, and the combined public check in
+[run 45854804934](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45854804934)
+at commit 644efcb33a7ca3e75929b71035fe7cf5a89bf373.** The file is
 `BarnesWall/Lattice128.lean`, SHA256
 `2d8f73cb33a9ccfed376bfbecc9ab7e32f804227c7c6b8fda323ccf1c4e0ab1d`.
 The clean source check completed in 3.361 seconds. A separate copy containing

@@ -152,7 +152,7 @@ theorem transportedPhase_cocycle (hEven : L.Even)
         (latticeCocycle L (ι x) (ι y) *
           (globalTau L H (ι x) * globalTau L H (ι y))) * (u x * u y) /
             (globalTau L H x * globalTau L H y) := by
-      field_simp [hx, hy] <;> ring
+      field_simp [hx, hy]
     _ = (explicitCocycle L H (ι x) (ι y) * (u x * u y)) *
         globalTau L H (ι (x + y)) / (globalTau L H x * globalTau L H y) := by
       rw [hi]
@@ -163,7 +163,7 @@ theorem transportedPhase_cocycle (hEven : L.Even)
     _ = latticeCocycle L x y *
         (u (x + y) * globalTau L H (ι (x + y)) / globalTau L H (x + y)) := by
       rw [hbase]
-      field_simp [hx, hy, hxy] <;> ring
+      field_simp [hx, hy, hxy]
 
 end Transport
 

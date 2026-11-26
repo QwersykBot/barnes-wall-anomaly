@@ -1,8 +1,12 @@
 import BarnesWall.BlockPhase
 import BarnesWall.IntegerPhase
 import BarnesWall.Lattice128
+import BarnesWall.KRRBlocks
+import BarnesWall.KRRPauli
 import BarnesWall.CocycleTransport
 import BarnesWall.LatticeComposition
+import BarnesWall.CanonicalLift
+import BarnesWall.CanonicalFaithfulness
 
 #check BarnesWall.transportDiscrepancy_symm_even
 #print axioms BarnesWall.transportDiscrepancy_symm_even
@@ -162,3 +166,135 @@ import BarnesWall.LatticeComposition
 
 #check BarnesWall.Lattice128.lattice_posDef
 #print axioms BarnesWall.Lattice128.lattice_posDef
+
+#check BarnesWall.KRRBlocks.H_even_of_same_block
+#print axioms BarnesWall.KRRBlocks.H_even_of_same_block
+
+#check BarnesWall.KRRBlocks.block_eq_iff
+#print axioms BarnesWall.KRRBlocks.block_eq_iff
+
+#check BarnesWall.KRRBlocks.block_surjective
+#print axioms BarnesWall.KRRBlocks.block_surjective
+
+#check BarnesWall.KRRBlocks.block_val
+#print axioms BarnesWall.KRRBlocks.block_val
+
+#check BarnesWall.KRRBlocks.four_dvd_G_of_same_block
+#print axioms BarnesWall.KRRBlocks.four_dvd_G_of_same_block
+
+#check BarnesWall.KRRBlocks.four_dvd_H_of_same_block
+#print axioms BarnesWall.KRRBlocks.four_dvd_H_of_same_block
+
+#check BarnesWall.KRRBlocks.gramPower_ge_six_of_same_block
+#print axioms BarnesWall.KRRBlocks.gramPower_ge_six_of_same_block
+
+#check BarnesWall.KRRBlocks.low_testBit_eq
+#print axioms BarnesWall.KRRBlocks.low_testBit_eq
+
+#check BarnesWall.KRRBlocks.mem_support_low_iff
+#print axioms BarnesWall.KRRBlocks.mem_support_low_iff
+
+#check BarnesWall.KRRBlocks.support_difference_subset
+#print axioms BarnesWall.KRRBlocks.support_difference_subset
+
+#check BarnesWall.KRRBlocks.support_union_card_le
+#print axioms BarnesWall.KRRBlocks.support_union_card_le
+
+#check BarnesWall.KRRPauli.support_indexOfSupport
+#print axioms BarnesWall.KRRPauli.support_indexOfSupport
+
+#check BarnesWall.KRRPauli.toggle_toggle
+#print axioms BarnesWall.KRRPauli.toggle_toggle
+
+#check BarnesWall.KRRPauli.parity_toggle
+#print axioms BarnesWall.KRRPauli.parity_toggle
+
+#check BarnesWall.KRRPauli.block_toggle
+#print axioms BarnesWall.KRRPauli.block_toggle
+
+#check BarnesWall.KRRPauli.X_mul_B
+#print axioms BarnesWall.KRRPauli.X_mul_B
+
+#check BarnesWall.KRRPauli.Z_mul_B
+#print axioms BarnesWall.KRRPauli.Z_mul_B
+
+#check BarnesWall.KRRPauli.isometry_of_intertwining
+#print axioms BarnesWall.KRRPauli.isometry_of_intertwining
+
+#check BarnesWall.KRRPauli.X_isometry
+#print axioms BarnesWall.KRRPauli.X_isometry
+
+#check BarnesWall.KRRPauli.Z_isometry
+#print axioms BarnesWall.KRRPauli.Z_isometry
+
+#check BarnesWall.KRRPauli.X_sq
+#print axioms BarnesWall.KRRPauli.X_sq
+
+#check BarnesWall.KRRPauli.Z_sq
+#print axioms BarnesWall.KRRPauli.Z_sq
+
+#check BarnesWall.KRRPauli.XUnit
+#print axioms BarnesWall.KRRPauli.XUnit
+
+#check BarnesWall.KRRPauli.ZUnit
+#print axioms BarnesWall.KRRPauli.ZUnit
+
+#check BarnesWall.KRRPauli.X_block_support
+#print axioms BarnesWall.KRRPauli.X_block_support
+
+#check BarnesWall.KRRPauli.Z_block_support
+#print axioms BarnesWall.KRRPauli.Z_block_support
+
+#check BarnesWall.CanonicalLift.halfForm_symmetrization
+#print axioms BarnesWall.CanonicalLift.halfForm_symmetrization
+
+#check BarnesWall.CanonicalLift.even_of_halfForm
+#print axioms BarnesWall.CanonicalLift.even_of_halfForm
+
+#check BarnesWall.CanonicalLift.rowEquiv
+#print axioms BarnesWall.CanonicalLift.rowEquiv
+
+#check BarnesWall.CanonicalLift.rowMap_mul
+#print axioms BarnesWall.CanonicalLift.rowMap_mul
+
+#check BarnesWall.CanonicalLift.rowMap_isometry
+#print axioms BarnesWall.CanonicalLift.rowMap_isometry
+
+#check BarnesWall.CanonicalLift.phase_zero
+#print axioms BarnesWall.CanonicalLift.phase_zero
+
+#check BarnesWall.CanonicalLift.phase_ne_zero
+#print axioms BarnesWall.CanonicalLift.phase_ne_zero
+
+#check BarnesWall.CanonicalLift.phase_neg
+#print axioms BarnesWall.CanonicalLift.phase_neg
+
+#check BarnesWall.CanonicalLift.phase_cocycle
+#print axioms BarnesWall.CanonicalLift.phase_cocycle
+
+#check BarnesWall.CanonicalLift.liftAut
+#print axioms BarnesWall.CanonicalLift.liftAut
+
+#check BarnesWall.CanonicalLift.liftAut_apply
+#print axioms BarnesWall.CanonicalLift.liftAut_apply
+
+#check BarnesWall.CanonicalLift.phase_mul
+#print axioms BarnesWall.CanonicalLift.phase_mul
+
+#check BarnesWall.CanonicalLift.liftMap_mul
+#print axioms BarnesWall.CanonicalLift.liftMap_mul
+
+#check BarnesWall.CanonicalLift.liftAut_mul
+#print axioms BarnesWall.CanonicalLift.liftAut_mul
+
+#check BarnesWall.CanonicalFaithfulness.charge_eq_of_smul_eq
+#print axioms BarnesWall.CanonicalFaithfulness.charge_eq_of_smul_eq
+
+#check BarnesWall.CanonicalFaithfulness.latticeMap_eq_of_latMorphC_eq
+#print axioms BarnesWall.CanonicalFaithfulness.latticeMap_eq_of_latMorphC_eq
+
+#check BarnesWall.CanonicalFaithfulness.rowMap_injective
+#print axioms BarnesWall.CanonicalFaithfulness.rowMap_injective
+
+#check BarnesWall.CanonicalFaithfulness.liftMap_injective
+#print axioms BarnesWall.CanonicalFaithfulness.liftMap_injective
