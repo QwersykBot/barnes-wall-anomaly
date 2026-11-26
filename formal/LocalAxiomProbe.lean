@@ -11,6 +11,8 @@ import BarnesWall.CanonicalFaithfulness
 import BarnesWall.KRRCanonical
 import BarnesWall.QuaternionLift
 import BarnesWall.KRRQuaternionAction
+import BarnesWall.CentralLift
+import BarnesWall.KRRCentralLift
 
 #check BarnesWall.transportDiscrepancy_symm_even
 #print axioms BarnesWall.transportDiscrepancy_symm_even
@@ -476,3 +478,15 @@ import BarnesWall.KRRQuaternionAction
 
 #check BarnesWall.KRRQuaternionAction.action_injective
 #print axioms BarnesWall.KRRQuaternionAction.action_injective
+
+#check BarnesWall.CanonicalLift.liftMap_neg_one
+#print axioms BarnesWall.CanonicalLift.liftMap_neg_one
+
+#check BarnesWall.CanonicalLift.liftAut_eq_thetaAut_of_val_neg_one
+#print axioms BarnesWall.CanonicalLift.liftAut_eq_thetaAut_of_val_neg_one
+
+#check BarnesWall.KRRCentralLift.centralLift_eq_thetaAut
+#print axioms BarnesWall.KRRCentralLift.centralLift_eq_thetaAut
+
+#check BarnesWall.KRRCentralLift.action_a_four_eq_thetaAut
+#print axioms BarnesWall.KRRCentralLift.action_a_four_eq_thetaAut

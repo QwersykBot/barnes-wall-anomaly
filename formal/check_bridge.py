@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import re
 import shutil
+import subprocess
 import sys
 
 from audit_bridge import (
@@ -30,6 +31,8 @@ MODULES = (
     "BarnesWall.KRRCanonical",
     "BarnesWall.QuaternionLift",
     "BarnesWall.KRRQuaternionAction",
+    "BarnesWall.CentralLift",
+    "BarnesWall.KRRCentralLift",
 )
 UPSTREAM_IMPORTS = {TARGET, "VOA.Foundations.Lattices", "Lean.Elab.Tactic.Omega"}
 PROBE = HERE / "LocalAxiomProbe.lean"
@@ -64,17 +67,21 @@ def main() -> None:
     verify_sources(source, packages, env)
 
     inputs: dict[str, str] = {}
+    local_imports: dict[str, set[str]] = {}
     cache_roots: set[str] = set()
     available: set[str] = set()
     for module in MODULES:
         relative = Path(module.replace(".", "/") + ".lean")
         origin = HERE / relative
         text = origin.read_text()
+        local_imports[module] = set()
         for imported in re.findall(r"^import\s+([A-Za-z0-9_.]+)", text, re.MULTILINE):
             if imported.startswith("Mathlib."):
                 cache_roots.add(imported)
             elif imported not in UPSTREAM_IMPORTS and imported not in available:
                 raise RuntimeError(f"Unplanned import in {module}: {imported}")
+            if imported in available:
+                local_imports[module].add(imported)
         destination = source / relative
         if destination.exists():
             raise RuntimeError(f"Local module destination already exists: {module}")
@@ -86,12 +93,31 @@ def main() -> None:
         run(["lake", "exe", "cache", "get", "--cache-from=master", *sorted(cache_roots)],
             cwd=source, env=env)
 
+    failed: dict[str, int] = {}
+    skipped: dict[str, list[str]] = {}
     for module in MODULES:
+        blocked = sorted(imported for imported in local_imports[module]
+                         if imported in failed or imported in skipped)
+        if blocked:
+            skipped[module] = blocked
+            reasons = ", ".join(f"{name} ({'failed' if name in failed else 'skipped'})"
+                                for name in blocked)
+            print(f"SKIP {module}: unavailable local imports: {reasons}", flush=True)
+            continue
         relative = Path(module.replace(".", "/"))
         output = source / ".lake" / "build" / "lib" / "lean" / relative.with_suffix(".olean")
         output.parent.mkdir(parents=True, exist_ok=True)
-        run(["lake", "env", "lean", str(source / relative.with_suffix(".lean")),
-             "-o", str(output)], cwd=source, env=env)
+        try:
+            run(["lake", "env", "lean", str(source / relative.with_suffix(".lean")),
+                 "-o", str(output)], cwd=source, env=env)
+        except subprocess.CalledProcessError as exc:
+            failed[module] = exc.returncode
+            print(f"FAIL {module}: compiler exited {exc.returncode}", flush=True)
+    if failed or skipped:
+        raise RuntimeError(
+            f"Local module compilation incomplete; failed: {failed}; skipped: {skipped}. "
+            "The axiom probe and success receipt were not run."
+        )
 
     probe_hash = sha256(PROBE)
     expected = re.findall(r"^#print axioms (\S+)$", PROBE.read_text(), re.MULTILINE)
@@ -119,7 +145,7 @@ def main() -> None:
         "modules_sha256": inputs,
         "probe_sha256": probe_hash,
         "axioms": reports,
-        "scope": "Concrete rank-128 even positive coordinate lattice, integral quaternion matrices, canonical phases, coherent full-state lifts and a faithful ordinary quaternion action with explicit generator images.",
+        "scope": "Concrete rank-128 even positive coordinate lattice, integral quaternion matrices, canonical phases, coherent full-state lifts and a faithful ordinary quaternion action whose central element is the prescribed lattice involution.",
         "concrete_coordinate_lattice_formalized": True,
         "krr_tensor_formula_identification_formalized": False,
         "krr_pauli_isometries_formalized": True,
@@ -129,7 +155,7 @@ def main() -> None:
         "concrete_lattice_canonical_lifts_formalized": True,
         "canonical_q16_action_formalized": True,
         "canonical_q16_action_faithful": True,
-        "prescribed_central_involution_identification_formalized": False,
+        "prescribed_central_involution_identification_formalized": True,
         "krr_full_extraspecial_action_formalized": False,
         "barnes_wall_anomaly_theorem_formalized": False,
     }

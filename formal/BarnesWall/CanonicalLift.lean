@@ -75,6 +75,7 @@ omit [LinearOrder ι] in
     coords (rowMap coords R x) = coords x ᵥ* R :=
   coords.apply_symm_apply _
 
+omit [LinearOrder ι] in
 /-- Matrix multiplication is proved to be the corresponding right action. -/
 theorem rowMap_mul (R S : Matrix ι ι ℤ) :
     rowMap coords (R * S) = (rowMap coords S).comp (rowMap coords R) := by
@@ -110,6 +111,7 @@ private theorem bilinear_conjugate (R G : Matrix ι ι ℤ) (v w : ι → ℤ) :
     _ = (v ᵥ* R) ⬝ᵥ (G *ᵥ (w ᵥ* R)) := by
       rw [Matrix.mulVec_transpose, Matrix.dotProduct_mulVec]
 
+omit [LinearOrder ι] in
 theorem rowMap_isometry (G R : Matrix ι ι ℤ)
     (hGram : ∀ x y, L.form x y = coords x ⬝ᵥ (G *ᵥ coords y))
     (hR : R * G * Rᵀ = G) (x y : L.carrier) :

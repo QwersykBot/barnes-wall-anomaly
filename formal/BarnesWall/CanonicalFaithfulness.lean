@@ -37,7 +37,7 @@ theorem charge_eq_of_smul_eq (L : VOA.IntegralLattice)
   by_contra hne
   have hp := congrArg (coordEα L α) h
   simp only [map_smul, latChargeGen, coordEα_latStateGen,
-    ite_eq_left rfl, ite_eq_right hne, smul_zero, HeisenbergN.vacuumN] at hp
+    ite_eq_right hne, smul_zero, HeisenbergN.vacuumN] at hp
   rcases smul_eq_zero.mp hp with hzero | hone
   · exact hc hzero
   · exact one_ne_zero hone
@@ -57,6 +57,7 @@ theorem latticeMap_eq_of_latMorphC_eq (L : VOA.IntegralLattice)
 variable {L : VOA.IntegralLattice} {ι : Type*} [Fintype ι] [LinearOrder ι]
 variable (coords : L.carrier ≃ₗ[ℤ] (ι → ℤ))
 
+omit [LinearOrder ι] in
 /-- The supplied coordinate equivalence makes the right-matrix action faithful. -/
 theorem rowMap_injective : Function.Injective (CanonicalLift.rowMap coords) := by
   intro R S h

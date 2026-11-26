@@ -57,7 +57,7 @@ is introduced or claimed here.
 ## Frozen inputs and suggested reports
 
 - `KRRCanonical.lean`: SHA256
-  `09da6c398d4c1c1b09820430bd6278ea68f7311203c77b19566667ac92f7a7d0`.
+  `f1e5306b4014813bbcc26285dc5d642f273d133fef1eb8eec92f732a66c3ca44`.
 - `KRRQ16.lean`: SHA256
   `ad4e192fea7666cad289f247ff4ab3b5555b6cc54fe79b40277a1a5a65462b6f`.
 - The independently owned generic constructor is consumed with argument order

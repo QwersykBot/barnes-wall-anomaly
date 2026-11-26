@@ -92,9 +92,10 @@ theorem lift_mul (R S : (Matrix Index Index ℤ)ˣ)
     (hR : (R : Matrix Index Index ℤ) * G * (R : Matrix Index Index ℤ)ᵀ = G)
     (hS : (S : Matrix Index Index ℤ) * G * (S : Matrix Index Index ℤ)ᵀ = G) :
     lift (R * S)
-        (by simpa only [Units.val_mul] using
-          CanonicalLift.matrix_isometry_mul G
-            (R : Matrix Index Index ℤ) (S : Matrix Index Index ℤ) hR hS) =
+        (by
+          simpa only [Units.val_mul] using
+            (CanonicalLift.matrix_isometry_mul G
+              (R : Matrix Index Index ℤ) (S : Matrix Index Index ℤ) hR hS)) =
       lift S hS * lift R hR :=
   CanonicalLift.liftAut_mul coordinates lattice_even lattice_posDef H G R S
     (block := KRRBlocks.block) gram_in_coordinates H_add_transpose
