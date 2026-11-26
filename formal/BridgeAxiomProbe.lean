@@ -1,7 +1,5 @@
 import VOA.Moonshine.LatticeMorph
 
-set_option pp.width 240
-
 #print axioms VOA.LatGen.latticeVOAGen
 #print axioms VOA.IntegralLattice.latticeCocycle_comm
 #print axioms VOA.LatGen.cobSign_add
