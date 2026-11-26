@@ -1,6 +1,6 @@
 {
   "review_date": "2026-11-26",
-  "note": "Hashes pin the exact consulted PDF bytes. Source PDFs are not part of this packet. Hashes establish identity, not correctness.",
+  "note": "Hashes pin the exact consulted PDF and source-code bytes. Source PDFs and external repository files are not redistributed in this packet. Hashes establish identity, not correctness.",
   "sources": [
     {
       "label": "KRR",
@@ -365,6 +365,234 @@
         "Section 1, equation (1), printed/PDF page 1, and Section 2, equation (2), page 5: The source uses right conjugation and ordinary abstract-group right 1-cocycles."
       ],
       "scope_check": "The application uses the stated all-field n>3 theorem, not an older large-field variant. Conversion from the source right-module convention to the chosen left-action convention must be explicit. This entry does not itself prove the action on the relative-equivalence torsor or its uniqueness."
+    },
+    {
+      "label": "GuiNet",
+      "appendix_label": "G",
+      "authors": [
+        "Bin Gui"
+      ],
+      "title": "Unbounded field operators in categorical extensions of conformal nets",
+      "role": "Strong locality and the identification of the lattice VOA net with the Dong–Xu lattice net",
+      "source_url": "https://arxiv.org/pdf/2001.03095v5",
+      "checked_version": "arXiv:2001.03095v5, 22 January 2026, 15:29:23 UTC; 65 pages. Final renumbered version.",
+      "publication_url": "https://doi.org/10.1007/s00222-026-01407-7",
+      "publication_metadata_urls": [
+        "https://arxiv.org/abs/2001.03095v5",
+        "https://api.crossref.org/works/10.1007/s00222-026-01407-7"
+      ],
+      "source_status": "Published in Inventiones mathematicae 244(3) (2026), 899–965; online 22 January 2026. The cited numbering is audited in arXiv v5.",
+      "results_used": [
+        "Theorem 3.46, printed/PDF page 57: positive even lattice VOAs satisfy the stated strong-locality and categorical correspondence conditions; the proof establishes complete rationality of the associated net.",
+        "Theorem 3.48, printed/PDF page 58: the smeared-field net associated with the lattice VOA is isomorphic to the Dong–Xu lattice net."
+      ],
+      "scope_check": "This entry concerns the original lattice VOA and its net. It does not identify the eventual full-orbifold VOA extension with the net extension constructed in the appendix.",
+      "sha256_of_consulted_pdf": "f13c8b09ddc754324f194beb74652a81840390106635f4dea503791a648f3449",
+      "bytes_of_consulted_pdf": 909000
+    },
+    {
+      "label": "CKLW",
+      "appendix_label": "C",
+      "authors": [
+        "Sebastiano Carpi",
+        "Yasuyuki Kawahigashi",
+        "Roberto Longo",
+        "Mihály Weiner"
+      ],
+      "title": "From vertex operator algebras to conformal nets and back",
+      "role": "Automorphism and fixed-point correspondence; current and tensor-product vacuum nets",
+      "source_url": "https://arxiv.org/pdf/1503.01260v4",
+      "checked_version": "arXiv:1503.01260v4, 8 October 2018, 19:42:18 UTC; 86 PDF pages.",
+      "publication_url": "https://doi.org/10.1090/memo/1213",
+      "publication_metadata_urls": [
+        "https://arxiv.org/abs/1503.01260v4"
+      ],
+      "source_status": "Published in Memoirs of the American Mathematical Society 254 (2018), no. 1213, vi + 85. Locators below refer to arXiv v4.",
+      "results_used": [
+        "Section 3.3, printed/PDF pages 19–22: conformal-net conventions, vacuum properties and diffeomorphism covariance.",
+        "Theorem 6.9, printed/PDF pages 53–54: the unitary automorphism group of a strongly local simple unitary VOA is the automorphism group of its associated net, acting on the same Hilbert completion.",
+        "Proposition 7.6, printed/PDF page 58: for a closed unitary automorphism group, the associated fixed-VOA net equals the fixed-point net.",
+        "Corollary 8.2, printed/PDF page 62: tensor products preserve strong locality and the corresponding net is the tensor product.",
+        "Example 8.6, printed/PDF page 63: the rank-one Heisenberg VOA gives the free Bose U(1)-current net."
+      ],
+      "scope_check": "The correspondence is applied to the original lattice VOA and its fixed algebra; it supplies no general twisted-field integration claim.",
+      "sha256_of_consulted_pdf": "df18a3837d4ccc70b4e8574f2b95ab2e8b9af81e33e91604d3e0f88eb52f264b",
+      "bytes_of_consulted_pdf": 847106
+    },
+    {
+      "label": "DX",
+      "appendix_label": "D",
+      "authors": [
+        "Chongying Dong",
+        "Feng Xu"
+      ],
+      "title": "Conformal Nets Associated with Lattices and Their Orbifolds",
+      "role": "Lattice-net rationality, proper signed actions, and the actual twisted soliton/current realization",
+      "source_url": "https://arxiv.org/pdf/math/0411499v2",
+      "checked_version": "arXiv:math/0411499v2, 23 November 2004, 22:23:33 UTC; 25 pages.",
+      "publication_url": "https://doi.org/10.1016/j.aim.2005.08.009",
+      "publication_metadata_urls": [
+        "https://arxiv.org/abs/math/0411499v2",
+        "https://www.sciencedirect.com/science/article/pii/S0001870805002331"
+      ],
+      "source_status": "Published in Advances in Mathematics 206(1) (2006), 279–306. Numbering below is pinned to arXiv v2.",
+      "results_used": [
+        "Theorem 2.4, printed/PDF page 6: complete rationality and the fixed-net mu-index formula for a proper finite action.",
+        "Lemma 3.5 and Proposition 3.6, page 8: charged positive-energy Heisenberg representations and the current subnet.",
+        "Proposition 3.9, page 9: local diffeomorphism implementers coming from the current subnet.",
+        "Corollary 3.19, page 14: complete rationality and mu(A_Q)=|Q*/Q|.",
+        "Section 4 opening and Lemma 4.1, page 14: a simultaneous finite signed lift action, and its proper action on the lattice net.",
+        "Definitions 4.5 and 4.7, pages 15–16: the 1/N rescaled cover metric and the represented local twisted loop.",
+        "Definition 4.19 and Remark 4.20, page 20: the pure lattice group factor and its conjugated-commutator convention.",
+        "Definition 4.22 and Lemma 4.23, page 21: the full loop map, its oscillator factor, and the homomorphism into the direct product.",
+        "Definition 4.24 and Proposition 4.25, page 22: the actual irreducible soliton, local normality, conjugation covariance and cyclic DHR restriction."
+      ],
+      "scope_check": "The appendix must supply the actual common signed group action, its cocycle and its relations; the source does not select those lifts automatically. Its pure U_alpha group factor is different from the full winding-loop image. The occupied zero-momentum argument additionally uses the already pinned BK source.",
+      "sha256_of_consulted_pdf": "dc0c3148b0265e2a8731c5ef8517f8d1e4384f14ec2b87e6733cd9d860bb9681",
+      "bytes_of_consulted_pdf": 268651
+    },
+    {
+      "label": "LX",
+      "appendix_label": "X",
+      "authors": [
+        "Roberto Longo",
+        "Feng Xu"
+      ],
+      "title": "Topological Sectors and a Dichotomy in Conformal Field Theory",
+      "role": "Geometric permutation solitons and their absolute covering Hamiltonian",
+      "source_url": "https://arxiv.org/pdf/math/0309366v3",
+      "checked_version": "arXiv:math/0309366v3, 17 March 2004, 17:48:00 UTC; 50 pages.",
+      "publication_url": "https://doi.org/10.1007/s00220-004-1063-1",
+      "publication_metadata_urls": [
+        "https://arxiv.org/abs/math/0309366v3"
+      ],
+      "source_status": "Published in Communications in Mathematical Physics 251 (2004), 321–364. Locators below refer to arXiv v3.",
+      "results_used": [
+        "Section 2, equations (13)–(15), printed/PDF page 10: the covering Virasoro generators and the fixed c(n^2−1)/(24n) shift of L0/n.",
+        "Section 6, equation (33), printed/PDF page 25: the local permutation soliton constructed using inverse branches of the covering map and the split isomorphism.",
+        "Theorem 6.3(b), (d), (e), printed/PDF pages 27–28: the covering diffeomorphism representation, decomposition into n irreducible constituents, and their spins.",
+        "Section 7.3.1, printed/PDF pages 32–33: the U(1)-current Weyl net and its charge representations."
+      ],
+      "scope_check": "The construction assumes the stated split conformal net. The cited covariance and finite constituent decomposition do not require finite mu-index; no finite-mu premise is inferred from the index formula. The negative signed-cycle Gaussian splitting and its exact Dong–Xu matching are arguments of the appendix, not standalone theorems quoted from this paper.",
+      "sha256_of_consulted_pdf": "1cd197eb48a178f0d74ffe9080c8ec001805637f2ff4ec44bf7b1c9e05fa3656",
+      "bytes_of_consulted_pdf": 448740
+    },
+    {
+      "label": "DFK",
+      "appendix_label": "F",
+      "authors": [
+        "Claudio D’Antoni",
+        "Klaus Fredenhagen",
+        "Søren Köster"
+      ],
+      "title": "Implementation of conformal covariance by diffeomorphism symmetry",
+      "role": "Globally inner canonical Möbius covariance and its common-local-unitary comparison",
+      "source_url": "https://arxiv.org/pdf/math-ph/0312017v1",
+      "checked_version": "arXiv:math-ph/0312017v1; PDF version stamp 5 December 2003; 11 pages.",
+      "publication_url": "https://doi.org/10.1023/B:MATH.0000035040.57943.7e",
+      "publication_metadata_urls": [
+        "https://www.theorie.physik.uni-goettingen.de/forschung2/qft/publications/index.html",
+        "https://api.crossref.org/works/10.1023/B:MATH.0000035040.57943.7e"
+      ],
+      "source_status": "Published in Letters in Mathematical Physics 67(3) (2004), 239–247. Locators below refer to arXiv v1.",
+      "results_used": [
+        "Proposition 2, printed/PDF pages 3–4: localized diffeomorphism unitaries implement the corresponding global automorphisms in the universal algebra.",
+        "Lemma 3, printed/PDF page 6: products of represented local implementers have central multiplication defects.",
+        "Lemma 4, printed/PDF pages 6–7: central corrections produce an honest strongly continuous universal-cover Möbius representation.",
+        "Theorem 5, printed/PDF page 7: every locally normal representation has a unique globally inner implementing Möbius representation."
+      ],
+      "scope_check": "The appendix derives its subnet comparison from this construction when the subnet contains the same local vacuum diffeomorphism unitaries. Mere covariance on a smaller algebra is not asserted to suffice. The source does not provide an independent arbitrary shift of the rotation generator.",
+      "sha256_of_consulted_pdf": "04f43decf78b656da96b573f3cf8dbf16980bb4259ea18f8fbd8f0dbaa66c68b",
+      "bytes_of_consulted_pdf": 144858
+    },
+    {
+      "label": "Bischoff",
+      "appendix_label": "B",
+      "authors": [
+        "Marcel Bischoff"
+      ],
+      "title": "A remark about the anomalies of cyclic holomorphic permutation orbifolds",
+      "role": "Intrinsic conformal-net anomaly from the actual twisted-sector kernel",
+      "source_url": "https://arxiv.org/pdf/1812.11910v1",
+      "checked_version": "arXiv:1812.11910v1, 31 December 2018, 17:34:14 UTC; 11 pages. Internal manuscript date: 1 January 2019.",
+      "publication_url": "https://doi.org/10.1142/S0129167X20500809",
+      "publication_metadata_urls": [
+        "https://arxiv.org/abs/1812.11910v1",
+        "https://api.crossref.org/works/10.1142/S0129167X20500809"
+      ],
+      "source_status": "Published in International Journal of Mathematics 31(10) (2020), article 2050080; online 31 July 2020. Locators below refer to arXiv v1.",
+      "results_used": [
+        "Section 1, printed/PDF pages 1–2: the unique twisted-sector class for each group element, its group kernel, multiplication intertwiners and the resulting H^3(G,T) associator class; the class is the net anomaly."
+      ],
+      "scope_check": "Restriction to a subgroup uses the same representatives and multiplication intertwiners in the displayed construction. The appendix uses this for naturality of its intrinsic net anomaly, not for a blanket claim that holomorphic or permutation actions are anomaly-free.",
+      "sha256_of_consulted_pdf": "16cc96b0b660c08c09139f4eec48d4d98784d440d8a7d0ff9c7bab9450c2b05b",
+      "bytes_of_consulted_pdf": 211539
+    },
+    {
+      "label": "DRINFELD",
+      "title": "DRINFELD central-defect Schur-sum implementation and trace research note",
+      "role": "Exact deterministic polarization, row-action matrices, seed, cochain, normalization and existing trace lookup on odd m>=5 addressed by the central-trace appendix",
+      "source_url": "https://github.com/thomas-gemunden/DRINFELD/tree/219d8dbb2e2d6a4370b221f4a7a9c7b018214ded",
+      "checked_version": "Git commit 219d8dbb2e2d6a4370b221f4a7a9c7b018214ded",
+      "issue_url": "https://github.com/thomas-gemunden/DRINFELD/issues/467",
+      "results_used": [
+        "bw_lattice.g: BitsOf, Parity and BWGram, lines28–56; exact numerical-index and binary Gram conventions.",
+        "em_construction.g: tensor Pauli matrices and group generators, lines13–60; twisted_group_algebra.g: UnimodSigma and UnimodZ, lines26–55, with row-action tensor position i equal to numerical bit m−i.",
+        "defect_rep_minus_id.g: F2_BitsOfLen211–216; SymplecticBasisF2258–375; BasisForN387–400; TwoCocycleForN402–420; HinSympBasis428–438; DeltaHHalfMatrix486–499; elementary Schur-sum entries526 onward and returned matrix orientation635–662.",
+        "krr_spectral_characters.g: common normalization35–49 and literal trace wrapper139–181; krr_spectral_characters_sparse.g: zero-seed, zero-shift trace entries258–317, normalized trace1036–1066 and existing lookup1220–1259.",
+        "defect_rep_minus_id_optim.g: optimized trace evaluator626–681; research note2026-06-06-tr-h-finer-invariant.md documents the empirical type formula and the earlier quadratic-sum approach."
+      ],
+      "scope_check": "The appendix proves the mathematical zero-shift Schur sum for every odd m>=5 in these exact conventions, including the m=7 question, and gives an explicit m=3 failure. It does not formally verify optimized evaluators, claim new runtime measurements, cover even m or a different seed or shift, or establish VOA anomaly vanishing.",
+      "source_files": [
+        {
+          "path": "extraspecial_orbifolds/docs/superpowers/research/2026-06-06-tr-h-finer-invariant.md",
+          "bytes": 16859,
+          "sha256": "310a40ab7b8ad4fbe29878e7aba1b55346baa05ee4c86620f09d2197884e745e",
+          "git_blob_sha1": "ef5e70f8450318f0a1337d141c9f8fa7e5fc6bb4"
+        },
+        {
+          "path": "extraspecial_orbifolds/scripts/bw_lattice.g",
+          "bytes": 3271,
+          "sha256": "1319d3b7d94b4580b59cecec2f1b0c15cf92d0149023bb6e6c20c2501c5cfb59",
+          "git_blob_sha1": "ce96bfbc053cbc984d0bc59fda79ae1f545f86c2"
+        },
+        {
+          "path": "extraspecial_orbifolds/scripts/defect_rep_minus_id.g",
+          "bytes": 23225,
+          "sha256": "b872da4b2cad1c7d241d7219f707ba066fdc9bc7c42a0fe98853dbbc4d7bd94c",
+          "git_blob_sha1": "2b26cc8f91d145f806c99f2f1b266095cbe96a43"
+        },
+        {
+          "path": "extraspecial_orbifolds/scripts/defect_rep_minus_id_optim.g",
+          "bytes": 39441,
+          "sha256": "fcde5c15733eec01bf3f1ce7fd0a9babfb9f3d88380ac12468d4e4481327b288",
+          "git_blob_sha1": "91bd97ec78797ae531d8fcc42df65e76a8d68ec3"
+        },
+        {
+          "path": "extraspecial_orbifolds/scripts/em_construction.g",
+          "bytes": 3681,
+          "sha256": "a2496a59913355e974b59578ab0dc32ae8566d1db019e9a9563578cb70921da2",
+          "git_blob_sha1": "182c962e70d091028dd11ff49e0bff35050f658a"
+        },
+        {
+          "path": "extraspecial_orbifolds/scripts/krr_spectral_characters.g",
+          "bytes": 23632,
+          "sha256": "37660fea35adf10accdb5dcfd5d71714421a38dba537a39206f6d019cb054697",
+          "git_blob_sha1": "1ad5a58faf8701d9a44dc9916cdd800de2011755"
+        },
+        {
+          "path": "extraspecial_orbifolds/scripts/krr_spectral_characters_sparse.g",
+          "bytes": 68129,
+          "sha256": "fc77ba6f80c7dada68bd0c95c808f19ed4bffa8fa88a9172e119ceff563716cd",
+          "git_blob_sha1": "74d6ca76d19c53209006ed3d98df422c691c9c81"
+        },
+        {
+          "path": "extraspecial_orbifolds/scripts/twisted_group_algebra.g",
+          "bytes": 6361,
+          "sha256": "e2b981b4310097c317d991c136e3ebb3f41ecc18e439b81e62bc8a6b59c94da8",
+          "git_blob_sha1": "39867968aa81573e9575920d09dfb624a8b10e44"
+        }
+      ]
     }
   ]
 }

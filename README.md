@@ -25,8 +25,10 @@ The selected seed has $P_0=4\,925\,570$ weight-four primaries. Each swap adds on
 
 - [proof.pdf](proof.pdf): typeset version for reading and review.
 - [proof.md](proof.md): complete proposed proof, including the anomaly calculation, unitary full orbifold, exact weight-four minimum and uniform family.
+- [net-appendix.pdf](net-appendix.pdf) and [net-appendix.md](net-appendix.md): separate conditional construction of a holomorphic conformal net, with the four retained inputs stated explicitly.
+- [central-trace.pdf](central-trace.pdf) and [central-trace.md](central-trace.md): analytic proof of the existing central-defect trace lookup for every odd width $m\ge5$, with exact code conventions and an explicit $m=3$ exception.
 - [review-notes.md](review-notes.md): source dependencies, attribution, current-literature search, internal validation scope, and questions for external review.
-- [sources.json](sources.json): exact versions and SHA-256 hashes of the source PDFs consulted. The PDFs themselves are not redistributed.
+- [sources.json](sources.json): exact versions and hashes of the source PDFs and external code consulted. Those sources are not redistributed.
 
 The main anomaly-vanishing argument uses the published KRR, Johnson–Freyd–Treumann and Yu sources. The VOA existence endpoint also uses Carnahan–Miyamoto's regularity preprint and the cited extension theorems. The unitarity argument uses Lam's lattice results, Gui's simple-current extension theorem, and an explicitly proved module lemma. Source status is explicit in the references.
 
@@ -34,9 +36,28 @@ The counting inputs are pinned to Griess's minimal-vector data and Bakalov–Kac
 
 Section 4 proves the lift relations by a block-cocycle argument, directly from the ordered lattice basis. The finite calculations below are supplementary checks of that analytic argument and the involution phase formulas.
 
+## Separate conditional conformal-net consequence
+
+The [net appendix](net-appendix.md) proposes a direct conformal-net construction conditional on four inputs from the main argument:
+
+1. The actual prescribed extraspecial sign-lift action, its involution standardness and its real eigenspaces.
+2. The actual compatible order-sixteen quaternion action, its common quaternion subgroup, and the standard order-eight lift with its stated spectrum.
+3. The extraspecial cohomological detector and the equal restriction kernels for the indicated cyclic and quaternion subgroups.
+4. The invariant vacuum spectrum below weight four and an exhibited nonzero weight-four Virasoro primary.
+
+Using geometric current sectors and the actual Dong–Xu solitons, it derives vanishing of the **intrinsic net anomaly** and then constructs a holomorphic local conformal extension of central charge 128 with primary gap exactly four. The anomaly is computed in the net setting; equality with a VOA anomaly is not assumed.
+
+The appendix does not identify this extension with the net of a particular full-orbifold VOA, transfer the exact weight-four minimum to it, or determine its full spectrum. Its analytic argument and four retained inputs are not certified by the partial Lean development. Like the main argument, it was prepared by coordinated AI agents and awaits external expert review.
+
+## Central-defect trace formula
+
+The [trace appendix](central-trace.md) proves the positive central-defect trace formula for every odd $m\ge5$ in DRINFELD's pinned deterministic basis, zero-shift cochain and elementary-seed normalization. At $m=7$ the normalized traces are $2^{64}$ for the two central elements, $2^{48}$ for noncentral involutions and $2^{32}$ for order-four elements. The raw Schur sums have an additional factor of $2^{64}$.
+
+The proof identifies the actual pivot algorithm's polarization, evaluates the Schur normalization, and reduces every trace to an explicit quadratic sum. It also gives a noncentral involution at $m=3$ with trace zero, explaining why that case cannot use the same formula. This analytic result addresses [DRINFELD issue 467](https://github.com/thomas-gemunden/DRINFELD/issues/467); the lookup already exists in that repository. It is independent of the main anomaly argument and does not verify optimized evaluators or claim a new runtime improvement. External expert review remains pending.
+
 ## Checked partial Lean development
 
-[Public run 45872020766](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45872020766), at commit [`561abb5442c7307072bd57037437df476b43668b`](https://github.com/QwersykBot/barnes-wall-anomaly/commit/561abb5442c7307072bd57037437df476b43668b), compiled all twenty-two local modules without warnings or errors. The 15 upstream and 223 local declaration reports contained only `propext`, `Classical.choice` and `Quot.sound`; the checked module and probe hashes matched that commit. This result applies to that exact source snapshot.
+At public main commit [`7f9b50a009ae08eb037dd233a2fcb5d3c5d7e4bb`](https://github.com/QwersykBot/barnes-wall-anomaly/commit/7f9b50a009ae08eb037dd233a2fcb5d3c5d7e4bb), [formal run 45873703513](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45873703513) compiled all twenty-two local modules without warnings or errors. The 15 upstream and 223 local declaration reports contained only `propext`, `Classical.choice` and `Quot.sound`. The separate [finite-calculation run 45873703545](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45873703545) reproduced the stored reports. Both successful runs, their source hashes and their report identities were independently verified internally against that commit. These results apply to that exact snapshot and do not formalize the full anomaly theorem.
 
 The checked scope includes:
 

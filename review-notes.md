@@ -46,6 +46,8 @@ The quaternion plane condition is similarly explicit: both vectors have quadrati
 
 ## What has and has not been checked
 
+The public checks at main commit [`7f9b50a009ae08eb037dd233a2fcb5d3c5d7e4bb`](https://github.com/QwersykBot/barnes-wall-anomaly/commit/7f9b50a009ae08eb037dd233a2fcb5d3c5d7e4bb) both passed: [formal run 45873703513](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45873703513) checked 22 local modules, 223 local declaration reports and 15 upstream reports; [finite run 45873703545](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45873703545) reproduced the stored finite reports. Their logs, public source hashes and report identities were independently verified internally. This is validation of the stated computational scope, not external expert review or a formal proof of the full anomaly theorem.
+
 Section 4 supplies an analytic proof of the lift compatibility. The half-Gram form vanishes modulo two within each of sixteen eight-dimensional coordinate blocks. All required isometries preserve those blocks, and two genuine lifts of the same isometry differ by a lattice character. These facts give exact canonical composition with the documented reversal of right matrix words, from which the stated ordinary quaternion action is constructed. A two-term row formula proves integrality of the order-eight generator directly. The finite code is therefore corroboration, not a logical dependency of that step.
 
 The primary checker uses arbitrary-precision integer arithmetic, verifies the cocycle-lift identity, and checks every coefficient of the quadratic phase differences for the four stated relations. This is a complete finite check of those identities; it is not a sample of lattice vectors. The alternative code starts in Cartesian coordinates, converts through the lattice basis and reaches matching matrix hashes without importing the primary implementation. Its NumPy signed-integer arithmetic is secondary evidence; the arbitrary-precision checker is the minimal finite certificate.
@@ -90,6 +92,24 @@ P_4(S^{m-7}(T_0))=4\,925\,570+(m-7),\qquad
 P_4(T_m)=\frac{(2^m+1)(2^m+2)}6.
 $$
 The counts differ for every odd $m\ge9$, proving nonisomorphism for this fixed seed and the stated direct family. The seed's exact count is specific to the selected full-$E(7)$ orbifold retaining the given fixed algebra, not an assertion about arbitrary central-charge-128 seeds. The comparison is limited to these constructions and is not an exhaustive novelty result.
+
+## Conditional direct conformal-net appendix
+
+The separate [net appendix](net-appendix.md) retains four inputs from the pinned main argument: the actual standard extraspecial lift action and its eigenspaces; the compatible quaternion action and common subgroup with its standard order-eight lift; the cohomological detector and restriction-kernel equality; and the invariant low-weight vacuum spectrum with its nonzero weight-four primary. These are statements about the prescribed lifts, not just the projected matrices. They remain explicit premises of the appendix.
+
+Its additional argument works within conformal nets. Gui and CKLW identify the original lattice-net base and transfer the actual unitary action. Longo–Xu supply geometric permutation solitons and the covering Hamiltonian, D’Antoni–Fredenhagen–Köster supply the canonical globally inner Möbius implementation, and Dong–Xu supply the actual signed-lift soliton realization. Bakalov–Kac's representation and momentum facts enter the occupied zero-momentum argument; a twisted VOA energy formula is not imported. Bischoff's twisted-sector kernel and the already cited Evans–Gannon results supply the intrinsic anomaly and local-extension framework. The six additional source PDFs, their versions and their precise cited locations are pinned in `sources.json`.
+
+The resulting conditional statement is a holomorphic local conformal net of central charge 128 and primary gap four. It does not identify that net with the net of a particular full-orbifold VOA, transfer the exact weight-four minimum, or establish a full spectrum. Neither equality of VOA and net anomalies nor a general integration of twisted VOA fields is a premise or conclusion.
+
+The source and its analytic interfaces received separate internal AI-agent reviews. External review remains especially useful for the exact local Weyl matching and cover metric; the common-local-unitary argument fixing absolute rotation energies; and the pure lattice-group translation proving that the oscillator-vacuum zero-momentum fiber is occupied. The signed action in Dong–Xu must be the same actual lift group, with the same cocycle and common quaternion subgroup. The formal and finite checkers do not verify these analytic interfaces or the complete net argument.
+
+## Central-defect trace appendix
+
+The separate [trace appendix](central-trace.md) fixes the mathematical Schur-sum conventions at DRINFELD commit `219d8dbb2e2d6a4370b221f4a7a9c7b018214ded`. The consulted source-file bytes were checked against that public Git tree and are pinned in `sources.json`. Its deterministic pivot algorithm, original row action, zero linear shift, elementary seed and common normalization are all part of the statement.
+
+The analytic proof covers every odd $m\ge5$. Its core is an exact shear-coefficient formula followed by complementary-pair quadratic summation; the null case includes a proof of the rank on each parity space. It determines the positive signs and the normalized/raw scaling, and gives the explicit $m=3$ trace-zero counterexample. The full argument received separate internal AI-agent reviews, including the parametric pivot count, the one-bit-neighbor threshold, the nilpotent parity ranks and all Gauss-sum cases.
+
+This supplies an analytic justification for the existing lookup; no new runtime measurement is claimed. No GAP execution or finite-vector enumeration is claimed, and no optimized evaluator or even-width formula is certified. The result is independent of the main VOA anomaly argument. It has not received external expert validation and is outside the partial Lean development's scope.
 
 ## Current-literature and duplicate-resolution check
 
