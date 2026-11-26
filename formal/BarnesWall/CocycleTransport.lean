@@ -45,7 +45,7 @@ open VOA VOA.IntegralLattice VOA.LatGen
 
 section Transport
 
-variable (L : IntegralLattice) (H : L.carrier →ₗ[ℤ] L.carrier →ₗ[ℤ] ℤ)
+variable (L : VOA.IntegralLattice) (H : L.carrier →ₗ[ℤ] L.carrier →ₗ[ℤ] ℤ)
 
 /-- The sign cocycle in the supplied integral coordinates. -/
 def explicitCocycle (x y : L.carrier) : ℂ := (-1 : ℂ) ^ (H x y)
@@ -169,7 +169,7 @@ end Transport
 
 section Automorphisms
 
-variable (L : IntegralLattice)
+variable (L : VOA.IntegralLattice)
 
 /-- Surjectivity uses the integral equivalence, not merely equality of ranks. -/
 theorem latMorphC_surjective (hPos : L.PosDef)

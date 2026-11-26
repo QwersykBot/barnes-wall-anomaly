@@ -16,7 +16,14 @@ from audit_bridge import (
 )
 
 HERE = Path(__file__).resolve().parent
-MODULES = ("BarnesWall.CocycleTransport",)
+MODULES = (
+    "BarnesWall.BlockPhase",
+    "BarnesWall.IntegerPhase",
+    "BarnesWall.Lattice128",
+    "BarnesWall.CocycleTransport",
+    "BarnesWall.LatticeComposition",
+)
+UPSTREAM_IMPORTS = {TARGET, "VOA.Foundations.Lattices", "Lean.Elab.Tactic.Omega"}
 PROBE = HERE / "LocalAxiomProbe.lean"
 
 
@@ -58,7 +65,7 @@ def main() -> None:
         for imported in re.findall(r"^import\s+([A-Za-z0-9_.]+)", text, re.MULTILINE):
             if imported.startswith("Mathlib."):
                 cache_roots.add(imported)
-            elif imported != TARGET and imported not in available:
+            elif imported not in UPSTREAM_IMPORTS and imported not in available:
                 raise RuntimeError(f"Unplanned import in {module}: {imported}")
         destination = source / relative
         if destination.exists():
@@ -98,14 +105,16 @@ def main() -> None:
         if sha256(source / relative) != expected_hash or sha256(HERE / relative) != expected_hash:
             raise RuntimeError(f"Local source changed during compilation: {module}")
     receipt = {
-        "status": "generic_bridge_lemmas_checked",
+        "status": "lattice_and_lift_lemmas_checked",
         "source_revision": SOURCE_REV,
         "mathlib_revision": MATHLIB_REV,
         "modules_sha256": inputs,
         "probe_sha256": probe_hash,
         "axioms": reports,
-        "scope": "Generic cocycle transport and conformal lattice-lift construction.",
-        "krr_lattice_or_lift_formalized": False,
+        "scope": "Concrete rank-128 even positive coordinate lattice; generic integral phases, cocycle transport, conformal lifts, and full lattice-map composition.",
+        "concrete_coordinate_lattice_formalized": True,
+        "krr_tensor_formula_identification_formalized": False,
+        "krr_isometries_or_lifts_formalized": False,
         "barnes_wall_anomaly_theorem_formalized": False,
     }
     rendered = json.dumps(receipt, indent=2, sort_keys=True) + "\n"

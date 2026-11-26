@@ -1,15 +1,20 @@
 # Lattice VOA bridge checks
 
-This directory contains a pinned dependency audit and generic bridge lemmas
-toward a formalization of the specific KRR Barnes–Wall lifts in sections 4.2–4.3
-of the accompanying proof. It contains no formal proof of that concrete lattice,
-those prescribed lifts, or the anomaly theorem.
+This directory contains a pinned dependency audit, a concrete rank-128 even
+positive lattice, and generic bridge lemmas toward the specific KRR Barnes–Wall
+lifts in sections 4.2–4.3 of the accompanying proof. The KRR matrix actions,
+prescribed quaternion lifts and anomaly theorem are not yet formalized.
 
 The dependency-only audit passed in
 [run 45848409773](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45848409773),
 at commit 338b74f5c5eeb02fcd0bd889f63f4cc1f5a77103. That result predates the
-new local bridge module. The workflow checks the local lemmas in a separate
-second stage; each run's result applies to its exact source commit.
+local bridge modules. The first transport candidate failed compilation because
+an upstream type name was ambiguous; the binders now explicitly name
+`VOA.IntegralLattice`. `BlockPhase`, `IntegerPhase` and `Lattice128` have passed
+separate local checks using the pinned Lean kernel, with only the standard
+axioms listed below. The public workflow checks all five local modules together
+in a separate second stage; each run's result applies to its exact source commit.
+The local checks do not establish that the combined transport stage has passed.
 
 The audited dependency is [LeanVOA](https://github.com/Fedor-Popov/Lean_VOA)
 at commit faedf8eb9e3fe275d3ac09e645aac694e496e965, by Fedor K. Popov
@@ -17,10 +22,11 @@ and contributors, released under Apache 2.0. Its exact manifest pins Mathlib
 b63f6e8a68d220e3b3bc4f3792bb53650d375f24 and Lean 4.35.0-rc3.
 The upstream source is downloaded at execution time and left unchanged.
 
-The local `CocycleTransport.lean` module is released under Apache 2.0, with
-the upstream notice retained for its adapted automorphism wrapper. The license
-is included in `LICENSE-Apache-2.0.txt`. Its additions and generalizations are
-identified in the source header.
+The local `CocycleTransport.lean`, `LatticeComposition.lean` and `Lattice128.lean`
+modules are released under Apache 2.0, with the upstream notice retained for the adapted
+automorphism wrapper. The license is included in `LICENSE-Apache-2.0.txt`.
+Additions and generalizations are identified in the source. `BlockPhase.lean`
+and `IntegerPhase.lean` use the repository's MIT license.
 
 ## What the dependency check establishes
 
@@ -39,9 +45,41 @@ or changed tracked upstream source makes the check fail.
 
 The ordinary Lean compiler and official Mathlib compiled cache are part of
 the trust boundary. This does not rebuild Mathlib from source or run a
-second independent proof kernel.
+second independent proof kernel. The local additions were generated and
+reviewed by AI agents; no independent human review is claimed.
+
+## Concrete coordinate lattice
+
+`BarnesWall/Lattice128.lean` defines the carrier literally as `Fin 128 → ℤ`,
+with its standard ordered basis. For binary supports Iᵢ and
+tᵢ = ⌈(7 − |Iᵢ|)/2⌉, the integer matrix has entries
+Bᵢⱼ = 2ᵗⁱ when Iⱼ ⊆ Iᵢ and zero otherwise. The Cartesian row basis is B/4.
+A powerset count proves B Bᵀ = 16 G, including an explicit proof that the
+integer Gram exponents are nonnegative. Lower triangularity gives a nonzero
+determinant, and a sum of squares proves positive definiteness. The prescribed
+half-Gram matrix satisfies H + Hᵀ = G and proves evenness. The rank is 128.
+
+The identification with KRR's tensor expression is documented in
+[Lattice128-notes.md](Lattice128-notes.md); Lean checks the explicit coordinate
+construction and its properties, not a parsed version of the paper's tensor
+formula. Unimodularity, minimum norm and the particular KRR isometries are
+outside this increment.
 
 ## Generic bridge lemmas
+
+`BarnesWall/BlockPhase.lean` proves the canonical quadratic phase composition
+identity over `ZMod 2`. Its hypotheses say that H vanishes within each block,
+that R and S preserve the blocks, and that they preserve H + Hᵀ. The proof
+derives both symmetry and zero diagonal of the composition defect, then proves
+that its quadratic expression vanishes. The second phase is evaluated at vR,
+as required for row vectors acting from the right.
+
+`BarnesWall/IntegerPhase.lean` defines the same strict-lower exponent over ℤ
+and the actual sign (−1) raised to that integer exponent in a field, including
+ℂ. It proves the explicit-cocycle identity from an integral isometry of
+H + Hᵀ. It then derives sign composition from `BlockPhase` when H is even
+within blocks and R and S have zero entries between blocks. Both conclusions
+are proved; neither desired phase equation is an assumption.
 
 `BarnesWall/CocycleTransport.lean` imports only the audited upstream target.
 Given an integral bilinear form H whose symmetrization is the lattice form,
@@ -54,23 +92,32 @@ a normalized, nonzero compatible phase as a conformal automorphism of the
 full lattice VOA. Integral surjectivity is supplied by the equivalence;
 vacuum, all vertex products and the conformal vector are preserved.
 
-`check_bridge.py` runs after the dependency audit. It compiles the local source
-into the audited environment, prints the types and transitive axioms of
-fourteen new declarations, and checks source pins and unchanged inputs again.
+`BarnesWall/LatticeComposition.lean` proves composition for the chosen-basis,
+frame and oscillator matrices, using the proved positive-definite frame
+invertibility. It then proves composition on every state of the full lattice
+module and shows that the global cocycle change preserves a supplied phase
+composition equation. In right-action notation, the lift of RS is the lift of
+S after the lift of R.
+
+`check_bridge.py` runs after the dependency audit. It compiles all five local
+modules into the audited environment, prints the types and transitive axioms of
+fifty-three new declarations, and checks source pins and unchanged inputs again.
 Its parser applies the same standard-axiom restriction. The mathematical
 assumptions remain visible in `LocalAxiomProbe.lean`'s type output.
 
-These generic statements still take an actual isometry and its explicit phase
-identity as inputs. They do not prove canonical phases compose, identify the
-KRR lattice, construct Q16, or establish unitarity of an automorphism.
+The integer module supplies explicit-cocycle compatibility and phase composition
+under its stated hypotheses. The VOA bridge accepts an actual integral isometry
+and compatible phase; a coordinate adapter must still connect those interfaces.
+The concrete KRR matrices must supply the integral isometry and block hypotheses.
+These statements do not construct Q16 or establish unitarity of an automorphism.
 
 ## Mathematical work still required
 
 LeanVOA's lattice basis is chosen noncomputably; its cocycle and oscillator
 frame are not definitionally the KRR coordinate conventions. A later
-formalization must establish the concrete rank-128 even positive lattice,
-its integral isometries and inverses, and instantiate the generic transport
-with the prescribed half-Gram form and phases.
+formalization must establish the concrete integral isometries and inverses,
+prove their block support and the half-Gram parity conditions, and instantiate
+the generic transport with the coordinate lattice and prescribed phases.
 
 The new wrapper supplies conformal preservation and bijectivity from its
 explicit hypotheses. The exact Q16 relations,
