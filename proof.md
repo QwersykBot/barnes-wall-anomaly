@@ -4,9 +4,9 @@
 
 ## Abstract and attribution
 
-Keller, Ashley Winter Roberts and Jeremy Roberts constructed a holomorphic orbifold of the rank-128 Barnes–Wall lattice VOA conditional on the vanishing of an extraspecial-group anomaly [KRR, Conjecture 5.2]. We give a candidate argument for that vanishing. A compatible lift of a specific generalized quaternion group of order 16 removes the residual anomaly that cyclic tests alone cannot detect. We also give a direct proof that all involutions in the prescribed extraspecial action are standard lifts. A block argument proves the compatibility of the quaternion lift analytically. Exact finite calculations corroborate this argument and the source phase formulas; a separate implementation reconstructs them by a different method. Two simple-current extensions and an explicit positivity lemma equip the resulting full orbifold with a unitary structure. A global discrete-torsion average gives a member with at most $5\,057\,652$ weight-four states. The anomaly argument extends to every odd parameter $m\ge5$, with a genuine obstruction at $m=3$; the resulting family has exact primary gap four for odd $m\ge7$ and an exact weight-four count for odd $m\ge9$.
+Keller, Ashley Winter Roberts and Jeremy Roberts constructed a holomorphic orbifold of the rank-128 Barnes–Wall lattice VOA conditional on the vanishing of an extraspecial-group anomaly [KRR, Conjecture 5.2]. We give a candidate argument for that vanishing. A compatible lift of a specific generalized quaternion group of order 16 removes the residual anomaly that cyclic tests alone cannot detect. We also give a direct proof that all involutions in the prescribed extraspecial action are standard lifts. A block argument proves the compatibility of the quaternion lift analytically. Exact finite calculations corroborate this argument and the source phase formulas; a separate implementation reconstructs them by a different method. Two simple-current extensions and an explicit positivity lemma equip the resulting full orbifold with a unitary structure. One global discrete-torsion choice attains the exact family minimum of $4\,925\,572$ weight-four states, with $4\,925\,570$ Virasoro primaries. The anomaly argument extends to every odd parameter $m\ge5$, with a genuine obstruction at $m=3$; the resulting family has exact primary gap four for odd $m\ge7$ and an exact weight-four count for odd $m\ge9$.
 
-The Barnes–Wall action, proposed orbifold, twisted-module calculations and spectral analysis are due to KRR. The contribution proposed here is the compatible quaternion lift and its use with established group cohomology, together with the standardness, unitarity, discrete-torsion bound and uniform-family arguments below. The resulting proposed construction is a unitary strongly rational holomorphic VOA of central charge 128 with primary gap four. It does not concern the existence of an extremal VOA at central charge 48.
+The Barnes–Wall action, proposed orbifold, twisted-module calculations and spectral analysis are due to KRR. The contribution proposed here is the compatible quaternion lift and its use with established group cohomology, together with the standardness, unitarity, exact discrete-torsion minimum and uniform-family arguments below. The resulting proposed construction is a unitary strongly rational holomorphic VOA of central charge 128 with primary gap four. It does not concern the existence of an extremal VOA at central charge 48.
 
 ## 1. Statement and conventions
 
@@ -22,7 +22,7 @@ Thus a lift of $a\in A$ has square $z^{Q(a)}$. We identify $H^3(G,U(1))$ with $H
 
 **Proposed theorem.** The anomaly $\alpha\in H^3(E,U(1))$ of the specified action on $V_{BW(7)}$ is zero.
 
-The theorem is about this particular action, including its lattice-VOA phases. Lattice isometries without their compatible lifts would not suffice. Sections 6–7 give the unitary full-orbifold consequence. Section 8 bounds its lightest-state multiplicity for some coherent discrete-torsion choice. Section 9 states and proves the extension to the family $E_m=2_+^{1+2m}$.
+The theorem is about this particular action, including its lattice-VOA phases. Lattice isometries without their compatible lifts would not suffice. Sections 6–7 give the unitary full-orbifold consequence. Section 8 determines the minimum lightest-state multiplicity in the coherent discrete-torsion family. Section 9 states and proves the extension to the family $E_m=2_+^{1+2m}$.
 
 All matrices below act on row lattice coordinates from the right. Products of lifts are read in the corresponding order. The quotient quadratic form $Q$, the conformal weight $\rho$, and the quadratic sign exponents $q_R$ are different objects.
 
@@ -419,16 +419,22 @@ T=\bigoplus_{a\in A}R_a
 $$
 is preunitarizable as a $W_1$-module. It is already a simple VOA, by §6, and is a finite simple-current extension of the unitary strongly rational VOA $W_1$. A second application of [Gui, Theorem 11.5] therefore equips this same $T$ with a positive invariant Hermitian form extending the one on $W_1$, hence on $W$. This proves the proposed strengthening. $\square$
 
-## 8. A bound on the weight-four multiplicity
+## 8. The exact weight-four minimum in the full-orbifold family
 
-Discrete torsion gives a family of full $E$-orbifolds within which one can bound the number of lightest states without determining any centralizer action explicitly.
-
-**Proposition.** There exists a unitary strongly rational holomorphic full $E$-orbifold $T$ with inflated discrete torsion, of central charge 128 and primary gap four, such that
+We determine the minimum weight-four multiplicity over the global family of inflated discrete-torsion extensions constructed below. Write $V=V_L$, $W=V^E$, and
 $$
-\dim T_4\le5\,057\,652.
+A=E/\langle z\rangle=S\oplus S^*,\qquad S=\mathbb F_2^7,\qquad Q(x,f)=f(x).
+$$
+Let $J_{\mathrm{lin}}=GL(S)$ act on $A$ by $(x,f)\mapsto(jx,fj^{-1})$. The actual compatible lift of this finite subgroup is proved in §8.3.2. The central simple current $J$ of §7 retains its earlier meaning.
+
+**Proposition.** In the global family $T_B$ of §8.1,
+$$
+\min_B\dim(T_B)_4=\dim W_4=4\,925\,572.
 \tag{22}
 $$
-It has at most $5\,057\,650$ Virasoro primary states of weight four.
+Consequently there is a unitary strongly rational holomorphic full $E$-orbifold $T_*$ of central charge 128 and primary gap four with exactly $4\,925\,570$ weight-four Virasoro primaries.
+
+The selected form is explicit relative to a unique $J_{\mathrm{lin}}$-fixed isomorphism class of relative equivalences. We do not compute that class in a previously chosen cochain gauge or assert a $J_{\mathrm{lin}}$-action on $T_*$. The spectral argument in this section is source-level mathematics and is not part of the checked partial Lean development.
 
 ### 8.1 A global family of unitary extensions
 
@@ -502,50 +508,576 @@ The nonzero singular vectors of $(A,Q)$ index these conjugacy classes. Their num
 $2^{13}+2^6-1=8255$.
 The order-four sectors begin at weight six and the central-involution sector at weight eight, so neither contributes to $T_{B,4}$.
 
-### 8.3 Averaging the selected characters
+### 8.3 Actual normalizing lifts and scalar ground spaces
 
-For a fixed noncentral involution representative $g$, put $a=\bar g\ne0$ and
-$C_g=C_E(g)$. Its image in $A$ is
-$a^\perp=\{b:B_Q(a,b)=0\}$.
-As $B$ varies, its slant character in (25) factors through
-$C_g/\langle g,z\rangle\cong a^\perp/\langle a\rangle$.
-The linear map
+#### 8.3.1 The local lift lemma uses the same global cocycle
+
+Matrices act on row lattice coordinates on the right. Write $C(R)$ for the
+canonical lift formed using the original ordered half-Gram matrix $H$.
+The block lemma of §4.2 says, under ordinary composition of VOA maps,
+
 $$
-\operatorname{Alt}^2(A^*)\longrightarrow
-\bigl(a^\perp/\langle a\rangle\bigr)^*,
-\qquad
-B\longmapsto B(a,\cdot)|_{a^\perp}
+ C(RS)=C(S)C(R)
+$$
+
+whenever both matrices preserve one partition of the basis on whose blocks
+$H$ is even. This is only a local statement. Its reason is that both phases
+vanish on a basis vector and its image inside a block; their ratio is a
+lattice character trivial on the entire basis.
+
+If a Cartesian tensor operator is supported on a set $\mathcal I$ of at most four
+tensor factors, partition the KRR basis by the bits outside $\mathcal I$. Each basis
+vector is a nonzero scalar multiple of a tensor-basis vector, so this
+operator preserves the corresponding real spans. If it is a lattice
+automorphism, its matrix and inverse preserve the integral blocks. For two
+indices in one block, their Hamming distance is at most four. The exact
+Gram entries are
+
+$$
+ G_{ij}=2^{3-d(i,j)/2+(p_i+p_j)/2},\qquad H_{ii}=2^{2+p_i},
+ \qquad p_i=(7-|i|)\bmod2.
+$$
+
+The exponent in an off-diagonal entry is an integer at least one. Therefore
+the restriction of this same $H$ to each block is even.
+
+Suppose a lattice normalizer $R$ is supported on at most two factors. For
+each Pauli generator $P=X_j,Z_j$, take the common support
+$\mathcal I=\operatorname{supp}(R)\cup\{j\}$. The local composition identity above gives
+
+$$
+ C(R)C(P)C(R)^{-1}=C(R^{-1}PR).
+$$
+
+If $j$ is outside the support, the conjugate is $P$. Otherwise it is a
+signed Pauli word within the two supported factors. Applying this local composition identity to that
+word identifies its canonical lift with the reversed product of the
+prescribed generator lifts and the prescribed central lift. Thus it belongs
+to the actual prescribed $E$. This membership argument precedes any appeal
+to faithfulness of projection. Applying the same argument to $R^{-1}$
+proves that $C(R)$ normalizes $E$.
+
+#### 8.3.2 A genuine Cartesian $J_{\mathrm{lin}}$-lift
+
+Label Cartesian coordinates by
+rows $x\in\mathbb F_2^7$, and let $R(A)$ be the lattice matrix of
+$e_x\mapsto e_{xA}$. The Cartesian linear group consists of lattice
+isometries by [KRR, §3.1, (3.1.5) and the Dickson-invariant discussion].
+
+For $i\ne j$, put $t_{ij}=I+E_{ij}$.
+
+The needed generator is also integral directly. In a block with only
+tensor positions $i,j$ free, the transvection
+$x_j\leftarrow x_j+x_i$ fixes the rows $w_{00},w_{01},w_{11}$, and
+the KRR tensor basis gives
+
+$$
+ w_{10}R(t_{ij})
+ =2^p w_{00}-w_{01}-w_{10}+2^p w_{11},
+$$
+
+where $p$ is the zero-count parity of the source row, including the
+fixed outside bits. This follows by substituting
+$u_0=(\sqrt2,0)$, $u_1=(1,1)$; the opposite parity changes the
+common scaling by $(\sqrt2)^{1-2p}$. The displayed coefficients are
+integral. Its Cartesian permutation is an orthogonal involution, so its
+inverse is integral as well and it is a lattice isometry. In zero-based
+numerical bit notation, KRR tensor position $a\in\{1,\ldots,7\}$
+is bit $7-a$; throughout this proof $i,j$ name tensor positions.
+
+Steinberg's exact presentation
+[St, §6, Theorem 9 and its following Example] specializes over $\mathbb F_2$
+to the following relations for $GL(7,2)=SL(7,2)$:
+
+$$
+ t_{ij}^2=1,\qquad
+ [t_{ij},t_{k\ell}]=1\quad(j\ne k,\ i\ne\ell),\qquad
+ [t_{ij},t_{jk}]=t_{ik}\quad(i,j,k\text{ distinct}).
+$$
+
+The commuting family includes shared rows and shared columns; opposite
+roots are excluded. The theorem is for finite fields without a
+$|k|>4$ hypothesis. That bound belongs to a different theorem about
+universal central extensions.
+
+Assign $t_{ij}\mapsto C(R(t_{ij}))$. Each entire defining relator is
+supported on at most four tensor factors. Section 8.3.1 applies to all its
+partial products and makes its ordinary operator product the canonical
+lift of the reversed matrix word. Every generator is an involution, so
+this reversed word is the inverse of the original relator and is the
+identity. Hence no residual lattice character occurs. The presentation
+gives a homomorphism
+
+$$
+ \rho:J_{\mathrm{lin}}\longrightarrow\operatorname{Aut}(V).
+$$
+
+Its underlying right row action at $A$ is $R(A^{-1})$; that fact
+makes $\rho$ faithful. It does not assert that $\rho(A)$ is the global
+canonical lift of $R(A^{-1})$ for an arbitrary word.
+
+Section 8.3.1 also proves exact normalization of the prescribed $E$ by
+every transvection lift, using at most three factors. If translations are
+indexed by rows $u$ and signs by columns $f$, the induced action is
+$(u,f)\mapsto(uA^{-1},Af)$. Calling the sign space $S$ and the
+translation space $S^*$ gives precisely the natural-plus-dual action
+$A=S\oplus S^*$ fixed at the start of §8. Thus this is an actual honest $J_{\mathrm{lin}}$-action
+normalizing $E$, including all VOA phases. No geometric-kernel descent
+or full-normalizer splitting is required below.
+
+#### 8.3.3 Scalarity on the entire twisted ground space
+
+For $g=X_1$, use the paired KRR basis from (27),
+$u_i=w_{(0,i)},v_i=w_{(1,i)}$, so
+$g(u_i)=-u_i+2^{p_i}v_i$ and $g(v_i)=v_i$.
+The minus-eigenlattice modulo $(1-g)L$ has the 32 generators
+$\mu_i=u_i-v_i$ for even tail cardinality $|i|$. It is an elementary
+abelian group of order $2^{32}$. The finite Heisenberg construction of
+[BK, §4] gives its irreducible defect space dimension $2^{16}$.
+
+For a centralizer generator $h=X_a,Z_a$, $a\ge2$, either $\mu_i$ is
+fixed or, with $j$ the tail-bit flip,
+
+$$
+ \mu_i h=-\mu_i+(2u_j-v_j),\qquad
+ \delta=\mu_i h-\mu_i=w(1-g),\qquad w=-u_i+u_j.
+$$
+
+The Gram matrix on $u_i,u_j,v_i,v_j$ is
+
+$$
+ \begin{pmatrix}
+16&8&8&8\\8&8&4&8\\8&4&8&8\\8&8&8&16
+ \end{pmatrix}.
+$$
+
+In particular $w^2=8$, $(w,wg)=0$, and the half-Gram restriction on this
+span is zero modulo two. For $h=g,z$, use $w=-u_i$, which has
+$w^2=16$ and again $(w,wg)=0$. All involved canonical phases vanish
+on these supported vectors by the same local block calculation.
+
+Write $c_h(v)=(-1)^{q_h(v)}$ for the prescribed lift phase and
+$\epsilon(v,w)=(-1)^{vHw^{\mathsf T}}$ for the lattice cocycle. In the
+normalized defect operators $V_\mu=2^{\mu^2}U_\mu$, the physical
+conjugation multiplier is
+
+$$
+ \kappa_h(\mu)=c_h(\mu)\epsilon(\delta,\mu)Q_g(w),\qquad
+ Q_g(w)=c_g(w)\epsilon(w,wg)i^{(w,wg)}.
+$$
+
+These are the lattice-intertwiner covariance formulas [GK, §§4–6], with
+the same cocycle as the specified lift. The preceding evenness and inner
+products make every displayed factor one. The fixed case has $\delta=0$
+and the same conclusion. Thus each centralizer intertwiner commutes with
+all defect generators, and irreducibility makes it scalar.
+
+Standardness gives no momentum shift. Every nonzero momentum and oscillator
+has positive energy, so the entire weight-four space is this zero-momentum
+oscillator-vacuum fiber, rather than a larger space containing it. Hence
+$\Omega_g=V(g)_4$ has dimension 65,536 and is scalar under every physical
+centralizer implementer.
+
+For an actual normalizer $\tau$, the pullback
+$Y^\tau(v,z)=Y(\tau v,z)$ is twisted by $\tau^{-1}g\tau$ and has the
+same conformal grading. Uniqueness of the twisted module for an even
+unimodular lattice [BK, Theorem 4.2] identifies it with the corresponding
+physical module. Covariance and Schur uniqueness [GK, (5), (99)] transport
+centralizer implementers up to scalar. The actual lifted Appendix-B gates
+of [KRR] connect all noncentral involutions. Therefore every such entire
+ground space is scalar. Choosing a coherent ordinary normalization later
+changes no scalarity assertion.
+
+### 8.4 Relative equivalences and a fixed origin
+
+#### 8.4.1 The natural multiplier module
+
+Let
+
+$$
+ M=\operatorname{Alt}^2(A^*)/\langle B_Q\rangle.
 \tag{28}
 $$
-is surjective. Indeed, extend any functional on the quotient to $\ell\in A^*$ with $\ell(a)=0$, choose $t\in A^*$ with $t(a)=1$, and take
-$B(x,y)=t(x)\ell(y)+\ell(x)t(y)$.
-It is alternating and has the prescribed restriction. Since the target has dimension 12, uniformly sampling the $2^{91}$ forms $B$ makes $\beta_g^B$ uniform over $2^{12}=4096$ distinct linear characters of $C_g$.
 
-Use the centralizer linearizations associated with the single fixed anomaly trivialization. Let $\Omega_g=V_L(g)_4$ be the entire unprojected weight-four space of the $g$-twisted module, with its resulting linear $C_g$-action. The actual twisted-module decomposition [GR, Theorems 2.2 and 3.1 and the discussion following (3.1)] identifies
+The identification $M\simeq H^2(E,U(1))$ needed here is natural, not just
+an equality of dimensions. We give an extension argument.
+
+Take any central extension $F\to E$ by $U(1)$ and a lift $\widetilde z$
+of $z$. For nonzero $a\in A$, choose $b,c\in a^\perp$ with
+$B_Q(b,c)=1$; the symplectic quotient of $a^\perp$ has positive rank.
+For lifts $x,y,w$ of representatives of $a,b,c$, the commutators
+$[x,y]$ and $[x,w]$ are central. Conjugation by $x$ therefore fixes
+$[y,w]$, which differs from $\widetilde z$ by a central scalar. Thus
+$\widetilde z$ is central; elements over $a=0$ cause no exception.
+Rescale it to have order two. Quotienting $F$ by
+$\langle\widetilde z\rangle$ gives an extension of $A$ by the same
+$U(1)$, whose pullback to $E$ recovers $F$. Inflation is surjective.
+
+Extensions of elementary abelian $A$ by $U(1)$ are classified by their
+alternating commutator forms: an abelian residual extension splits by
+rescaling commuting lifts of a basis to involutions. If the inflation of
+a form $B$ splits, the splitting induces a homomorphism from $E$ to the
+extension of $A$. It sends $z$ to $(-1)^e$; preservation of
+commutators implies $B=eB_Q$. Conversely the form $B_Q$ is represented
+by the pushout of $E$ along $z\mapsto-1$, and its pullback splits.
+The kernel of inflation is exactly $\langle B_Q\rangle$.
+
+The resulting isomorphism is the inflation map itself, hence is
+$\operatorname{Aut}(E)$-equivariant. Inner automorphisms act trivially.
+For finite groups the $U(1)$ and $\mathbb C^\times$ versions of this
+cohomology agree: the positive-real factor has zero higher cohomology by
+averaging after taking logarithms. The module has dimension $91-1=90$.
+
+#### 8.4.2 Fixed vectors and first cohomology
+
+Restricted to $J_{\mathrm{lin}}=GL(7,2)=SL(7,2)=L_7(2)$, the natural module (28) is
+
 $$
-\dim[g,\chi]_4
-=\dim\operatorname{Hom}_{C_g}(\chi,\Omega_g)
+ M=\Lambda^2S^*\oplus
+   \bigl(\operatorname{End}(S)/\langle I\rangle\bigr)
+   \oplus\Lambda^2S.
 $$
-for each linear character $\chi$. The multiplicities of distinct linear characters sum to at most $\dim\Omega_g$. If $\mathcal X_g$ denotes the 4096 characters reached in (28), this gives
+
+First, $M^{J_{\mathrm{lin}}}=0$. On either pure alternating summand, transitivity on
+ordered independent pairs makes an invariant bilinear form constant there.
+Bilinearity applied to three independent vectors forces that constant
+to vanish. The endomorphisms invariant under the full linear group are
+scalars. Passing to the quotient introduces no new invariant vectors:
+the $J_{\mathrm{lin}}$-invariant contraction
+
 $$
-\mathbb E_B\,\dim[g,\beta_g^B]_4
-=\frac1{4096}\sum_{\chi\in\mathcal X_g}
-  \dim\operatorname{Hom}_{C_g}(\chi,\Omega_g)
-\le\frac{65536}{4096}=16.
+ c(B)=\sum_iB(e_i,e_i^*)
+$$
+
+satisfies $c(B_Q)=7=1$ in $\mathbb F_2$, so it splits off the line
+$\langle B_Q\rangle$ as a $J_{\mathrm{lin}}$-module. Therefore the quotient's
+invariant space is zero.
+
+For first cohomology, two source results apply to precisely these
+finite-group modules:
+
+* [IS, §3, Lemma 3.2, pp. 35–36] states
+  $H^1(L_n(2),\Lambda^i\mathbb F_2^n)=0$, except for
+  $(n,i)=(3,1),(3,2),(4,2)$. It explicitly defines the natural module
+  over $\mathbb F_2$. At $n=7$ it covers $i=2,5$, and the
+  determinant pairing gives $\Lambda^2S^*\simeq\Lambda^5S$.
+  This is the published restatement of the Jones–Parshall result for
+  the required finite-group modules.
+* [CGP, Theorem 1.4 and §1.1] gives
+  $H^1(SL(n,K),\operatorname{End}(K^n)/\langle I\rangle)
+    \simeq\operatorname{Der}(K)$ for $n>3$ and every field $K$.
+  The trace pairing identifies the displayed quotient with the dual
+  adjoint module. Convert the source right action to our left action by
+  $j\cdot m=m\cdot j^{-1}$; a right cocycle $b$ gives the left cocycle
+  $j\mapsto b(j^{-1})$. Thus the vanishing statement uses the same module
+  and convention. Every derivation of $\mathbb F_2$ is zero. The source
+  verified here is the 2025 arXiv preprint, version 2; journal publication
+  is not asserted.
+
+Consequently
+
+$$
+ M^{J_{\mathrm{lin}}}=0,\qquad H^1(J_{\mathrm{lin}},M)=0.
 \tag{29}
 $$
-This inequality imposes no assumption that $g$ or $z$ acts as $+1$ on $\Omega_g$, or that its centralizer representation is trivial.
 
-The same global $B$ is used in every class. Linearity of expectation, which requires no independence between classes, now yields
+These are statements for the exact finite subgroup and module. There is
+no rational-to-finite comparison and no assertion that
+$H^1(\Omega^+(14,2),M)$ vanishes.
+
+#### 8.4.3 The specified charge embedding and actual relative torsor
+
+Put $\mathcal C=\operatorname{Rep}(W)$ and $\mathcal D=Z(\operatorname{Vec}_E)$. Fix the actual charge embedding
 $$
-\mathbb E_B\,\dim T_{B,4}
-\le4\,925\,572+8255\cdot16
-=5\,057\,652.
+\Phi:\operatorname{Rep}(E)\longrightarrow\mathcal C,
+\qquad
+\Phi(U)=(U\otimes V)^E,
+$$
+where $U$ is an object of $\operatorname{Rep}(E)$ and invariants are taken for the diagonal action. Its tensor structure is the standard orbifold tensor structure induced by the vertex operator and vacuum of $V$, equivalently by the regular algebra $\operatorname{Res}_W V$. We retain this embedding, including its tensor structure, rather than merely its list of simple objects.
+
+The actual twisted-module theorem [GR, Theorem 2.2] identifies the de-equivariantization with the category of twisted $V$-modules and identifies $\mathcal C$ with its equivariantization. In the holomorphic case, [GR, Theorem 3.1] identifies this twisted category with $\operatorname{Vec}_E^\omega$, with the grading supplied by the actual automorphisms of $V$. The anomaly vanishing proved in §5 consequently gives a nonempty set
+$$
+\mathcal T=
+\operatorname{IsoBr}_{\operatorname{Rep}(E)}
+ \bigl((\mathcal C,\Phi),(\mathcal D,\iota)\bigr),
+$$
+of isomorphism classes of braided equivalences equipped with a compatible tensor identification on the specified copy of $\operatorname{Rep}(E)$. Here $\iota$ is the charge embedding into the untwisted center. Natural tensor identifications may be strictified to the convention of [DS], which fixes this subcategory on the nose.
+
+By [DS, Lemmas 2.1.5 and 2.1.7], $\mathcal T$ is a torsor for
+$$
+H^2(E,\mathbb C^\times)\cong H^2(E,U(1)).
+$$
+The second identification is the standard finite-group identification. The relative condition is essential: an abstract equivalence of braided categories, or a permutation fixing charge-simple labels, does not specify a point of this torsor.
+
+#### 8.4.4 A coherent normalizer action
+
+Let $\sigma\in N_{\operatorname{Aut}(V)}(E)$, and put
+$\nu_\sigma(e)=\sigma e\sigma^{-1}$. The automorphism $\sigma$ preserves $W$. Use inverse pullback on $W$-modules:
+$$
+Y_{F_\sigma X}(w,z)=Y_X(\sigma^{-1}w,z).
+$$
+On representations of $E$, use the relabeling
+$$
+R_\sigma U:\quad
+e\longmapsto \rho_U(\sigma^{-1}e\sigma).
+$$
+There is a specified natural isomorphism
+$$
+\eta_{\sigma,U}=\operatorname{id}_U\otimes\sigma:
+F_\sigma\Phi(U)\longrightarrow\Phi(R_\sigma U).
+$$
+It maps invariant vectors to invariant vectors: applying $e$ after this map is the same as applying $\sigma^{-1}e\sigma$ before it. It is a $W$-module map because $\sigma$ intertwines the vertex operators. Preservation of the vertex product and vacuum gives tensor and unit coherence.
+
+With the canonical pullback identifications, these data satisfy
+$$
+F_\sigma F_\tau=F_{\sigma\tau},\qquad
+R_\sigma R_\tau=R_{\sigma\tau},\qquad
+\eta_{\sigma\tau,U}
+=\eta_{\sigma,R_\tau U}\circ F_\sigma(\eta_{\tau,U}).
+$$
+For $\sigma$ centralizing $E$, $R_\sigma$ is the identity, so this specified map is an actual relative datum over $\Phi$.
+
+Let $Z_\sigma$ be the corresponding relabeling of the untwisted center. It sends degree $g$ to degree $\nu_\sigma(g)$, and replaces the $E$-action by pullback along $\nu_\sigma^{-1}$; its restriction to charges is $R_\sigma$. The normalizer acts on the relative-equivalence torsor by
+$$
+\sigma\cdot[F]
+=\bigl[Z_\sigma\circ F\circ F_{\sigma^{-1}}\bigr],
+$$
+with relative datum obtained from $\eta_{\sigma,U}$. The pullback coherence identities make this a genuine action on isomorphism classes. Conjugating a relative autoequivalence of $\mathcal D$ by $Z_\sigma$ gives the natural action on $H^2(E,U(1))$, so this is an affine action with that linear part. No independent centralizer normalizations have been chosen.
+
+#### 8.4.5 Inner automorphisms cancel, including central choices
+
+For $e\in E$, inverse pullback on $W$ is the identity, since $e$ fixes $W$ pointwise. Nevertheless its specified relative datum must be retained. The natural tensor isomorphism
+$$
+r_{e,U}=\rho_U(e):R_eU\longrightarrow U
+$$
+satisfies
+$$
+\Phi(r_{e,U})\circ\eta_{e,U}
+=\bigl(\rho_U(e)\otimes e\bigr)\big|_{(U\otimes V)^E}
+=\operatorname{id}_{\Phi(U)}.
+$$
+Thus the inner relabeling and the physical relative datum cancel.
+
+The same cancellation occurs in the target center. In its graded-vector-space model, the map $x\mapsto e\cdot x$ is a braided tensor natural isomorphism $Z_e\Rightarrow\operatorname{Id}_{\mathcal D}$, whose restriction to charges is $r_e$. Together with the cancellation identity above, it identifies the normalizer action with the identity on relative equivalence classes.
+
+If two representatives of an inner automorphism differ by $z\in Z(E)$, their natural identifications differ by the action of $z$. That action extends to a monoidal natural automorphism of $\operatorname{Id}_{\mathcal D}$: it preserves every homogeneous degree because $z$ is central, commutes with the $E$-action, and acts diagonally on tensor products. Its restriction is the corresponding natural automorphism on $\operatorname{Rep}(E)$. Hence this central ambiguity introduces no $H^2$-translation. We conclude that the actual subgroup $E$ acts trivially on $\mathcal T$; we do not assert literal equality of all the functors or a strictification of every higher coherence.
+
+#### 8.4.6 The actual affine $J_{\mathrm{lin}}$-action
+
+Write $J_{\mathrm{lin}}=GL(7,2)$, $A=E/\langle z\rangle$, and let $B_Q$ be the polar form of the extraspecial quadratic form. The natural inflation calculation in §8.4.1 identifies
+$$
+H^2(E,U(1))
+\cong
+M:=\operatorname{Alt}^2(A^*)/\langle B_Q\rangle.
+$$
+More explicitly, $H^2(A,U(1))$ is the space of alternating commutator forms, and inflation is surjective with kernel $\langle B_Q\rangle$. Inflation commutes with automorphisms of the central extension, so this isomorphism identifies the induced $J_{\mathrm{lin}}$-action with the natural action on $M$.
+
+Section 8.3.2 supplies an actual faithful homomorphism
+$$
+\rho:J_{\mathrm{lin}}\longrightarrow N_{\operatorname{Aut}(V)}(E)
+$$
+lifting the Cartesian permutation subgroup. Its action on $A$ is the specified natural-plus-dual action on $S\oplus S^*$.
+
+Restrict the coherent normalizer action of §8.4.4 to this subgroup:
+$$
+j\cdot[F]
+=\bigl[Z_{\rho(j)}\circ F\circ F_{\rho(j^{-1})}\bigr].
+$$
+Because $\rho$ is a homomorphism and the relative data satisfy the coherence identities of §8.4.4, this is a genuine affine $J_{\mathrm{lin}}$-action on the nonempty torsor $\mathcal T$. Its linear part is precisely the natural $J_{\mathrm{lin}}$-module structure on $M$ in (28).
+
+This actual affine action is the input to §8.4.7. The results $H^1(J_{\mathrm{lin}},M)=0$ and $M^{J_{\mathrm{lin}}}=0$ proved in §8.4.2 give existence and uniqueness of a $J_{\mathrm{lin}}$-fixed origin.
+
+#### 8.4.7 A unique fixed origin
+
+Choose any point of the nonempty relative-equivalence torsor of §8.4.3. Its
+translation defect under $J_{\mathrm{lin}}$ is a one-cocycle. Equation (29) makes it a
+coboundary, so shifting the origin gives a $J_{\mathrm{lin}}$-fixed point. Section 8.4.2
+proved $M^{J_{\mathrm{lin}}}=0$, so this point is unique. Fix one relative equivalence
+representing that isomorphism class and use it for every sector below.
+
+This change of origin preserves the family in (25). By §8.4.1 every relative
+change is an inflated class represented by a global alternating form, so
+moving from the original origin to this one only translates the global
+$B$-parameter. It does not replace that family by a larger collection of
+independently normalized sectors.
+
+This is a statement about one finite subgroup and this exact module.
+It does not assert $H^1(\Omega^+(14,2),M)=0$, nor an invariant origin for
+the whole orthogonal subgroup. No rational-to-finite comparison is used.
+
+### 8.5 Eligible ground characters
+
+#### 8.5.1 Ribbon eligibility and physical centralizer normalization
+
+The following eligibility statement holds for every point of the actual relative torsor $\mathcal T$; fixedness under $J_{\mathrm{lin}}$ is not needed for this step. In particular, it applies to the fixed origin chosen in §8.4.7.
+
+By [GR, §2.1], a pseudounitary braided category has a unique ribbon structure whose categorical dimensions equal its Frobenius–Perron dimensions. The physical ribbon structure of $\mathcal C$ is this positive one: the nontrivial twisted sectors have positive lowest weights by the bounds in §3, and nontrivial untwisted summands have no weight-zero vector. This is the positivity setting of [GR, §2.2]. A braided equivalence transports the positive ribbon structure to another positive ribbon structure; preservation of fusion rules preserves Frobenius–Perron dimensions. Uniqueness therefore makes our equivalence ribbon automatically.
+
+The chosen relative equivalence supplies coherent ordinary centralizer labels, using the actual twisted-module equivariantization of [GR, Theorems 2.2 and 3.1]. This normalization is compatible with the physical operators. Indeed, for an irreducible $g$-twisted module $M_g$, the operators implementing $h\in C_E(g)$ satisfy
+$$
+O_hY_g(v,z)O_h^{-1}=Y_g(hv,z)
+$$
+and are unique up to nonzero scalar [GK, (5), (99)]. Consequently replacing them by the operators selected by the relative equivalence only rephases each full-module operator:
+$\widetilde O_h=s_hO_h$. This preserves ground-space scalarity and leaves the oscillator conjugation law unchanged:
+$$
+\widetilde O_h\,a_{-r}\,\widetilde O_h^{-1}
+=O_h\,a_{-r}\,O_h^{-1},
+$$
+as in [GK, (101)]. It does not permit separate rephasings of ground and oscillator factors.
+
+For a noncentral involution, the physical scalarity proved in §8.3.3 therefore gives, in this coherent ordinary normalization,
+$$
+\Omega_g=(M_g)_4
+\cong\chi_g\otimes\mathbb C^{65536},
+$$
+where $\chi_g$ is a one-dimensional character of $C_E(g)$. Since
+$[C_E(g),C_E(g)]=\langle z\rangle$, one has $\chi_g(z)=1$.
+The corresponding simple $W$-module $[g,\chi_g]$ has lowest conformal weight $4$. Its physical ribbon twist is $e^{2\pi i4}=1$, while the untwisted-center formula is
+$$
+\theta([g,\chi_g])=\frac{\chi_g(g)}{\chi_g(1)}
+\qquad\text{[GR, §3.2].}
+$$
+Ribbon preservation and $\chi_g(1)=1$ imply $\chi_g(g)=1$.
+Thus every such scalar ground character factors through
+$$
+C_E(g)/\langle g,z\rangle
+\cong a^\perp/\langle a\rangle,
+\qquad a=\bar g.
+$$
+These are exactly the eligible characters for the inflated discrete-torsion family of §8.1. The twist in the displayed formula is the ribbon twist, not the modular $T$-matrix entry with its common central-charge factor.
+
+For clarity, this argument derives eligibility from the fixed coherent equivalence; it does not choose phases independently to force the desired signs. Changing the relative origin by a two-cocycle changes a centralizer label by its slant character, whose value at $h=g$ is $1$. Representative changes $g\leftrightarrow gz$ are implemented by inner $E$-conjugacy and preserve this quotient description, since eligible characters are trivial on $z$.
+
+#### 8.5.2 The same origin restricts all ground characters
+
+Use the fixed origin of §8.4.7. For a nonzero singular $a\in A$, choose an involution representative
+$g$. Its conjugacy class in $E$ is $\{g,gz\}$, its centralizer has
+image $a^\perp$, and
+
+$$
+ H_a:=C_E(g)/\langle g,z\rangle\simeq a^\perp/\langle a\rangle.
+$$
+
+The induced polar form is nondegenerate on this 12-dimensional space.
+Sections 8.3.3 and 8.5.1 identify the entire ground representation with 65,536
+copies of one honest linear character $\chi_g$, trivial on $g,z$.
+Identify this character with a vector $r_a\in H_a$ by
+
+$$
+ \chi_g(h)=(-1)^{B_Q(r_a,\bar h)}.
+$$
+
+These vectors are $J_{\mathrm{lin}}$-equivariant. To see the point of the relative
+construction, apply the comparison natural isomorphism for the fixed
+equivalence class to the unique ground-bearing simple object. Pullback by
+an actual normalizer preserves conformal weight. A residual nontrivial
+character shift would change the simple label and cannot disappear inside
+a natural isomorphism. Scalar ambiguities in the comparison maps do not
+change the label. Thus $r_{ja}=j r_a$.
+
+Replacing $g$ by $gz$ causes no ambiguity. An inner conjugation supplies
+this replacement; on its centralizer it differs by powers of $z$, which
+$\chi_g$ kills. There are three $J_{\mathrm{lin}}$-orbits of nonzero singular vectors:
+pure $(x,0)$, pure $(0,f)$, and mixed $(x,f)$ with
+$x,f\ne0$ and $f(x)=0$.
+
+For a pure representative, a $GL(6,2)$ subgroup of its stabilizer acts
+on $H_a$ as its natural module plus its dual. Neither has a nonzero
+fixed vector. Therefore
+
+$$
+ r_{(x,0)}=r_{(0,f)}=0.
+$$
+
+For the mixed representative $a=(e_1,e_2^*)$, its stabilizer consists
+of matrices, in the decomposition $1+1+5$, of the form
+
+$$
+ \begin{pmatrix}1&\alpha&b\\0&1&0\\0&c&D\end{pmatrix},
+ \qquad D\in GL(5,2).
+$$
+
+Writing a vector of $a^\perp$ as $(u,f)$, the condition is
+$u_2+f_1=0$. The $GL(5,2)$ Levi factor fixes, after quotienting by
+$a$, precisely the span of
+
+$$
+ b_0=[(e_1,0)],\qquad d=[(e_2,e_1^*)].
+$$
+
+The unipotent with parameter $c$ sends $d$ to $d+[(c,0)]$ and
+fixes $b_0$. Thus the fixed space of the whole stabilizer is the one
+line spanned by $b_0$. Equivariance and transitivity give one constant
+$\varepsilon\in\mathbb F_2$ on the entire mixed orbit such that
+
+$$
+ r_{(x,f)}=\varepsilon[(x,0)].
+$$
+
+The constant need not be determined. It is not an independent choice for
+each sector.
+
+### 8.6 One global form attains the minimum
+
+Choose $C\in\operatorname{End}(S)$ to be multiplication by
+$\alpha\in\mathbb F_{128}\setminus\mathbb F_2$. Since 7 is prime,
+$\alpha$ has degree seven, so $C$ and $C+I$ are invertible.
+A concrete presentation is
+
+$$
+ \mathbb F_{128}=\mathbb F_2[t]/(t^7+t+1),\qquad \alpha=t.
+$$
+
+For completeness, this degree-seven polynomial has no factor of degree
+at most three: it is nonzero at 0 and 1; at a root $s$ of
+$t^2+t+1$, it evaluates to 1 because $s^3=1$; and at a nonzero
+element of $\mathbb F_8$, it evaluates to that element because
+$s^7=1$. Every reducible degree-seven polynomial has an irreducible
+factor of degree at most three. This proves the presentation without
+an irreducibility search.
+
+Define the single alternating form
+
+$$
+ B_C((x,f),(u,h))=h(Cx)+f(Cu).
 \tag{30}
 $$
-At least one member of the family satisfies (22). At weight four, the vacuum descendant space is spanned by $L_{-4}\mathbf1$ and $L_{-2}^2\mathbf1$. These are independent at $c=128$: their Gram determinant is $c^2(5c+22)/2>0$. Since there are no lower-weight nonvacuum primaries and $T_B$ is unitary, its weight-four primary space has dimension $\dim T_{B,4}-2$. This proves the stated bound $5\,057\,650$. $\square$
 
-Every member contains $W$, so $4\,925\,572$ is also a lower bound for its weight-four dimension. The argument therefore bounds the minimum multiplicity in this family between $4\,925\,572$ and $5\,057\,652$. It gives an existential bound over a globally coherent family of cocycles. It specifies neither an optimizing cocycle nor the full character of the resulting VOA. The $2^{91}$ forms are a parameter family; the proof does not require them to give inequivalent theories.
+Its slant at $a=(x,f)$, identified using $B_Q$, is
+
+$$
+ s_C(a)=[(Cx,C^*f)]\in H_a,\qquad C^*f=f\circ C.
+$$
+
+It lies in $a^\perp$ because the two terms $f(Cx)$ cancel.
+A weight-four contribution from this class would require
+$s_C(a)=r_a$.
+
+For pure $a$, this equality would give $Cx=\lambda x$ or
+$C^*f=\lambda f$, with $\lambda\in\mathbb F_2$. For mixed $a$,
+the mixed-orbit formula of §8.5.2 would give
+
+$$
+ Cx=(\lambda+\varepsilon)x,\qquad C^*f=\lambda f.
+$$
+
+All are impossible because there is no eigenvalue 0 or 1. Hence every
+noncentral-involution contribution at weight four is zero for this same
+global form. The other twisted sectors start later, while the untwisted
+subalgebra is unchanged. Therefore
+
+$$
+ \dim (T_{B_C})_4=\dim W_4=4\,925\,572.
+$$
+
+Every extension in the family contains $W$, proving the minimum in
+(22). At weight four, the vacuum descendant space is spanned by
+$L_{-4}\mathbf1$ and $L_{-2}^2\mathbf1$. These are independent at
+$c=128$: their Gram determinant is $c^2(5c+22)/2>0$.
+Since there are no lower-weight nonvacuum primaries and $T_{B_C}$ is unitary,
+its weight-four primary space has dimension $\dim(T_{B_C})_4-2$.
+Thus $P_4=4\,925\,570$. This conclusion uses neither sector independence
+nor a search over the $2^{90}$ effective discrete-torsion classes.
 
 ## 9. The uniform Barnes–Wall family
 
@@ -635,11 +1167,11 @@ The target has dimension two, and the kernel is precisely the primary subspace. 
 
 ### 9.4 Distinction from iterated swap orbifolds
 
-Write $P_4(V)$ for the dimension of the weight-four Virasoro-primary space. Fix once and for all a sparse full $E(7)$ orbifold $T_0$ supplied by §8, and put $P_0=P_4(T_0)$. Then
+Write $P_4(V)$ for the dimension of the weight-four Virasoro-primary space. Fix once and for all a full $E(7)$ orbifold $T_0$ attaining the minimum in §8, and put $P_0=P_4(T_0)$. Then
 $$
-4\,925\,570\le P_0\le5\,057\,650.
+P_0=4\,925\,570.
 $$
-The lower bound comes from the common fixed-point subalgebra $V_{BW(7)}^{E(7)}$ of these full $E(7)$ orbifolds; it is not asserted for arbitrary central-charge-128 seeds.
+This count is for the selected full $E(7)$ orbifold retaining $V_{BW(7)}^{E(7)}$; it is not asserted for arbitrary central-charge-128 seeds.
 
 Let $S(V)$ be the type-zero swap orbifold of $V\otimes V$. At a stage with $c(V)=c_j=128\cdot2^j$, [BDM, proof of Theorem 3.9, printed p. 23] gives
 $$
@@ -655,13 +1187,13 @@ Thus swaps preserve primary gap four, and $P_4(S^r(T_0))=P_0+r$. The comparison 
 
 For odd $m\ge9$, the direct orbifold $T_m$ has $D_m=P_4(T_m)=(2^m+1)(2^m+2)/6$. Matching central charges requires $r=m-7$:
 
-| $m$ | $D_m$ | Bounds for $P_4(S^{m-7}(T_0))$ |
+| $m$ | $D_m$ | Exact $P_4(S^{m-7}(T_0))$ |
 |---:|---:|---:|
-| $9$ | $43\,947$ | $[4\,925\,572,\ 5\,057\,652]$ |
-| $11$ | $700\,075$ | $[4\,925\,574,\ 5\,057\,654]$ |
-| $13$ | $11\,188\,907$ | $[4\,925\,576,\ 5\,057\,656]$ |
+| $9$ | $43\,947$ | $4\,925\,572$ |
+| $11$ | $700\,075$ | $4\,925\,574$ |
+| $13$ | $11\,188\,907$ | $4\,925\,576$ |
 
-The first two rows separate using the seed lower bound; the third uses its upper bound. For $n=2^m$,
+The direct counts are smaller in the first two rows and larger in the third. For $n=2^m$,
 $$
 D_{m+2}-D_m=\frac{5n^2+3n}{2}>2,
 $$
@@ -679,7 +1211,7 @@ This distinguishes the direct family from the stated sequence of swap orbifolds;
 
 **[CM]** Scott Carnahan, Masahiko Miyamoto. *Regularity of fixed-point vertex operator subalgebras*. [arXiv:1603.05645v4](https://arxiv.org/pdf/1603.05645v4), 13 February 2018, Corollary 5.25. The cited source is a preprint; no journal publication was located in this review.
 
-**[GR]** Terry Gannon, Andrew Riesen. *Orbifolds of Pointed Vertex Operator Algebras I*. Advances in Mathematics 482, Part A (2025), 110546. [DOI](https://doi.org/10.1016/j.aim.2025.110546). The theorem numbering used here is that of [arXiv:2410.00809v1](https://arxiv.org/pdf/2410.00809v1), §2.2 and Theorem 3.1.
+**[GR]** Terry Gannon, Andrew Riesen. *Orbifolds of Pointed Vertex Operator Algebras I*. Advances in Mathematics 482, Part A (2025), 110546. [DOI](https://doi.org/10.1016/j.aim.2025.110546). The theorem numbering used here is that of [arXiv:2410.00809v1](https://arxiv.org/pdf/2410.00809v1), §§2.1–2.2, Theorems 2.2 and 3.1, and §3.2.
 
 **[HKL]** Yi-Zhi Huang, Alexander Kirillov Jr., James Lepowsky. *Braided Tensor Categories and Extensions of Vertex Operator Algebras*. Communications in Mathematical Physics 337 (2015), 1143–1159. [DOI](https://doi.org/10.1007/s00220-015-2292-1). [arXiv:1406.3420](https://arxiv.org/abs/1406.3420), Theorems 3.2–3.6.
 
@@ -691,10 +1223,20 @@ This distinguishes the direct family from the stated sequence of swap orbifolds;
 
 **[Griess]** Robert L. Griess Jr. *Pieces of $2^d$: existence and uniqueness for Barnes–Wall and Ypsilanti lattices*. Advances in Mathematics **196** (2005), 147–192. [DOI](https://doi.org/10.1016/j.aim.2004.08.014). The numbering cited here is specifically that of the [author-hosted manuscript dated 11 August 2004](https://sites.lsa.umich.edu/rlg/wp-content/uploads/sites/1335/2024/09/pottd.pdf): Notation 8.7, p. 26, and Proposition 8.9, p. 27.
 
-**[BK]** Bojko Bakalov, Victor G. Kac. *Twisted Modules over Lattice Vertex Algebras*. In *Lie Theory and Its Applications in Physics V*, World Scientific (2004), 3–26. [DOI](https://doi.org/10.1142/9789812702562_0001). The cited numbering is that of [arXiv:math/0402315v3](https://arxiv.org/pdf/math/0402315v3), 31 March 2004: equation (4.53), p. 16, and Remark 4.4, p. 18.
+**[BK]** Bojko Bakalov, Victor G. Kac. *Twisted Modules over Lattice Vertex Algebras*. In *Lie Theory and Its Applications in Physics V*, World Scientific (2004), 3–26. [DOI](https://doi.org/10.1142/9789812702562_0001). The cited numbering is that of [arXiv:math/0402315v3](https://arxiv.org/pdf/math/0402315v3), 31 March 2004: Theorem 4.2 and the twisted-module construction in §4, including equation (4.53), p. 16, and Remark 4.4, p. 18.
 
 **[BDM]** Katrina Barron, Chongying Dong, Geoffrey Mason. *Twisted Sectors for Tensor Product Vertex Operator Algebras Associated to Permutation Groups*. Communications in Mathematical Physics **227** (2002), 349–384. [DOI](https://doi.org/10.1007/s002200200633). The formula used here is in the proof of Theorem 3.9, printed p. 23 of [arXiv:math/9803118v2](https://arxiv.org/pdf/math/9803118v2), 16 December 1999.
 
 **[vEMS]** Jethro van Ekeren, Sven Möller, Nils R. Scheithauer. *Construction and Classification of Holomorphic Vertex Operator Algebras*. Journal für die reine und angewandte Mathematik **759** (2020), 61–99. [DOI](https://doi.org/10.1515/crelle-2017-0046). The cited Theorem 5.16 and its type-zero specialization are on printed pp. 20–21 of [arXiv:1507.08142v3](https://arxiv.org/pdf/1507.08142v3), 28 November 2017.
+
+**[GK]** Thomas Gemünden, Christoph A. Keller. *Non-Abelian Orbifolds of Lattice Vertex Operator Algebras*. Journal of Algebra **585** (2021), 656–696. [DOI](https://doi.org/10.1016/j.jalgebra.2021.06.023). The equation numbering used here is that of [arXiv:1909.09626v1](https://arxiv.org/pdf/1909.09626v1), 20 September 2019: equations (5), (99), (101), and the lattice-intertwiner and defect calculations in §§4–6.
+
+**[DS]** Alexei Davydov, Darren A. Simmons. *Third Cohomology and Fusion Categories*. Homology, Homotopy and Applications **20**(1) (2018), 275–302. [DOI](https://doi.org/10.4310/HHA.2018.v20.n1.a17). The cited numbering is that of [arXiv:1704.02401v2](https://arxiv.org/pdf/1704.02401v2), 2 June 2018, §2.1 and Lemmas 2.1.5 and 2.1.7. These identify relative modular-extension equivalences and their global two-cochain description.
+
+**[St]** Robert Steinberg. *Lectures on Chevalley Groups*. Yale University, 1967. [Original primary scan](https://www.math.utah.edu/~ptrapa/math-library/steinberg/steinberg-yale-notes.pdf), §6, Theorem 9 and the following Example, printed p. 72/PDF p. 79. The finite-field presentation is used for $GL(7,2)=SL(7,2)$.
+
+**[IS]** A. A. Ivanov, S. V. Shpectorov. *Amalgams Determined by Locally Projective Actions*. Nagoya Mathematical Journal **176** (2004), 19–98. [Publisher PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EB129155904F4E8FEE817AF36F1E6D22/S0027763000008989a.pdf/amalgams-determined-by-locally-projective-actions.pdf), §3, Lemma 3.2, pp. 35–36. The stated exterior-power cohomology result is used at $(n,i)=(7,2)$ and $(7,5)$.
+
+**[CGP]** I. Cardinali, L. Giuzzi, A. Pasini. *On the 1-cohomology of SL(n,K) on the dual of its adjoint module*. [arXiv:2502.11808v2](https://arxiv.org/pdf/2502.11808v2), §1.1 and Theorem 1.4. The consulted source is an arXiv preprint; no journal publication is asserted.
 
 The recent Ji–Tian and Höhn preprints are status/context references only, as described in the review notes. They are not assumptions in the vanishing proof.

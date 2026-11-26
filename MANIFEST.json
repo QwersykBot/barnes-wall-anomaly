@@ -33,8 +33,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11210,
-      "sha256": "392743e0798f52ae73bb19115cddc718055fe1d69dc727ebedd52c6daf1dbca4"
+      "bytes": 12410,
+      "sha256": "f2d4ce3f6bf6e08452931e416ef53e4e2307f46f9298fdc8c78ac3183d7fbce2"
     },
     {
       "path": "alternate-report.json",
@@ -228,13 +228,13 @@
     },
     {
       "path": "formal/PauliPresentation-notes.md",
-      "bytes": 5255,
-      "sha256": "9662b9fb5e1283d0157864a5f9e96731fdac3faa1df020ae7dd4758b9d3cffa9"
+      "bytes": 5259,
+      "sha256": "60f30e9d4799147984f94e03dad71b50d5b173a5819c5d502f8c06664ede0db1"
     },
     {
       "path": "formal/README.md",
-      "bytes": 20101,
-      "sha256": "003c4d4036da25c0b6437f38ee551d828fc8aac6e1a1d4592246f402604eb699"
+      "bytes": 19840,
+      "sha256": "89bd044e9734c5ca247629b67323dc4da1029d109da10c3cde897a57449993f5"
     },
     {
       "path": "formal/audit_bridge.py",
@@ -253,23 +253,23 @@
     },
     {
       "path": "proof.md",
-      "bytes": 56065,
-      "sha256": "eeff97c7626f106dd0d62e849f51af7af87b2e5ea9f5332b8a61451dd5c893d5"
+      "bytes": 83091,
+      "sha256": "a462a6755f0b7d50463b9b5834518f05e9c6f869cf7d4d939b648fab6e0a88ba"
     },
     {
       "path": "proof.pdf",
-      "bytes": 1202705,
-      "sha256": "06be1d6252e3407fd23dbf6a5e3d669b18152c731c3b8cee6aef1b45c25c8a6b"
+      "bytes": 1732388,
+      "sha256": "8ee4bc996d665b76245b1c00ca455e99d405fe1a06e2e71a185b8ddbc4177b3f"
     },
     {
       "path": "review-notes.md",
-      "bytes": 15999,
-      "sha256": "0b188df8e1a35d89d9462aec0643678faea49b8e113cd1a9a8230e397359408b"
+      "bytes": 22295,
+      "sha256": "ae98284bf7ed3c4ff6cb0e7a67b56a1878e6e7cf0d84f4cf20f32e67c4c797de"
     },
     {
       "path": "sources.json",
-      "bytes": 17996,
-      "sha256": "96150e8e5f9945cf43b9cc8d19965d248b22467e90970aff26000f06d080f4b3"
+      "bytes": 28814,
+      "sha256": "57fca9b7b82786991d99c5f6ef1b9afaa9f4e9fa9453fd547744bb46d779827b"
     }
   ]
 }

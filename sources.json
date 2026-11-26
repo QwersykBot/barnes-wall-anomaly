@@ -50,7 +50,14 @@
       "publication_url": "https://doi.org/10.1016/j.aim.2025.110546",
       "source_status": "Published in Advances in Mathematics 482 (2025), 110546; theorem numbering audited in pinned arXiv v1",
       "sha256_of_consulted_pdf": "2f929bce2ce55e7166183616dd07450b8e02269621aaaeac07dd7602045722d4",
-      "bytes_of_consulted_pdf": 560909
+      "bytes_of_consulted_pdf": 560909,
+      "results_used": [
+        "Section 2.1, printed/PDF page 4, and Section 2.2, page 6: Uniqueness of the positive ribbon structure in the pseudounitary setting, and the physical VOA twist exp(2*pi*i*h_M). Positivity of nonvacuum conformal weights places the VOA module category in this setting.",
+        "Theorem 2.2 and the following paragraph, printed/PDF page 7: The actual twisted-module category is obtained from the parent algebra Res_(V^G)V, and its equivariantization is Mod(V^G); algebra automorphisms match the actual group action.",
+        "Theorem 3.1, printed/PDF page 11, and the decomposition immediately after equation (3.1), page 12: For holomorphic V with strongly rational V^G, the actual twisted category is Vec_G^omega, with its actual automorphism grading and centralizer-character decomposition.",
+        "Section 3.2, printed/PDF page 13: The ribbon twist of a centralizer-labelled simple [g,chi] is chi(g)/chi(1), used after ribbon compatibility to obtain ground-character eligibility."
+      ],
+      "scope_check": " The relative equivalence retains the specified tensor copy of Rep(E) arising from the parent VOA. Positivity makes that braided equivalence ribbon. Centralizer relabelling rephases each full-module implementer by one scalar; it does not permit separate ground/oscillator rephasings or independently chosen origins for different conjugacy classes."
     },
     {
       "label": "HKL",
@@ -179,7 +186,9 @@
         "Equation (4.53), printed page 16 / PDF page 16: The squared defect dimension is the order of the relevant finite nondegenerate quotient.",
         "Proposition 4.3 and equations (4.54)-(4.55), printed page 16 / PDF page 16: The twisted module is induced from its oscillator-vacuum subspace and has the corresponding symmetric Fock factor.",
         "Lemma 4.7, printed page 17 / PDF page 17: Momentum fibers are translated by projected lattice vectors and carry the irreducible finite defect representation.",
-        "Theorem 4.2 and Remark 4.4, printed page 18 / PDF page 18: Classification and explicit Heisenberg-module decomposition S(hat h_sigma^+) tensor e^(lambda_0) C[pi_0 Q] tensor C^d(sigma). The source uses plus for negative-mode creation operators."
+        "Theorem 4.2 and Remark 4.4, printed page 18 / PDF page 18: Classification and explicit Heisenberg-module decomposition S(hat h_sigma^+) tensor e^(lambda_0) C[pi_0 Q] tensor C^d(sigma). The source uses plus for negative-mode creation operators.",
+        "Equation (4.19) and Proposition 4.1, printed/PDF page 9: The lift phase equals one on the fixed sublattice in the standard-lift convention used for the zero-shift momentum decomposition.",
+        "Definition 4.1(iii), printed/PDF page 15, together with Theorem 4.2, page 18: For an even lattice, twisted simple modules are parametrized by (Q^*/Q)^sigma. For the even unimodular lattice this is a singleton, giving the uniqueness used to transport physical twisted modules under an actual normalizer."
       ],
       "scope_check": "For the even unimodular lattice and standard lift, the momentum shift is zero. The claim that weight four consists only of the zero-momentum oscillator-vacuum fiber also uses rho_g=4 and positive definiteness. The dimension 2^16 is derived independently from KRR (A.2.5), not asserted for arbitrary unrelated lattices.",
       "sha256_of_consulted_pdf": "40ce87ba4635d3837dff38bc6fefef6657dbfff4579393b44fc2308408cc1c7f",
@@ -250,6 +259,112 @@
         "Type-zero specialization after Theorem 5.16, printed page 21 / PDF page 21: the compatible labels have fusion group Z_n times Z_n, quadratic form ij/n, and holomorphic extension direct_sum_i W^(i,0)."
       ],
       "scope_check": "Section 5 applies to general central charge, independently of the later charge-24 classification. Apply it to the parent U tensor U, whose charge is 2*c_seed. BDM gives type 4*rho_swap=c_seed/4 modulo 2, hence zero for c_seed=128*2^k. The antisymmetric untwisted module has positive weight because the unique weight-zero vector is swap-invariant; both twisted eigenspaces have weight at least c_seed/16, so all three nonvacuum fixed-algebra modules satisfy the required positivity. This theorem establishes the strongly rational holomorphic extension, not unitarity; preservation of the primary gap is a separate low-weight argument."
+    },
+    {
+      "label": "GK",
+      "authors": [
+        "Thomas Gemünden",
+        "Christoph A. Keller"
+      ],
+      "title": "Non-Abelian Orbifolds of Lattice Vertex Operator Algebras",
+      "role": "Physical twisted-lattice operators, centralizer covariance and uniqueness up to scalar",
+      "source_url": "https://arxiv.org/pdf/1909.09626v1",
+      "checked_version": "arXiv:1909.09626v1, 20 September 2019; 27 pages",
+      "publication_url": "https://doi.org/10.1016/j.jalgebra.2021.06.023",
+      "publication_metadata_url": "https://www.sciencedirect.com/science/article/pii/S0021869321003331",
+      "source_status": "Published in Journal of Algebra 585 (2021), 656–696. All equation and page numbers below refer to the consulted arXiv v1, not the journal pagination.",
+      "sha256_of_consulted_pdf": "4f196daac5c0e0917ff1cd88f8e3dfd3c96242607163e351fd2ddda3be9ab94a",
+      "bytes_of_consulted_pdf": 438464,
+      "results_used": [
+        "Section 2.1, equation (5), printed/PDF page 4: A centralizer implementer on an irreducible twisted module satisfies vertex-operator covariance and is unique up to a nonzero scalar.",
+        "Sections 5.2–5.3, equations (67)–(72), printed/PDF page 11, and (91)–(95), pages 12–13: Multiplication, twist compatibility and normalization of the finite defect operators used in the physical scalarity calculation.",
+        "Theorem 5.3, equations (97)–(98), printed/PDF page 13: The twisted-module basis and the sum of oscillator, projected-momentum and ground conformal energies.",
+        "Section 6.1, equations (99)–(103), printed/PDF page 13: Actual centralizer covariance on lattice and Heisenberg operators, and the defect-space intertwiner determined up to scalar."
+      ],
+      "scope_check": "The Barnes–Wall scalarity calculation supplies its own lift phases and inner products. These source formulas do not independently trivialize the centralizer cocycle, choose a coherent ordinary normalization, or prove that the resulting holomorphic extension carries the normalizer action."
+    },
+    {
+      "label": "DS",
+      "authors": [
+        "Alexei Davydov",
+        "Darren A. Simmons"
+      ],
+      "title": "Third Cohomology and Fusion Categories",
+      "role": "Relative braided-equivalence torsor and its H^2 action",
+      "source_url": "https://arxiv.org/pdf/1704.02401v2",
+      "checked_version": "arXiv:1704.02401v2, 2 June 2018; 30 pages. The exact consulted PDF has the internal title-page date 7 November 2018.",
+      "publication_url": "https://doi.org/10.4310/HHA.2018.v20.n1.a17",
+      "publication_metadata_url": "https://ohioopen.library.ohio.edu/math-oapub/11/",
+      "source_status": "Published in Homology, Homotopy and Applications 20(1) (2018), 275–302. Lemma numbering and pages below are pinned to arXiv v2.",
+      "sha256_of_consulted_pdf": "fffe4b8df0b207cbe9b5ea5578e08c03c4f299274e796a7936cfa61df31e1a18",
+      "bytes_of_consulted_pdf": 369233,
+      "results_used": [
+        "Section 2.1, Lemma 2.1.5, printed/PDF pages 8–9: Isomorphism classes of braided autoequivalences of the untwisted center fixing the specified Rep(G) subcategory form H^2(G,k^*).",
+        "Section 2.1, Lemma 2.1.7, printed/PDF page 9: The crossed-module description identifies relative equivalences between twisted centers with suitable 2-cochains modulo 2-coboundaries. Together with a nonempty relative equivalence set, this yields the H^2 torsor."
+      ],
+      "scope_check": "The ground field is algebraically closed of characteristic zero; the application uses k=C and finite G=E. The condition retains the specified tensor embedding of Rep(E), not just its simple-object labels. Existence of that relative equivalence, its normalizer action and the later fixed-point argument are separate obligations."
+    },
+    {
+      "label": "St",
+      "authors": [
+        "Robert Steinberg"
+      ],
+      "title": "Lectures on Chevalley Groups",
+      "role": "Exact finite-field presentation used for the genuine Cartesian GL(7,2) lift",
+      "source_url": "https://www.math.utah.edu/~ptrapa/math-library/steinberg/steinberg-yale-notes.pdf",
+      "checked_version": "Original Yale University lecture notes, 1967; notes prepared by John Faulkner and Robert Wilson; acknowledgement dated June 1968; 284 PDF pages",
+      "publication_url": null,
+      "source_status": "Yale University lecture notes. The consulted source is the original typewritten scan; no later edited edition or its pagination is substituted.",
+      "sha256_of_consulted_pdf": "5943b5571ab9815c45eaba206bcb35ed8b3efb3a7c3c45404ea9a9bbce7dbb50",
+      "bytes_of_consulted_pdf": 9127447,
+      "results_used": [
+        "Section 6, Theorem 9 and its following Example, printed page 72 / PDF page 79: The finite-field presentation of SL(n,k) for n at least 3 by elementary root generators and the stated additivity, chain-commutator and commuting relations. Specializing to k=F_2 and n=7 gives GL(7,2)=SL(7,2)."
+      ],
+      "scope_check": "The presentation covers all required shared-index relators over F_2 and imposes no field-size-greater-than-four restriction here. Verifying the particular lattice lifts against every relator uses the separate common-support argument on at most four tensor positions. The source alone supplies neither those lift equalities nor a splitting of the entire lattice normalizer."
+    },
+    {
+      "label": "IS",
+      "authors": [
+        "A. A. Ivanov",
+        "S. V. Shpectorov"
+      ],
+      "title": "Amalgams Determined by Locally Projective Actions",
+      "role": "Finite-group H^1 vanishing for the natural exterior-power summands",
+      "source_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EB129155904F4E8FEE817AF36F1E6D22/S0027763000008989a.pdf/amalgams-determined-by-locally-projective-actions.pdf",
+      "checked_version": "Published version, Nagoya Mathematical Journal 176 (2004), 19–98; 80 PDF pages",
+      "publication_url": "https://doi.org/10.1017/S0027763000008989",
+      "publication_metadata_url": "https://www.cambridge.org/core/journals/nagoya-mathematical-journal/article/amalgams-determined-by-locally-projective-actions/EB129155904F4E8FEE817AF36F1E6D22",
+      "source_status": "Published in Nagoya Mathematical Journal 176 (2004), 19–98. The official publisher PDF is the consulted version.",
+      "sha256_of_consulted_pdf": "1b660d98e747863b5d56263b11a2a19b137e7e243387df045f4a260c077296b5",
+      "bytes_of_consulted_pdf": 532837,
+      "results_used": [
+        "Section 3, printed page 35 / PDF page 17: L_n(2) is the finite linear group acting on its natural n-dimensional GF(2)-module U, and U^[i] denotes the i-th exterior power.",
+        "Lemma 3.2, printed page 36 / PDF page 18: H^1(L_n(2),U^[i]) vanishes except at (n,i)=(3,1),(3,2),(4,2). Hence the n=7, i=2 and i=5 cases used for the two exterior-power summands vanish."
+      ],
+      "scope_check": "This is the directly consulted published restatement, attributed there to Jones–Parshall [JP76]. No claim is made to have checked the original 1976 chapter. It concerns ordinary cohomology of the finite group, so no rational algebraic-group comparison is assumed."
+    },
+    {
+      "label": "CGP",
+      "authors": [
+        "Ilaria Cardinali",
+        "Luca Giuzzi",
+        "Antonio Pasini"
+      ],
+      "title": "On the 1-cohomology of SL(n,K) on the dual of its adjoint module",
+      "role": "H^1 vanishing for the endomorphism-quotient summand",
+      "source_url": "https://arxiv.org/pdf/2502.11808v2",
+      "checked_version": "arXiv:2502.11808v2, 16 December 2025; 24 pages. The exact consulted PDF has the internal title-page date 18 December 2025.",
+      "publication_url": null,
+      "publication_metadata_url": "https://arxiv.org/abs/2502.11808v2",
+      "source_status": "The consulted source is an arXiv preprint, version 2. No journal publication is asserted.",
+      "sha256_of_consulted_pdf": "6e1a488e79b21743d1370a53d71a10e12744980dee52daa4f6f1fcca0607da1f",
+      "bytes_of_consulted_pdf": 196726,
+      "results_used": [
+        "Section 1.1, printed/PDF page 2: The trace pairing identifies the dual adjoint module A_n^* with Mat_n(K)/<I> as an SL(n,K)-module.",
+        "Theorem 1.4, printed/PDF page 4: For n>3 and every field K, H^1(SL(n,K),A_n^*) is isomorphic to Der(K). Applying this to n=7 and K=F_2 gives zero.",
+        "Section 1, equation (1), printed/PDF page 1, and Section 2, equation (2), page 5: The source uses right conjugation and ordinary abstract-group right 1-cocycles."
+      ],
+      "scope_check": "The application uses the stated all-field n>3 theorem, not an older large-field variant. Conversion from the source right-module convention to the chosen left-action convention must be explicit. This entry does not itself prove the action on the relative-equivalence torsor or its uniqueness."
     }
   ]
 }

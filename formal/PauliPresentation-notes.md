@@ -77,30 +77,31 @@ transports every generator and quaternion-word image. This construction does
 not assert that the canonical section is multiplicative on arbitrary lattice
 matrix words; only the established relations and universal property are used.
 
+Transporting instead from the usual matrix subgroup by `R ↦ op (R⁻¹)`
+preserves the involutive generator images, but sends `aUnit` and `bUnit`
+to `aLift⁻¹` and `bLift⁻¹`. The stated unchanged quaternion labels belong
+to the opposite-subgroup action above.
+
 ## Verification status
 
 The complete public check at commit
-`9886f589d5b27d11913fce65482f99c2e35ea8c6`,
-[run 45868904182](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45868904182),
-passed **21 local modules, 204 local declaration reports and 15 upstream
+`561abb5442c7307072bd57037437df476b43668b`,
+[run 45872020766](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45872020766),
+passed **22 local modules, 223 local declaration reports and 15 upstream
 reports**. The local compilation produced no warnings or errors. Source and
 probe hashes matched that exact public commit, and the reports used only
 `propext`, `Classical.choice`, and `Quot.sound`.
 
 That result includes the presentation's nine requested declarations and the
-original action adapter's eight declarations: `relations`, `action`, its
+action adapter's original eight declarations: `relations`, `action`, its
 three generator equations, `action_injective`, `action_a_word`, and
 `action_b_word`. The generic presentation also passed a separate local check
 before publication; the public integrated result is the relevant certificate
 for the actual VOA specialization.
 
-The current candidate adds `KRRPauliMatrix` and three transport declarations
-in `KRRPauliAction`, yielding **22 modules and 223 local reports**. The added
-reports cover sixteen matrix declarations and `concreteAction`,
-`concreteAction_injective`, and `concreteAction_matrixEquiv`. Source and
-pinned-API reviews found no remaining blocker; the expanded public compile
-and axiom result is pending. The prior 21-module run does not certify these
-additions.
+The same completed check covers sixteen declarations in `KRRPauliMatrix`
+and the three transport declarations `concreteAction`,
+`concreteAction_injective`, and `concreteAction_matrixEquiv`.
 
 The exact source snapshot is recorded in the repository manifest. The broad
 `krr_full_extraspecial_action_formalized` flag remains false because group order

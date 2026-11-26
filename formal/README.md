@@ -7,22 +7,21 @@ action is faithful, and its central lift equals the prescribed lattice involutio
 A separate Boolean-cubic factorization lemma supplies one combinatorial
 ingredient. The anomaly theorem is separate work.
 
-The latest complete public integration passed twenty-one modules in
-[run 45868904182](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45868904182)
-at commit 9886f589d5b27d11913fce65482f99c2e35ea8c6. All 15 upstream reports,
-including Jacobi, and all 204 requested local declaration reports contained
+The latest complete public integration passed twenty-two modules in
+[run 45872020766](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45872020766)
+at commit 561abb5442c7307072bd57037437df476b43668b. All 15 upstream reports,
+including Jacobi, and all 223 requested local declaration reports contained
 only the standard axioms listed below. The local modules compiled without
 warnings or errors; their source hashes and the probe hash match the public
 commit. This includes the faithful quaternion action, its exact central
 involution, Boolean-cubic factorization, concrete small-support composition,
-all full-state Pauli relations, the general Pauli presentation, and its
-faithful action on the full lattice-VOA state space.
+all full-state Pauli relations, the general Pauli presentation, its
+identification with the generated opposite-matrix subgroup, and the
+transported faithful action on the full lattice-VOA state space.
 
-The next candidate adds `KRRPauliMatrix` and three transport declarations in
-`KRRPauliAction`: twenty-two modules and 223 local reports, adding sixteen
-matrix and three action reports. Source and pinned-API reviews passed; the
-full public compile and axiom result is pending. The twenty-one-module run
-does not certify these additions. See
+The matrix identification contributes sixteen declaration reports; the
+transport adds three reports in `KRRPauliAction`. All are included in the
+completed public check. See
 [PauliPresentation-notes.md](PauliPresentation-notes.md) for the exact contracts
 and verification boundary.
 
@@ -235,18 +234,18 @@ from the presentation theorem, and identifies its range with the subgroup
 closure of those generators. `matrixEquiv` is an equivalence onto this generated
 subgroup, with the underlying matrix value recorded by `matrixEquiv_coe`.
 The images of `z 6 * x 6` and `z 5 * x 5 * z 6` are exactly the published
-`aUnit` and `bUnit` in the opposite group. This module awaits public integration.
+`aUnit` and `bUnit` in the opposite group.
 
 `BarnesWall/KRRPauliAction.lean` specializes the presentation to `n = 7`.
 Its generator images are literally `thetaAut`, `xLift` and `zLift`, with all
 relations and central nontriviality supplied by `KRRPauliLift`. The public
-21-module result checks this injective ordinary homomorphism and the exact
-reversed words for the two common-Q8 lifts. The current candidate then composes
+check verifies this injective ordinary homomorphism and the exact
+reversed words for the two common-Q8 lifts. The module then composes
 it with `matrixEquiv.symm`, obtaining `concreteAction` on the actual generated
 opposite-matrix subgroup. Injectivity and the equation
 `concreteAction (matrixEquiv g) = action g` transport every previously checked
-generator and quaternion-word image. Only these three new declarations await
-the expanded integration. [PauliPresentation-notes.md](PauliPresentation-notes.md)
+generator and quaternion-word image. These declarations also passed the
+combined check. [PauliPresentation-notes.md](PauliPresentation-notes.md)
 describes the opposite convention and remaining classification boundary.
 
 ## Boolean-cubic factorization
@@ -270,11 +269,10 @@ polynomials or prove anomaly detection.
 
 ## Combined local check
 
-`check_bridge.py` runs after the dependency audit. The next candidate compiles
+`check_bridge.py` runs after the dependency audit. It compiles
 twenty-two local modules into the audited environment, prints the types and
 transitive axioms of 223 local declarations, and checks source pins and unchanged
-inputs again. This expanded public result is pending; the latest completed
-public run checked twenty-one modules and 204 local declarations.
+inputs again. The completed public result is recorded above.
 It continues independent module checks after a source failure, skips affected
 dependents, and fails before the axiom stage if any module failed or was skipped.
 Its parser applies the same standard-axiom restriction. The mathematical
