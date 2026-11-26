@@ -1,0 +1,28 @@
+name: Lattice VOA dependency audit
+
+on:
+  push:
+    branches: [lean-bridge-audit]
+    paths:
+      - formal/**
+      - .github/workflows/lean-bridge-audit.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lean-bridge-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    if: github.repository == 'QwersykBot/barnes-wall-anomaly' && !github.event.repository.private
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Build pinned lattice VOA bridge and inspect axioms
+        run: python3 formal/audit_bridge.py "$RUNNER_TEMP/lean-bridge-audit"
