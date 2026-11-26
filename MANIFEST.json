@@ -128,8 +128,8 @@
     },
     {
       "path": "formal/BarnesWall/KRRPauliMatrix.lean",
-      "bytes": 7010,
-      "sha256": "3dc5ad1030d6c008bf4b76c991d430826f910ac6b4f4370daa92b4697477e2a0"
+      "bytes": 7032,
+      "sha256": "8d266689a48c9a1701157cf0cbd01392902a85ab5a6362801274b882da541e14"
     },
     {
       "path": "formal/BarnesWall/KRRQ16.lean",

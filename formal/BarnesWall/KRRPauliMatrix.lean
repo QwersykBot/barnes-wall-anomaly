@@ -42,14 +42,14 @@ def zImage (i : Fin 7) : OppositeMatrixGroup :=
   MulOpposite.op (KRRPauli.ZUnit i)
 
 @[simp] theorem centralImage_val :
-    (MulOpposite.unop centralImage : Mat) = -1 :=
+    ((MulOpposite.unop centralImage : Matˣ) : Mat) = -1 :=
   KRRQuaternionAction.centralUnit_val
 
 @[simp] theorem xImage_val (i : Fin 7) :
-    (MulOpposite.unop (xImage i) : Mat) = KRRPauli.X i := rfl
+    ((MulOpposite.unop (xImage i) : Matˣ) : Mat) = KRRPauli.X i := rfl
 
 @[simp] theorem zImage_val (i : Fin 7) :
-    (MulOpposite.unop (zImage i) : Mat) = KRRPauli.Z i := rfl
+    ((MulOpposite.unop (zImage i) : Matˣ) : Mat) = KRRPauli.Z i := rfl
 
 theorem matrixRelations : Relations centralImage xImage zImage := by
   refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
@@ -99,7 +99,7 @@ theorem matrixRelations : Relations centralImage xImage zImage := by
   · intro i j
     by_cases hij : i = j
     · subst j
-      simp only [ite_eq_left rfl]
+      simp only
       apply MulOpposite.unop_injective
       apply Units.ext
       change KRRPauli.Z i * KRRPauli.X i =
@@ -116,7 +116,7 @@ theorem matrixRelations : Relations centralImage xImage zImage := by
 theorem centralImage_ne_one : centralImage ≠ 1 := by
   intro h
   have hm := congrArg
-    (fun u : OppositeMatrixGroup => (MulOpposite.unop u : Mat)) h
+    (fun u : OppositeMatrixGroup => ((MulOpposite.unop u : Matˣ) : Mat)) h
   change (KRRQuaternionAction.centralUnit : Mat) = 1 at hm
   rw [KRRQuaternionAction.centralUnit_val] at hm
   exact KRRQ16.neg_one_ne_one hm
