@@ -1,0 +1,96 @@
+{
+  "review_date": "2026-11-26",
+  "note": "Hashes pin the exact consulted PDF bytes. Source PDFs are not part of this packet. Hashes establish identity, not correctness.",
+  "sources": [
+    {
+      "label": "KRR",
+      "role": "anomaly-proof and spectrum",
+      "source_url": "https://arxiv.org/pdf/2411.13646v2",
+      "checked_version": "arXiv:2411.13646v2, 17 March 2026",
+      "publication_url": "https://doi.org/10.1007/JHEP04(2026)009",
+      "source_status": "Published, JHEP 04 (2026), 009",
+      "sha256_of_consulted_pdf": "034fd7025a50b70da292daa52464fe73841cb69108ccb84bf82e0e83a88bab21",
+      "bytes_of_consulted_pdf": 597940
+    },
+    {
+      "label": "JFT",
+      "role": "anomaly-proof",
+      "source_url": "https://sigma-journal.com/2019/059/sigma19-059.pdf",
+      "checked_version": "SIGMA 15 (2019), 059",
+      "publication_url": "https://doi.org/10.3842/SIGMA.2019.059",
+      "source_status": "Published",
+      "sha256_of_consulted_pdf": "b8e69b9fdbd2b7ff42e4f3016fdbe13a324b3d521d1556f211d668170329889d",
+      "bytes_of_consulted_pdf": 573531
+    },
+    {
+      "label": "Yu",
+      "role": "anomaly-proof support",
+      "source_url": "https://scoap3-prod-backend.s3.cern.ch/media/files/69932/10.1103/PhysRevD.105.106007.pdf",
+      "checked_version": "Physical Review D 105 (2022), 106007",
+      "publication_url": "https://doi.org/10.1103/PhysRevD.105.106007",
+      "source_status": "Published",
+      "sha256_of_consulted_pdf": "f930b4351382ae75124725e68a0643c9eeff3d62ce289b8d29dc53497e7a842b",
+      "bytes_of_consulted_pdf": 581161
+    },
+    {
+      "label": "CM",
+      "role": "orbifold-existence endpoint",
+      "source_url": "https://arxiv.org/pdf/1603.05645v4",
+      "checked_version": "arXiv:1603.05645v4, 13 February 2018",
+      "publication_url": null,
+      "source_status": "Preprint; no journal publication located in bounded check",
+      "sha256_of_consulted_pdf": "78d8de409ec19f61d6c6594c419412277947bdd9d8c5693ef850f16e2be0595e",
+      "bytes_of_consulted_pdf": 553759
+    },
+    {
+      "label": "GR",
+      "role": "orbifold-existence endpoint",
+      "source_url": "https://arxiv.org/pdf/2410.00809v1",
+      "checked_version": "arXiv:2410.00809v1, 1 October 2024",
+      "publication_url": "https://doi.org/10.1016/j.aim.2025.110546",
+      "source_status": "Published in Advances in Mathematics 482 (2025), 110546; theorem numbering audited in pinned arXiv v1",
+      "sha256_of_consulted_pdf": "2f929bce2ce55e7166183616dd07450b8e02269621aaaeac07dd7602045722d4",
+      "bytes_of_consulted_pdf": 560909
+    },
+    {
+      "label": "HKL",
+      "role": "orbifold-existence endpoint",
+      "source_url": "https://arxiv.org/pdf/1406.3420v1",
+      "checked_version": "arXiv:1406.3420v1, 13 June 2014",
+      "publication_url": "https://doi.org/10.1007/s00220-015-2292-1",
+      "source_status": "Published in Communications in Mathematical Physics 337 (2015), 1143-1159",
+      "sha256_of_consulted_pdf": "a820ea3b268209f32b11a2be917d1a1da9fda1b26a79626156e2b13016bb2645",
+      "bytes_of_consulted_pdf": 224430
+    },
+    {
+      "label": "EG",
+      "role": "orbifold-existence endpoint, alternative description",
+      "source_url": "https://arxiv.org/pdf/1804.11145v1",
+      "checked_version": "arXiv:1804.11145v1, 30 April 2018",
+      "publication_url": "https://doi.org/10.1090/tran/8575",
+      "source_status": "Published in Transactions AMS 375 (2022), 2789-2826; numbering audited in pinned arXiv v1",
+      "sha256_of_consulted_pdf": "ea44211bccc4baa6f076ff9d762a5510950ef3750838b3cf2c8ec61af590f0f9",
+      "bytes_of_consulted_pdf": 505950
+    },
+    {
+      "label": "JT",
+      "role": "status context only, not proof dependency",
+      "source_url": "https://arxiv.org/pdf/2611.23231v1",
+      "checked_version": "arXiv:2611.23231v1, 17 November 2026",
+      "publication_url": null,
+      "source_status": "Preprint",
+      "sha256_of_consulted_pdf": "a3b602123a4aa148ef369fa4e54259f7c367dd49a94ee7b55f8cf81a31767981",
+      "bytes_of_consulted_pdf": 632057
+    },
+    {
+      "label": "Hohn",
+      "role": "status context only, not proof dependency",
+      "source_url": "https://hexagonmath.org/pdf/2611.00631v2",
+      "checked_version": "Hexagon 2611.00631v2, 19 November 2026",
+      "publication_url": null,
+      "source_status": "Preprint; full construction not independently validated here",
+      "sha256_of_consulted_pdf": "6fe2ffeaaadc207ee6d2fc47f09b9cd03bc438061e000b32b52f5e1423f9c559",
+      "bytes_of_consulted_pdf": 507556
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "Fixed-dimension finite confirmation of the analytic involution-standardness lemma.",
+  "arithmetic": "Python arbitrary-precision integers and packed F2; no numerical approximation.",
+  "quotient_dimension": 14,
+  "singular_quotient_vectors_including_zero": 8256,
+  "identically_zero_phase_cases": 2080,
+  "nontrivial_phase_cases_checked": 6176,
+  "row_map_rank_counts": {
+    "32": 6176
+  },
+  "kernel_basis_quadratic_checks": 197632,
+  "kernel_basis_polarization_checks": 3063296,
+  "phase_vanishes_on_all_mod2_fixed_vectors": true,
+  "central_sign_changes_share_the_same_mod2_phase_and_action": true,
+  "finite_certificate_verified": true,
+  "checker_sha256": "8d06440fa42dd03d0b4da55eaed8a3878838b58041adb808ef91dbd07b779aa1"
+}

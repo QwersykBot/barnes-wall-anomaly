@@ -1,0 +1,59 @@
+{
+  "scope": "Independent exact lattice and VOA-sign-lift certificate; cohomology and orbifold theorem are separate mathematical inputs.",
+  "construction": "Pauli lattice matrices from KRR A.2.5--6, sparse integer g=(I+X1Z1)(X3+Z3)/2; no import of originating checker.",
+  "arithmetic": "Python arbitrary-precision integers and packed F2; no floating-point operations in checks.",
+  "rank": 128,
+  "gram_even_unimodular_from_triangular_basis": true,
+  "all_17_source_and_candidate_isometries_exact": true,
+  "quaternion_matrix_relations_exact": true,
+  "generated_lattice_group_order": 16,
+  "lift_coboundary_identity_verified": true,
+  "all_generator_phases_match_complementary_pair_quadratics": true,
+  "generator_phase_monomial_counts_X1_Z1_then_factor_order": [
+    16,
+    16,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "all_generator_binary_actions_match_wedge_contraction_on_parity_zero": true,
+  "phase_inputs_basis_and_pairwise_sums": 8256,
+  "complete_lift_relations": {
+    "g_squared_equals_prescribed_a": true,
+    "b_g_b_g_equals_canonical_z": true,
+    "prescribed_a_squared_equals_canonical_z": true,
+    "prescribed_b_squared_equals_canonical_z": true
+  },
+  "canonical_g_needs_no_character_correction": true,
+  "g_lift_order": 8,
+  "g_fixed_lattice_rank": 0,
+  "g_standard_lift": true,
+  "g_traces_powers_1_to_4": [
+    0,
+    0,
+    0,
+    -128
+  ],
+  "g_primitive_eighth_root_multiplicities": {
+    "1": 32,
+    "3": 32,
+    "5": 32,
+    "7": 32
+  },
+  "g_twisted_vacuum_weight": "11/2",
+  "g_cyclic_type_mod_8": 0,
+  "sha256_compact_dense_g": "f5dc4638866975a3c80c0ac8e9ec383de88b7e8ef31808b2a88a936856e97341",
+  "sha256_compact_dense_b": "d5b07f9f19a8e4b7cb6a7e0f1dbb34c25e09e82ded77ca77f38d875d532edbae",
+  "sha256_compact_dense_gram": "c5cbdce1ff17512efc722944f9d00d42120f4fc0a49ed5fad5c2beffc340c624",
+  "finite_certificate_verified": true,
+  "checker_sha256": "2e3a9459e1bdec3e932f1c9ed999c61b2ce14b2a4cebd92f823b5ccb713b3960"
+}

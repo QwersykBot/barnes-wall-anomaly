@@ -1,0 +1,38 @@
+name: Exact certificate checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Verify release manifest
+        run: |
+          python3 - <<'PYTHON'
+          import hashlib
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path("MANIFEST.json").read_text())
+          for entry in manifest["files"]:
+              data = Path(entry["path"]).read_bytes()
+              assert len(data) == entry["bytes"], entry["path"]
+              assert hashlib.sha256(data).hexdigest() == entry["sha256"], entry["path"]
+          print(f"Verified {len(manifest['files'])} payload files.")
+          PYTHON
+      - name: Reproduce exact lift certificate
+        run: |
+          python3 check_lift.py --output "$RUNNER_TEMP/check-report.json"
+          diff -u check-report.json "$RUNNER_TEMP/check-report.json"
+      - name: Reproduce involution certificate
+        run: |
+          python3 check_involutions.py --output "$RUNNER_TEMP/involution-report.json"
+          diff -u involution-report.json "$RUNNER_TEMP/involution-report.json"

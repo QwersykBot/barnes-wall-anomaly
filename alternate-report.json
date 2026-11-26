@@ -1,0 +1,40 @@
+{
+  "scope": "Alternative finite lattice/sign certificate only; theoretical inputs are separate.",
+  "construction": "Cartesian Pauli matrices converted by the KRR subset/Mobius basis.",
+  "arithmetic": "NumPy int64 matrices and exact parity; checked independently by arbitrary-precision main certificate.",
+  "rank": 128,
+  "canonical_g_needs_no_character_correction": true,
+  "full_cocycle_identity_and_lift_relations": true,
+  "all_generator_phases_match_complementary_pair_quadratics": true,
+  "generator_phase_monomial_counts_X1_Z1_then_factor_order": [
+    16,
+    16,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "generated_lattice_group_order": 16,
+  "g_lift_order": 8,
+  "g_traces_powers_1_to_4": [
+    0,
+    0,
+    0,
+    -128
+  ],
+  "g_twisted_vacuum_weight": "11/2",
+  "g_cyclic_type_mod_8": 0,
+  "sha256_compact_dense_g": "f5dc4638866975a3c80c0ac8e9ec383de88b7e8ef31808b2a88a936856e97341",
+  "sha256_compact_dense_b": "d5b07f9f19a8e4b7cb6a7e0f1dbb34c25e09e82ded77ca77f38d875d532edbae",
+  "sha256_compact_dense_gram": "c5cbdce1ff17512efc722944f9d00d42120f4fc0a49ed5fad5c2beffc340c624",
+  "finite_certificate_verified": true,
+  "checker_sha256": "bf6b30a4aaf9b1088aa9c95f6bcd609f45a904d8474a730300ee47280adfd101"
+}
