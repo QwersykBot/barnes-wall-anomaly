@@ -1,13 +1,15 @@
-# Concrete faithful quaternion action: source-only candidate
+# Concrete faithful quaternion action
 
 Date: 2026-11-26.
 
-**Status: integration repairs await public Lean checking and axiom reports.**
-Public run 45861216253 compiled its prerequisites but reported a block-predicate
-elaboration mismatch and a group-rearrangement timeout in this adapter. The
-repair exposes the predicate and performs the final rearrangement in a private
-abstract-group lemma, with explicit unit arguments and unchanged public
-statements. No heartbeat budget or imports were added. The source is
+**Status: the exact source and all 22 requested type/axiom reports passed in
+[public run 45863204593](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45863204593),
+with no local warnings or errors and only the standard three axioms.**
+An earlier run found a block-predicate elaboration mismatch and a group
+rearrangement timeout. The checked repair exposes the predicate and performs
+the final rearrangement in a private abstract-group lemma, with explicit unit
+arguments and unchanged public statements. No heartbeat budget or imports were
+added. The source is
 `BarnesWall/KRRQuaternionAction.lean`, SHA256
 `5ee6641589238c91f83c5306734c9f99d3823c68cd5f8b012fd989e8a0eeb377`.
 The actual generic `QuaternionLift` source signatures were inspected and match
@@ -74,4 +76,4 @@ The public theorem declarations under `BarnesWall.KRRQuaternionAction` are
 `gLift_mul_bLift`, `gLift_four_ne_one`, `action_a_one`, `action_xa_zero`,
 `action_a_two`, `action_a_four`, `action_xa_nat`, and `action_injective`.
 The `action` definition itself is also a useful axiom-report target.
-These are requested verification targets, not completed compilation receipts.
+All these declarations were included in the successful combined probe.

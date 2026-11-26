@@ -2,8 +2,8 @@
 
 Date: 2026-11-26.
 
-**Status: this exact source compiled in public run 45861216253; the combined
-local axiom gate remains pending because two downstream modules failed.**
+**Status: this exact source and all its requested axiom reports passed in the
+complete public run 45863204593.**
 `BarnesWall/KRRCanonical.lean` has SHA256
 `f1e5306b4014813bbcc26285dc5d642f273d133fef1eb8eec92f732a66c3ca44`.
 
@@ -71,5 +71,7 @@ axiom gate was not reached. Its two linter-only cleanups have SHA256
 `2af31cd1c9ae471488614f0f1c1bf8d661e64c9dcaaf7fb1f7d8630f4b390ee1`.
 That earlier run stopped at a multiline proof-term layout error in this
 specialization. The source hash above includes its parenthesization repair,
-which compiled without local warnings in
-[run 45861216253](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45861216253).
+which compiled without local warnings in run 45861216253. The complete
+[run 45863204593](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45863204593)
+subsequently checked this specialization and all other sixteen-module inputs,
+with 167 local axiom reports containing only the standard three axioms.

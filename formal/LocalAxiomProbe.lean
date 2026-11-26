@@ -3,12 +3,14 @@ import BarnesWall.IntegerPhase
 import BarnesWall.Lattice128
 import BarnesWall.KRRBlocks
 import BarnesWall.KRRPauli
+import BarnesWall.KRRSupport
 import BarnesWall.KRRQ16
 import BarnesWall.CocycleTransport
 import BarnesWall.LatticeComposition
 import BarnesWall.CanonicalLift
 import BarnesWall.CanonicalFaithfulness
 import BarnesWall.KRRCanonical
+import BarnesWall.KRRSupportedLift
 import BarnesWall.QuaternionLift
 import BarnesWall.KRRQuaternionAction
 import BarnesWall.CentralLift
@@ -515,3 +517,18 @@ import BarnesWall.BooleanCubic
 
 #check BarnesWall.BooleanCubic.boolean_cubic_factor_unique_of_nonzero
 #print axioms BarnesWall.BooleanCubic.boolean_cubic_factor_unique_of_nonzero
+
+#check BarnesWall.KRRSupport.H_even_of_same_block
+#print axioms BarnesWall.KRRSupport.H_even_of_same_block
+
+#check BarnesWall.KRRSupport.X_supported
+#print axioms BarnesWall.KRRSupport.X_supported
+
+#check BarnesWall.KRRSupport.Z_supported
+#print axioms BarnesWall.KRRSupport.Z_supported
+
+#check BarnesWall.KRRCanonical.liftMap_mul_of_small_support
+#print axioms BarnesWall.KRRCanonical.liftMap_mul_of_small_support
+
+#check BarnesWall.KRRCanonical.lift_mul_of_small_support
+#print axioms BarnesWall.KRRCanonical.lift_mul_of_small_support

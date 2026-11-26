@@ -53,9 +53,12 @@ the axiom log had SHA256
 `7381ffec0b94e5c2fc65db8aa5278f223084abed17e54cd042eed4f9a7c5a378`.
 The integrated source adds only the MIT license header and has SHA256
 `62c095443c0d7acf2d927490ec5dc409480a467fb3af4ed6fe499a8d09805815`.
-The proof body is byte-identical. Public reproduction of that integration copy
-is requested by the combined workflow; the earlier local run does not certify
-the rest of the project. Independent internal source review found no changed
+The proof body is byte-identical. That exact integration copy and all eight
+requested reports passed in
+[public run 45863204593](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45863204593)
+at commit 316e085ce9a20240c8a1a5a5f1ae0af76b0c39b6. The complete sixteen-module
+integration passed, with every source hash and the probe hash verified.
+Independent internal source review found no changed
 definitions or theorem statements in the compilation repairs. All authorship
 and review here were by AI agents; no independent human review is claimed.
 

@@ -2,37 +2,25 @@
 
 This directory contains a pinned dependency audit, a concrete rank-128 even
 positive lattice, concrete integral quaternion matrices, and canonical full-state
-lifts toward sections 4.2–4.3 of the accompanying proof. A faithful quaternion
-action and equality of its central lift with the prescribed lattice involution
-are included as integration candidates. A separate Boolean-cubic factorization
-lemma supplies one combinatorial ingredient. The anomaly theorem is separate work.
+lifts toward sections 4.2–4.3 of the accompanying proof. Its checked quaternion
+action is faithful, and its central lift equals the prescribed lattice involution.
+A separate Boolean-cubic factorization lemma supplies one combinatorial
+ingredient. The anomaly theorem is separate work.
 
-The complete five-module baseline passed in
-[run 45854804934](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45854804934),
-at commit 644efcb33a7ca3e75929b71035fe7cf5a89bf373: all 53 requested local
-declarations had only the standard axioms listed below. That run includes
-`BlockPhase`, `IntegerPhase`, `Lattice128`, `CocycleTransport` and
-`LatticeComposition`.
+The complete sixteen-module integration passed in
+[run 45863204593](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45863204593)
+at commit 316e085ce9a20240c8a1a5a5f1ae0af76b0c39b6. All 15 upstream reports,
+including Jacobi, and all 167 requested local declaration reports contained
+only the standard axioms listed below. The local modules compiled without
+warnings or errors; their source hashes and the probe hash match the public
+commit. This includes the faithful quaternion action, its exact central
+comparison and `BooleanCubic`, as well as their lattice and lift prerequisites.
 
-The latest completed integration,
-[run 45861216253](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45861216253)
-at commit 89228fac0c031431fd5aacae6063842f8e47cc12, passed the upstream audit
-including Jacobi and compiled the first twelve local modules through
-`QuaternionLift`. It found a block-predicate elaboration mismatch and group
-rearrangement timeout in `KRRQuaternionAction`, plus a pointwise-negation cast
-goal in `CentralLift`. The dependent `KRRCentralLift` and combined axiom probe
-did not run. This increment repairs those proof terms and two reported unused
-simp arguments; their mathematical statements are unchanged.
-
-`KRRQ16` has passed a separate local kernel check and twenty standard-axiom
-reports. `QuaternionLift` has likewise passed its local check and seven reports.
-`KRRBlocks` and `KRRPauli` also passed separate local kernel and axiom checks.
-`BooleanCubic` passed a separate local kernel check and eight standard-axiom
-reports at the same pins. Its integration copy adds only an MIT license header.
-The action and two central-comparison modules remain source-reviewed candidates.
-The public workflow now checks sixteen modules in a second stage; each result
-applies to its exact source commit. Earlier runs do not certify the additions
-or the latest repairs.
+This increment adds `KRRSupport`, which separately passed its local kernel check
+and three standard-axiom reports, and the source-reviewed thin VOA wrapper
+`KRRSupportedLift`. The public workflow now checks eighteen modules in a second
+stage. Each result applies to its exact source commit; the sixteen-module run
+does not certify these additions.
 
 The audited dependency is [LeanVOA](https://github.com/Fedor-Popov/Lean_VOA)
 at commit faedf8eb9e3fe275d3ac09e645aac694e496e965, by Fedor K. Popov
@@ -109,6 +97,13 @@ matrices square to one and are bundled with their actual integral inverses.
 Numerical bits 6, 5 and 4 are KRR tensor positions 1, 2 and 3; their matrices
 preserve the low-four-bit blocks.
 
+`BarnesWall/KRRSupport.lean` generalizes the block key to the support outside
+any chosen set of numerical bit positions. With at most three chosen positions,
+the same prescribed H is even within every block. The literal X and Z matrices
+preserve these blocks whenever their active position is chosen. The argument
+keeps the ordered basis and global H unchanged. See
+[KRRSupport-notes.md](KRRSupport-notes.md) for its precise scope and local check.
+
 `BarnesWall/KRRQ16.lean` defines the additional generator g directly by integral
 rows and proves `2g = (I + a)(X₄ + Z₄)`, where `a = X₆Z₆` and `b = Z₆X₅Z₅`.
 Intertwining with an explicit Cartesian numerator proves full Gram preservation.
@@ -173,6 +168,12 @@ generic lift. It exports full-state and conformal-automorphism composition,
 as well as recovery of an actual matrix from equality of lifts. Its remaining
 matrix premises are explicit isometry and block-support conditions.
 
+`BarnesWall/KRRSupportedLift.lean` specializes the generic full-state and
+automorphism composition theorems to those arbitrary small-support blocks.
+It retains the same coordinates and cocycle transport, explicit isometry
+premises, and reversed multiplication order. This permits local arguments
+at different positions without asserting global multiplication for all words.
+
 `BarnesWall/QuaternionLift.lean` uses Mathlib's existing `QuaternionGroup 4`.
 It constructs a homomorphism into any group from `A⁸ = 1`, `B² = A⁴`, and
 `AB = BA⁻¹`, by descending powers through `ZMod 8` and checking all four
@@ -201,7 +202,8 @@ Gram and integral-unit hypotheses.
 
 `BarnesWall/KRRCentralLift.lean` specializes that comparison to the concrete
 quaternion action: its `centralLift`, and hence the image of `a 4`, is exactly
-`thetaAut` on this lattice VOA. Both comparison modules await combined CI.
+`thetaAut` on this lattice VOA. Both comparison modules passed the complete
+sixteen-module integration above.
 
 ## Boolean-cubic factorization
 
@@ -224,9 +226,9 @@ polynomials or prove anomaly detection.
 
 ## Combined local check
 
-`check_bridge.py` runs after the dependency audit. It compiles all sixteen local
+`check_bridge.py` runs after the dependency audit. It compiles all eighteen local
 modules into the audited environment, prints the types and transitive axioms of
-167 local declarations, and checks source pins and unchanged inputs again.
+172 local declarations, and checks source pins and unchanged inputs again.
 It continues independent module checks after a source failure, skips affected
 dependents, and fails before the axiom stage if any module failed or was skipped.
 Its parser applies the same standard-axiom restriction. The mathematical
@@ -235,19 +237,20 @@ assumptions remain visible in `LocalAxiomProbe.lean`'s type output.
 The integer module and coordinate adapter derive explicit-cocycle compatibility
 and coherent lift composition under their stated matrix hypotheses. The block
 and quaternion matrix modules supply concrete generator inputs. The action
-candidate connects these to a faithful `QuaternionGroup 4` representation;
-its combined check is pending. No module establishes unitarity of an automorphism.
+module connects these to a faithful `QuaternionGroup 4` representation and has
+passed the combined check. No module establishes unitarity of an automorphism.
 
 ## Mathematical work still required
 
 LeanVOA's lattice basis is chosen noncomputably; its cocycle and oscillator
-frame are not definitionally the KRR coordinate conventions. The concrete
-specialization, quaternion action and central comparison must first pass the
-combined gate.
+frame are not definitionally the KRR coordinate conventions. The checked
+coordinate specialization and global cocycle transport connect those conventions
+for the stated lattice and quaternion action. The new small-support wrapper
+still requires its combined check.
 
 The wrapper supplies conformal preservation and bijectivity from its explicit
 hypotheses, and the charge-state argument supplies generic matrix faithfulness.
-Literal common-Q8 generator images are stated in the candidate action, but
+Literal common-Q8 generator images are checked in the action, but
 agreement with an independently formalized prescribed extraspecial-group
 action remains to be established. The general group
 cohomology, anomaly and orbifold arguments are not formalized by this increment.
