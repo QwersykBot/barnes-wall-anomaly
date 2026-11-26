@@ -1,10 +1,10 @@
 # Lattice VOA bridge checks
 
 This directory contains a pinned dependency audit, a concrete rank-128 even
-positive lattice, the concrete KRR Pauli matrices, and generic bridge lemmas
-toward the specific Barnes–Wall lifts in sections 4.2–4.3 of the accompanying
-proof. The additional quaternion generator, its prescribed lift relations and
-the anomaly theorem are not yet formalized.
+positive lattice, concrete integral quaternion matrices, and canonical full-state
+lifts toward sections 4.2–4.3 of the accompanying proof. A faithful abstract
+quaternion-action candidate is included for combined checking. Agreement with
+the prescribed central involution and the anomaly theorem remain separate work.
 
 The dependency-only audit passed in
 [run 45848409773](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45848409773),
@@ -14,14 +14,22 @@ local bridge modules. The first five modules then passed together in
 at commit 644efcb33a7ca3e75929b71035fe7cf5a89bf373: all 53 requested local
 declarations had only the standard axioms listed below. That run includes
 `BlockPhase`, `IntegerPhase`, `Lattice128`, `CocycleTransport` and
-`LatticeComposition`. Three redundant trailing tactics reported by its linter
-have been removed in this increment.
+`LatticeComposition`.
 
 The next two concrete modules, `KRRBlocks` and `KRRPauli`, passed separate local
-kernel and axiom checks. `CanonicalLift` and `CanonicalFaithfulness` are new
-integration candidates. The public workflow now checks all nine modules in
-a separate second stage; each run's result applies to its exact source commit.
-The five-module result does not certify these four additions.
+kernel and axiom checks and compiled in
+[run 45856439226](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45856439226),
+at commit 1bf367f3567d21ecde3e6f130825445f785e6ebe. That run then failed in
+`CanonicalLift.rowEquiv`'s inverse proofs, before reaching `CanonicalFaithfulness`
+or the combined local axiom probe. This increment makes the two bundled-map
+coercions explicit without changing the mathematical statements.
+
+`KRRQ16` has passed a separate local kernel check and twenty standard-axiom
+reports. `QuaternionLift` has likewise passed its local check and seven reports.
+`KRRCanonical` and `KRRQuaternionAction` are source-reviewed candidates awaiting
+compilation. The public workflow now checks thirteen modules in a second stage;
+each result applies to its exact source commit. Earlier runs do not certify
+the additions or the inverse-proof repair.
 
 The audited dependency is [LeanVOA](https://github.com/Fedor-Popov/Lean_VOA)
 at commit faedf8eb9e3fe275d3ac09e645aac694e496e965, by Fedor K. Popov
@@ -29,8 +37,9 @@ and contributors, released under Apache 2.0. Its exact manifest pins Mathlib
 b63f6e8a68d220e3b3bc4f3792bb53650d375f24 and Lean 4.35.0-rc3.
 The upstream source is downloaded at execution time and left unchanged.
 
-The local modules use Apache 2.0, except `BlockPhase.lean` and
-`IntegerPhase.lean`, which use the repository's MIT license. The upstream
+The local modules use Apache 2.0, except `BlockPhase.lean`,
+`IntegerPhase.lean` and `QuaternionLift.lean`, which use the repository's MIT
+license. The upstream
 notice is retained for the adapted automorphism wrapper. The Apache license
 is included in `LICENSE-Apache-2.0.txt`; additions and generalizations are
 identified in the source.
@@ -42,10 +51,14 @@ upstream source and nine dependency revisions, restores the official Mathlib
 master cache for the target's imports, and builds VOA.Moonshine.LatticeMorph
 from source with the upstream Lake configuration.
 
-The probe prints the transitive axioms of fourteen declarations covering the
+The probe prints the transitive axioms of fifteen declarations covering the
 full lattice VOA, its cocycle comparison, oscillator-map composition,
 vertex-product preservation, conformal-vector preservation, and injectivity
-and image of the general lattice map. The parser requires one report for
+and image of the general lattice map. It also checks the type and transitive
+axioms of `VOA.VertexOperatorAlgebra.jacobi`, the all-integer mode-form Jacobi
+identity. That theorem is already in the pinned target's import closure;
+adding its explicit probe does not change the dependency sources.
+The parser requires one report for
 every requested declaration and allows only propext, Classical.choice and
 Quot.sound. An unexpected axiom, missing report, build failure, changed pin
 or changed tracked upstream source makes the check fail.
@@ -54,6 +67,14 @@ The ordinary Lean compiler and official Mathlib compiled cache are part of
 the trust boundary. This does not rebuild Mathlib from source or run a
 second independent proof kernel. The local additions were generated and
 reviewed by AI agents; no independent human review is claimed.
+
+The target's carrier contains every polynomial oscillator state and every
+lattice charge, with no finite-state cutoff. The resulting VOA includes its
+integer grading, finite-dimensional graded pieces, vertex-product truncation,
+vacuum and creation laws, locality, Virasoro action and translation covariance.
+The explicit Jacobi probe checks the corresponding mode identity. These
+algebraic results do not provide a Hermitian form or prove unitarity,
+rationality, holomorphicity, twisted modules or the orbifold theorem.
 
 ## Concrete coordinate lattice
 
@@ -84,6 +105,16 @@ preservation, including pairings between different blocks. The integral
 matrices square to one and are bundled with their actual integral inverses.
 Numerical bits 6, 5 and 4 are KRR tensor positions 1, 2 and 3; their matrices
 preserve the low-four-bit blocks.
+
+`BarnesWall/KRRQ16.lean` defines the additional generator g directly by integral
+rows and proves `2g = (I + a)(X₄ + Z₄)`, where `a = X₆Z₆` and `b = Z₆X₅Z₅`.
+Intertwining with an explicit Cartesian numerator proves full Gram preservation.
+Pauli algebra and nonzero integer-scalar cancellation give
+`g² = a`, `g⁴ = a² = b² = −I`, `bgbg = −I`, and `g⁸ = I`.
+The actual integral inverses are `g⁷` and `−b`, and both matrices preserve
+the concrete blocks. The proof also shows `−I ≠ I`. No rational inverse,
+assumed quaternion relation, or enumeration of all matrix entries is used.
+These matrix results do not yet construct an abstract group action on the VOA.
 
 ## Generic bridge lemmas
 
@@ -132,30 +163,56 @@ state map with nonzero phases. The coordinate equivalence then recovers its
 integer matrix. Thus the canonical full-state maps distinguish their matrices;
 this does not by itself identify a concrete quaternion group representation.
 
-`check_bridge.py` runs after the dependency audit. It compiles all nine local
+`BarnesWall/KRRCanonical.lean` specializes the coordinate equivalence to the
+identity on the concrete rank-128 lattice, identifies the prescribed half-form,
+and supplies its proved evenness, positivity and within-block evenness to the
+generic lift. It exports full-state and conformal-automorphism composition,
+as well as recovery of an actual matrix from equality of lifts. Its remaining
+matrix premises are explicit isometry and block-support conditions.
+
+`BarnesWall/QuaternionLift.lean` uses Mathlib's existing `QuaternionGroup 4`.
+It constructs a homomorphism into any group from `A⁸ = 1`, `B² = A⁴`, and
+`AB = BA⁻¹`, by descending powers through `ZMod 8` and checking all four
+normal-form products. If `A⁴ ≠ 1`, it proves that the homomorphism is injective.
+There is no assumed faithfulness premise.
+
+`BarnesWall/KRRQuaternionAction.lean` supplies those relations using the
+concrete canonical lifts, derives identity and powers from full-state
+composition, and proves nontriviality of the central lift by recovering its
+matrix. The ordinary action maps `a 1`, `xa 0`, `a 2` and `a 4` to the literal
+canonical lifts of g, b, a and −I. Neither generator is inverted.
+
+The order convention matters: `action (xa k) = lift(b) * lift(g)^k` corresponds
+under anti-composition to the matrix word `g^k b`, not the standard matrix label
+`b g^k`. The module does not identify this ordinary action elementwise with
+the raw matrix-labelled anti-action. Equality of the central lift with the
+upstream prescribed `thetaLat` remains unproved.
+
+`check_bridge.py` runs after the dependency audit. It compiles all thirteen local
 modules into the audited environment, prints the types and transitive axioms of
-ninety-seven local declarations, and checks source pins and unchanged inputs again.
+155 local declarations, and checks source pins and unchanged inputs again.
 Its parser applies the same standard-axiom restriction. The mathematical
 assumptions remain visible in `LocalAxiomProbe.lean`'s type output.
 
 The integer module and coordinate adapter derive explicit-cocycle compatibility
 and coherent lift composition under their stated matrix hypotheses. The block
-and Pauli modules supply concrete inputs for the source generators. These
-statements do not construct Q16 or establish unitarity of an automorphism.
+and quaternion matrix modules supply concrete generator inputs. The action
+candidate connects these to a faithful `QuaternionGroup 4` representation;
+its combined check is pending. No module establishes unitarity of an automorphism.
 
 ## Mathematical work still required
 
 LeanVOA's lattice basis is chosen noncomputably; its cocycle and oscillator
-frame are not definitionally the KRR coordinate conventions. A later
-formalization must instantiate the generic transport with the concrete coordinate
-lattice and prescribed phases, then add the integral quaternion generator,
-its inverse and its full form isometry.
+frame are not definitionally the KRR coordinate conventions. The concrete
+specialization, canonical-lift repair and quaternion action must first pass the
+combined gate.
 
 The wrapper supplies conformal preservation and bijectivity from its explicit
 hypotheses, and the charge-state argument supplies generic matrix faithfulness.
-The exact Q16 matrix and lift relations, the concrete group's faithful order,
-and agreement with the prescribed common Q8 must still be proved with the
-correct right-action convention.
+Literal common-Q8 generator images are stated in the candidate action, but
+agreement with an independently formalized prescribed extraspecial-group
+action and central involution remains to be established. The general group
+cohomology, anomaly and orbifold arguments are not formalized by this increment.
 
 Passing this dependency audit alone establishes none of those specialized
 claims, nor the anomaly, orbifold, unitarity or spectrum statements.

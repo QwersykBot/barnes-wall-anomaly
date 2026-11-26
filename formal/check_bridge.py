@@ -22,10 +22,14 @@ MODULES = (
     "BarnesWall.Lattice128",
     "BarnesWall.KRRBlocks",
     "BarnesWall.KRRPauli",
+    "BarnesWall.KRRQ16",
     "BarnesWall.CocycleTransport",
     "BarnesWall.LatticeComposition",
     "BarnesWall.CanonicalLift",
     "BarnesWall.CanonicalFaithfulness",
+    "BarnesWall.KRRCanonical",
+    "BarnesWall.QuaternionLift",
+    "BarnesWall.KRRQuaternionAction",
 )
 UPSTREAM_IMPORTS = {TARGET, "VOA.Foundations.Lattices", "Lean.Elab.Tactic.Omega"}
 PROBE = HERE / "LocalAxiomProbe.lean"
@@ -115,13 +119,18 @@ def main() -> None:
         "modules_sha256": inputs,
         "probe_sha256": probe_hash,
         "axioms": reports,
-        "scope": "Concrete rank-128 even positive coordinate lattice, KRR blocks and Pauli isometries; canonical matrix phases, coherent conformal lifts and faithful full-state maps.",
+        "scope": "Concrete rank-128 even positive coordinate lattice, integral quaternion matrices, canonical phases, coherent full-state lifts and a faithful ordinary quaternion action with explicit generator images.",
         "concrete_coordinate_lattice_formalized": True,
         "krr_tensor_formula_identification_formalized": False,
         "krr_pauli_isometries_formalized": True,
+        "krr_quaternion_matrix_relations_formalized": True,
         "canonical_matrix_lift_formalized": True,
         "generic_lift_faithfulness_formalized": True,
-        "krr_q16_lift_formalized": False,
+        "concrete_lattice_canonical_lifts_formalized": True,
+        "canonical_q16_action_formalized": True,
+        "canonical_q16_action_faithful": True,
+        "prescribed_central_involution_identification_formalized": False,
+        "krr_full_extraspecial_action_formalized": False,
         "barnes_wall_anomaly_theorem_formalized": False,
     }
     rendered = json.dumps(receipt, indent=2, sort_keys=True) + "\n"

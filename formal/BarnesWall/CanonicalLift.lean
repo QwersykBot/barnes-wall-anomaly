@@ -70,6 +70,7 @@ theorem even_of_halfForm (H G : Matrix ι ι ℤ)
 def rowMap (R : Matrix ι ι ℤ) : L.carrier →ₗ[ℤ] L.carrier :=
   coords.symm.toLinearMap.comp (R.vecMulLinear.comp coords.toLinearMap)
 
+omit [LinearOrder ι] in
 @[simp] theorem coords_rowMap (R : Matrix ι ι ℤ) (x : L.carrier) :
     coords (rowMap coords R x) = coords x ᵥ* R :=
   coords.apply_symm_apply _
@@ -88,14 +89,19 @@ def rowEquiv (R : (Matrix ι ι ℤ)ˣ) : L.carrier ≃ₗ[ℤ] L.carrier where
   invFun := rowMap coords (↑R⁻¹ : Matrix ι ι ℤ)
   left_inv x := by
     apply coords.injective
+    change coords (rowMap coords (↑R⁻¹ : Matrix ι ι ℤ)
+      (rowMap coords (R : Matrix ι ι ℤ) x)) = coords x
     simp only [coords_rowMap, Matrix.vecMul_vecMul, Units.mul_inv, Matrix.vecMul_one]
   right_inv x := by
     apply coords.injective
+    change coords (rowMap coords (R : Matrix ι ι ℤ)
+      (rowMap coords (↑R⁻¹ : Matrix ι ι ℤ) x)) = coords x
     simp only [coords_rowMap, Matrix.vecMul_vecMul, Units.inv_mul, Matrix.vecMul_one]
 
 @[simp] theorem rowEquiv_toLinearMap (R : (Matrix ι ι ℤ)ˣ) :
     (rowEquiv coords R).toLinearMap = rowMap coords (R : Matrix ι ι ℤ) := rfl
 
+omit [LinearOrder ι] in
 private theorem bilinear_conjugate (R G : Matrix ι ι ℤ) (v w : ι → ℤ) :
     v ⬝ᵥ ((R * G * Rᵀ) *ᵥ w) = (v ᵥ* R) ⬝ᵥ (G *ᵥ (w ᵥ* R)) := by
   calc
@@ -187,6 +193,7 @@ theorem liftMap_mul (hPos : L.PosDef) (H G R S : Matrix ι ι ℤ) {block : ι �
     (rowMap coords R) (rowMap coords S) (phase coords H R) (phase coords H S)
     (phase coords H (R * S)) (phase_mul coords H G R S hHG hH hRb hSb hR hS)
 
+omit [LinearOrder ι] in
 theorem matrix_isometry_mul (G R S : Matrix ι ι ℤ)
     (hR : R * G * Rᵀ = G) (hS : S * G * Sᵀ = G) :
     (R * S) * G * (R * S)ᵀ = G := by
@@ -213,7 +220,7 @@ theorem liftAut_mul (hEven : L.Even) (hPos : L.PosDef) (H G : Matrix ι ι ℤ)
   apply VOA.Aut.ext
   apply LinearEquiv.ext
   intro v
-  simp only [VOA.Aut.coe_toLinearEquiv, VOA.Aut.mul_apply, liftAut_apply, Units.val_mul]
+  simp only [VOA.Aut.mul_apply, liftAut_apply, Units.val_mul]
   exact congrArg (fun f : LatModuleGen L →ₗ[ℂ] LatModuleGen L => f v)
     (liftMap_mul coords hPos H G R S hHG hH hRb hSb hR hS)
 

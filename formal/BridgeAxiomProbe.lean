@@ -14,3 +14,6 @@ import VOA.Moonshine.LatticeMorph
 #print axioms VOA.LatGen.latMorphC_injective
 #print axioms VOA.LatGen.mem_range_latMorphC_iff
 #print axioms VOA.Aut.comp
+
+#check VOA.VertexOperatorAlgebra.jacobi
+#print axioms VOA.VertexOperatorAlgebra.jacobi

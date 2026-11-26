@@ -176,7 +176,7 @@ def main() -> None:
     probe_dest = source / "BridgeAxiomProbe.lean"
     shutil.copyfile(PROBE, probe_dest)
     expected = re.findall(r"^#print axioms (\S+)$", PROBE.read_text(), re.MULTILINE)
-    if len(expected) != 14 or len(set(expected)) != 14:
+    if len(expected) != 15 or len(set(expected)) != 15:
         raise RuntimeError("Unexpected probe declaration inventory")
     output = run(["lake", "env", "lean", str(probe_dest)], cwd=source, env=env, capture=True)
     print(output, flush=True)
@@ -202,7 +202,7 @@ def main() -> None:
     if summary:
         with Path(summary).open("a") as stream:
             stream.write("## Lattice-VOA dependency audit\n\n")
-            stream.write("Built the pinned target and checked all 14 axiom reports.\n\n")
+            stream.write("Built the pinned target and checked all 15 axiom reports.\n\n")
             stream.write("This check does not formalize the KRR lifts or the anomaly theorem.\n")
 
 

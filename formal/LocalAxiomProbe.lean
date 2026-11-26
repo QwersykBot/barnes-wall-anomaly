@@ -3,10 +3,14 @@ import BarnesWall.IntegerPhase
 import BarnesWall.Lattice128
 import BarnesWall.KRRBlocks
 import BarnesWall.KRRPauli
+import BarnesWall.KRRQ16
 import BarnesWall.CocycleTransport
 import BarnesWall.LatticeComposition
 import BarnesWall.CanonicalLift
 import BarnesWall.CanonicalFaithfulness
+import BarnesWall.KRRCanonical
+import BarnesWall.QuaternionLift
+import BarnesWall.KRRQuaternionAction
 
 #check BarnesWall.transportDiscrepancy_symm_even
 #print axioms BarnesWall.transportDiscrepancy_symm_even
@@ -298,3 +302,177 @@ import BarnesWall.CanonicalFaithfulness
 
 #check BarnesWall.CanonicalFaithfulness.liftMap_injective
 #print axioms BarnesWall.CanonicalFaithfulness.liftMap_injective
+
+#check BarnesWall.KRRQ16.toggle_commute
+#print axioms BarnesWall.KRRQ16.toggle_commute
+
+#check BarnesWall.KRRQ16.Z_mul_X
+#print axioms BarnesWall.KRRQ16.Z_mul_X
+
+#check BarnesWall.KRRQ16.two_g
+#print axioms BarnesWall.KRRQ16.two_g
+
+#check BarnesWall.KRRQ16.two_g_mul_B
+#print axioms BarnesWall.KRRQ16.two_g_mul_B
+
+#check BarnesWall.KRRQ16.D_mul_transpose
+#print axioms BarnesWall.KRRQ16.D_mul_transpose
+
+#check BarnesWall.KRRQ16.g_isometry
+#print axioms BarnesWall.KRRQ16.g_isometry
+
+#check BarnesWall.KRRQ16.a_isometry
+#print axioms BarnesWall.KRRQ16.a_isometry
+
+#check BarnesWall.KRRQ16.b_isometry
+#print axioms BarnesWall.KRRQ16.b_isometry
+
+#check BarnesWall.KRRQ16.g_sq
+#print axioms BarnesWall.KRRQ16.g_sq
+
+#check BarnesWall.KRRQ16.g_four
+#print axioms BarnesWall.KRRQ16.g_four
+
+#check BarnesWall.KRRQ16.b_sq
+#print axioms BarnesWall.KRRQ16.b_sq
+
+#check BarnesWall.KRRQ16.b_g_b_g
+#print axioms BarnesWall.KRRQ16.b_g_b_g
+
+#check BarnesWall.KRRQ16.g_eight
+#print axioms BarnesWall.KRRQ16.g_eight
+
+#check BarnesWall.KRRQ16.gUnit
+#print axioms BarnesWall.KRRQ16.gUnit
+
+#check BarnesWall.KRRQ16.bUnit
+#print axioms BarnesWall.KRRQ16.bUnit
+
+#check BarnesWall.KRRQ16.a_block_support
+#print axioms BarnesWall.KRRQ16.a_block_support
+
+#check BarnesWall.KRRQ16.b_block_support
+#print axioms BarnesWall.KRRQ16.b_block_support
+
+#check BarnesWall.KRRQ16.g_block_support
+#print axioms BarnesWall.KRRQ16.g_block_support
+
+#check BarnesWall.KRRQ16.neg_one_ne_one
+#print axioms BarnesWall.KRRQ16.neg_one_ne_one
+
+#check BarnesWall.KRRQ16.g_four_ne_one
+#print axioms BarnesWall.KRRQ16.g_four_ne_one
+
+#check BarnesWall.KRRCanonical.coordinates_apply
+#print axioms BarnesWall.KRRCanonical.coordinates_apply
+
+#check BarnesWall.KRRCanonical.gram_in_coordinates
+#print axioms BarnesWall.KRRCanonical.gram_in_coordinates
+
+#check BarnesWall.KRRCanonical.canonicalHalfForm_eq
+#print axioms BarnesWall.KRRCanonical.canonicalHalfForm_eq
+
+#check BarnesWall.KRRCanonical.lift
+#print axioms BarnesWall.KRRCanonical.lift
+
+#check BarnesWall.KRRCanonical.lift_apply
+#print axioms BarnesWall.KRRCanonical.lift_apply
+
+#check BarnesWall.KRRCanonical.liftMap_mul
+#print axioms BarnesWall.KRRCanonical.liftMap_mul
+
+#check BarnesWall.KRRCanonical.lift_mul
+#print axioms BarnesWall.KRRCanonical.lift_mul
+
+#check BarnesWall.KRRCanonical.liftMap_injective
+#print axioms BarnesWall.KRRCanonical.liftMap_injective
+
+#check BarnesWall.KRRCanonical.matrix_eq_of_lift_eq
+#print axioms BarnesWall.KRRCanonical.matrix_eq_of_lift_eq
+
+#check BarnesWall.QuaternionLift.ofRelations
+#print axioms BarnesWall.QuaternionLift.ofRelations
+
+#check BarnesWall.QuaternionLift.ofRelations_a_natCast
+#print axioms BarnesWall.QuaternionLift.ofRelations_a_natCast
+
+#check BarnesWall.QuaternionLift.ofRelations_a_one
+#print axioms BarnesWall.QuaternionLift.ofRelations_a_one
+
+#check BarnesWall.QuaternionLift.ofRelations_a_two
+#print axioms BarnesWall.QuaternionLift.ofRelations_a_two
+
+#check BarnesWall.QuaternionLift.ofRelations_a_four
+#print axioms BarnesWall.QuaternionLift.ofRelations_a_four
+
+#check BarnesWall.QuaternionLift.ofRelations_xa_zero
+#print axioms BarnesWall.QuaternionLift.ofRelations_xa_zero
+
+#check BarnesWall.QuaternionLift.ofRelations_injective
+#print axioms BarnesWall.QuaternionLift.ofRelations_injective
+
+#check BarnesWall.KRRQuaternionAction.one_isometry
+#print axioms BarnesWall.KRRQuaternionAction.one_isometry
+
+#check BarnesWall.KRRQuaternionAction.lift_one
+#print axioms BarnesWall.KRRQuaternionAction.lift_one
+
+#check BarnesWall.KRRQuaternionAction.pow_isometry
+#print axioms BarnesWall.KRRQuaternionAction.pow_isometry
+
+#check BarnesWall.KRRQuaternionAction.lift_pow
+#print axioms BarnesWall.KRRQuaternionAction.lift_pow
+
+#check BarnesWall.KRRQuaternionAction.aUnit_val
+#print axioms BarnesWall.KRRQuaternionAction.aUnit_val
+
+#check BarnesWall.KRRQuaternionAction.aUnit_isometry
+#print axioms BarnesWall.KRRQuaternionAction.aUnit_isometry
+
+#check BarnesWall.KRRQuaternionAction.centralUnit_val
+#print axioms BarnesWall.KRRQuaternionAction.centralUnit_val
+
+#check BarnesWall.KRRQuaternionAction.centralUnit_isometry
+#print axioms BarnesWall.KRRQuaternionAction.centralUnit_isometry
+
+#check BarnesWall.KRRQuaternionAction.gLift_sq
+#print axioms BarnesWall.KRRQuaternionAction.gLift_sq
+
+#check BarnesWall.KRRQuaternionAction.gLift_four
+#print axioms BarnesWall.KRRQuaternionAction.gLift_four
+
+#check BarnesWall.KRRQuaternionAction.reversed_unit_word
+#print axioms BarnesWall.KRRQuaternionAction.reversed_unit_word
+
+#check BarnesWall.KRRQuaternionAction.gLift_eight
+#print axioms BarnesWall.KRRQuaternionAction.gLift_eight
+
+#check BarnesWall.KRRQuaternionAction.bLift_sq
+#print axioms BarnesWall.KRRQuaternionAction.bLift_sq
+
+#check BarnesWall.KRRQuaternionAction.gLift_mul_bLift
+#print axioms BarnesWall.KRRQuaternionAction.gLift_mul_bLift
+
+#check BarnesWall.KRRQuaternionAction.gLift_four_ne_one
+#print axioms BarnesWall.KRRQuaternionAction.gLift_four_ne_one
+
+#check BarnesWall.KRRQuaternionAction.action
+#print axioms BarnesWall.KRRQuaternionAction.action
+
+#check BarnesWall.KRRQuaternionAction.action_a_one
+#print axioms BarnesWall.KRRQuaternionAction.action_a_one
+
+#check BarnesWall.KRRQuaternionAction.action_xa_zero
+#print axioms BarnesWall.KRRQuaternionAction.action_xa_zero
+
+#check BarnesWall.KRRQuaternionAction.action_a_two
+#print axioms BarnesWall.KRRQuaternionAction.action_a_two
+
+#check BarnesWall.KRRQuaternionAction.action_a_four
+#print axioms BarnesWall.KRRQuaternionAction.action_a_four
+
+#check BarnesWall.KRRQuaternionAction.action_xa_nat
+#print axioms BarnesWall.KRRQuaternionAction.action_xa_nat
+
+#check BarnesWall.KRRQuaternionAction.action_injective
+#print axioms BarnesWall.KRRQuaternionAction.action_injective
