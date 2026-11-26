@@ -35,6 +35,7 @@ MODULES = (
     "BarnesWall.KRRQuaternionAction",
     "BarnesWall.CentralLift",
     "BarnesWall.KRRCentralLift",
+    "BarnesWall.KRRPauliLift",
     "BarnesWall.BooleanCubic",
 )
 UPSTREAM_IMPORTS = {TARGET, "VOA.Foundations.Lattices", "Lean.Elab.Tactic.Omega"}
@@ -161,6 +162,7 @@ def main() -> None:
         "prescribed_central_involution_identification_formalized": True,
         "boolean_cubic_factorization_formalized": True,
         "krr_small_support_lift_composition_formalized": True,
+        "krr_full_pauli_lift_relations_formalized": True,
         "cohomological_boolean_cubic_identification_formalized": False,
         "krr_full_extraspecial_action_formalized": False,
         "barnes_wall_anomaly_theorem_formalized": False,

@@ -7,20 +7,20 @@ action is faithful, and its central lift equals the prescribed lattice involutio
 A separate Boolean-cubic factorization lemma supplies one combinatorial
 ingredient. The anomaly theorem is separate work.
 
-The complete sixteen-module integration passed in
-[run 45863204593](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45863204593)
-at commit 316e085ce9a20240c8a1a5a5f1ae0af76b0c39b6. All 15 upstream reports,
-including Jacobi, and all 167 requested local declaration reports contained
+The complete eighteen-module integration passed in
+[run 45864728408](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45864728408)
+at commit c8030261ec42a8d9554b8a831c40c01894091303. All 15 upstream reports,
+including Jacobi, and all 172 requested local declaration reports contained
 only the standard axioms listed below. The local modules compiled without
 warnings or errors; their source hashes and the probe hash match the public
 commit. This includes the faithful quaternion action, its exact central
-comparison and `BooleanCubic`, as well as their lattice and lift prerequisites.
+comparison and `BooleanCubic`, as well as arbitrary small-support composition
+and their lattice and lift prerequisites.
 
-This increment adds `KRRSupport`, which separately passed its local kernel check
-and three standard-axiom reports, and the source-reviewed thin VOA wrapper
-`KRRSupportedLift`. The public workflow now checks eighteen modules in a second
-stage. Each result applies to its exact source commit; the sixteen-module run
-does not certify these additions.
+This increment adds the source-reviewed concrete relation adapter
+`KRRPauliLift`. The public workflow now checks nineteen modules in a second
+stage. Each result applies to its exact source commit; the eighteen-module run
+does not certify this addition.
 
 The audited dependency is [LeanVOA](https://github.com/Fedor-Popov/Lean_VOA)
 at commit faedf8eb9e3fe275d3ac09e645aac694e496e965, by Fedor K. Popov
@@ -203,7 +203,16 @@ Gram and integral-unit hypotheses.
 `BarnesWall/KRRCentralLift.lean` specializes that comparison to the concrete
 quaternion action: its `centralLift`, and hence the image of `a 4`, is exactly
 `thetaAut` on this lattice VOA. Both comparison modules passed the complete
-sixteen-module integration above.
+integration above.
+
+`BarnesWall/KRRPauliLift.lean` defines the literal canonical X and Z lifts at
+all seven positions. It derives their squares and commutators, including the
+same-position sign given by the actual `thetaAut`, from the checked matrix
+relations and one-/two-position composition. It proves that theta has order
+two and states the literal reversed-word expressions for the common Q8
+generators. This relation adapter awaits compilation; it does not yet construct
+the full extraspecial group or its action. See
+[KRRPauliLift-notes.md](KRRPauliLift-notes.md).
 
 ## Boolean-cubic factorization
 
@@ -226,9 +235,9 @@ polynomials or prove anomaly detection.
 
 ## Combined local check
 
-`check_bridge.py` runs after the dependency audit. It compiles all eighteen local
+`check_bridge.py` runs after the dependency audit. It compiles all nineteen local
 modules into the audited environment, prints the types and transitive axioms of
-172 local declarations, and checks source pins and unchanged inputs again.
+187 local declarations, and checks source pins and unchanged inputs again.
 It continues independent module checks after a source failure, skips affected
 dependents, and fails before the axiom stage if any module failed or was skipped.
 Its parser applies the same standard-axiom restriction. The mathematical
@@ -245,8 +254,9 @@ passed the combined check. No module establishes unitarity of an automorphism.
 LeanVOA's lattice basis is chosen noncomputably; its cocycle and oscillator
 frame are not definitionally the KRR coordinate conventions. The checked
 coordinate specialization and global cocycle transport connect those conventions
-for the stated lattice and quaternion action. The new small-support wrapper
-still requires its combined check.
+for the stated lattice and quaternion action. Arbitrary small-support
+composition has also passed the combined check. The new Pauli relation
+adapter still requires its combined check and a full-group construction.
 
 The wrapper supplies conformal preservation and bijectivity from its explicit
 hypotheses, and the charge-state argument supplies generic matrix faithfulness.

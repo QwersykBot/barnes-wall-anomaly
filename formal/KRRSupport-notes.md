@@ -39,12 +39,15 @@ and `Z_supported`. All three used only `propext`, `Classical.choice` and
 The integration copy updates only the status comment and license pointer;
 imports and proof body are unchanged. Its SHA256 is
 `a47d447d130bb4397a55b908809f1ba4c16cb3a842b666c31baad23ce4e06e63`.
-The wrapper has received independent internal source and API review; it has
-not been compiled locally because the complete VOA dependency closure is
-checked in public CI. Its integration SHA256 is
+The wrapper received independent internal source and API review and was
+subsequently compiled with the complete VOA dependency closure in public CI.
+Its integration SHA256 is
 `2b87ddb52a607fbe93ecad0a4b008e24eba99ef384dc53d731fa231705700cfe`.
-The combined workflow requests all five declarations. A successful local
-support check does not certify the wrapper or the complete integration.
+Both integration sources and all five declaration reports passed in
+[run 45864728408](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45864728408)
+at commit c8030261ec42a8d9554b8a831c40c01894091303. The complete eighteen-module
+run had no local warnings or errors; all 172 local reports used only the
+standard three axioms and all source/probe hashes matched that public commit.
 
 ## Scope
 

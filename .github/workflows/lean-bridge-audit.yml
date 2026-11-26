@@ -2,7 +2,7 @@ name: Lattice VOA formal checks
 
 on:
   push:
-    branches: [lean-bridge-audit]
+    branches: [lean-bridge-audit, main]
     paths:
       - formal/**
       - .github/workflows/lean-bridge-audit.yml
@@ -24,6 +24,32 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - name: Verify complete tracked-file manifest
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import subprocess
+          from pathlib import Path
+
+          entries = json.loads(Path("MANIFEST.json").read_text(encoding="utf-8"))["files"]
+          paths = [entry["path"] for entry in entries]
+          tracked = set(subprocess.check_output(["git", "ls-files", "-z"]).decode("utf-8").split("\0"))
+          tracked.discard("")
+          tracked.discard("MANIFEST.json")
+          if len(paths) != len(set(paths)):
+              raise SystemExit("Manifest contains duplicate paths")
+          if set(paths) != tracked:
+              raise SystemExit("Manifest coverage mismatch: " + json.dumps({
+                  "missing": sorted(tracked - set(paths)),
+                  "extra": sorted(set(paths) - tracked),
+              }))
+          for entry in entries:
+              data = Path(entry["path"]).read_bytes()
+              if len(data) != entry["bytes"] or hashlib.sha256(data).hexdigest() != entry["sha256"]:
+                  raise SystemExit("Manifest length/hash mismatch: " + entry["path"])
+          print(f"Verified all {len(entries)} tracked payload files")
+          PY
       - name: Build pinned lattice VOA bridge and inspect axioms
         run: python3 formal/audit_bridge.py "$RUNNER_TEMP/lean-bridge-audit"
       - name: Check the coordinate lattice, canonical phases, and full lattice maps

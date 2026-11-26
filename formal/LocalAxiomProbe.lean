@@ -15,6 +15,7 @@ import BarnesWall.QuaternionLift
 import BarnesWall.KRRQuaternionAction
 import BarnesWall.CentralLift
 import BarnesWall.KRRCentralLift
+import BarnesWall.KRRPauliLift
 import BarnesWall.BooleanCubic
 
 #check BarnesWall.transportDiscrepancy_symm_even
@@ -532,3 +533,48 @@ import BarnesWall.BooleanCubic
 
 #check BarnesWall.KRRCanonical.lift_mul_of_small_support
 #print axioms BarnesWall.KRRCanonical.lift_mul_of_small_support
+
+#check BarnesWall.KRRPauliLift.xLift
+#print axioms BarnesWall.KRRPauliLift.xLift
+
+#check BarnesWall.KRRPauliLift.zLift
+#print axioms BarnesWall.KRRPauliLift.zLift
+
+#check BarnesWall.KRRPauliLift.xLift_sq
+#print axioms BarnesWall.KRRPauliLift.xLift_sq
+
+#check BarnesWall.KRRPauliLift.zLift_sq
+#print axioms BarnesWall.KRRPauliLift.zLift_sq
+
+#check BarnesWall.KRRPauliLift.xLift_commute_xLift
+#print axioms BarnesWall.KRRPauliLift.xLift_commute_xLift
+
+#check BarnesWall.KRRPauliLift.zLift_commute_zLift
+#print axioms BarnesWall.KRRPauliLift.zLift_commute_zLift
+
+#check BarnesWall.KRRPauliLift.xLift_commute_zLift_of_ne
+#print axioms BarnesWall.KRRPauliLift.xLift_commute_zLift_of_ne
+
+#check BarnesWall.KRRPauliLift.theta_commute_xLift
+#print axioms BarnesWall.KRRPauliLift.theta_commute_xLift
+
+#check BarnesWall.KRRPauliLift.theta_commute_zLift
+#print axioms BarnesWall.KRRPauliLift.theta_commute_zLift
+
+#check BarnesWall.KRRPauliLift.xLift_mul_zLift
+#print axioms BarnesWall.KRRPauliLift.xLift_mul_zLift
+
+#check BarnesWall.KRRPauliLift.theta_sq
+#print axioms BarnesWall.KRRPauliLift.theta_sq
+
+#check BarnesWall.KRRPauliLift.theta_ne_one
+#print axioms BarnesWall.KRRPauliLift.theta_ne_one
+
+#check BarnesWall.KRRPauliLift.theta_orderOf
+#print axioms BarnesWall.KRRPauliLift.theta_orderOf
+
+#check BarnesWall.KRRPauliLift.aLift_eq_zLift_mul_xLift
+#print axioms BarnesWall.KRRPauliLift.aLift_eq_zLift_mul_xLift
+
+#check BarnesWall.KRRPauliLift.bLift_eq_zLift_mul_xLift_mul_zLift
+#print axioms BarnesWall.KRRPauliLift.bLift_eq_zLift_mul_xLift_mul_zLift
