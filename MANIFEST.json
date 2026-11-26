@@ -33,8 +33,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11056,
-      "sha256": "0f725f02ba86ba8fcf82eb4df03df3fb2e43a6d566a53382f16848e4a311626a"
+      "bytes": 11210,
+      "sha256": "392743e0798f52ae73bb19115cddc718055fe1d69dc727ebedd52c6daf1dbca4"
     },
     {
       "path": "alternate-report.json",
@@ -118,13 +118,18 @@
     },
     {
       "path": "formal/BarnesWall/KRRPauliAction.lean",
-      "bytes": 3879,
-      "sha256": "11404478c63d95a6f1f2b12bec03a88a388e3452b76938a5f63fc6ce4831e2c3"
+      "bytes": 4762,
+      "sha256": "de411d13e0dcfbd218abcfcd10e02d981608ba5dc9936d5dd406268b634586ef"
     },
     {
       "path": "formal/BarnesWall/KRRPauliLift.lean",
       "bytes": 12200,
       "sha256": "c58805d25d3180159d73cd024e6276e7faa70ee68ea4ccd8cdd16cc3d32c7206"
+    },
+    {
+      "path": "formal/BarnesWall/KRRPauliMatrix.lean",
+      "bytes": 7010,
+      "sha256": "3dc5ad1030d6c008bf4b76c991d430826f910ac6b4f4370daa92b4697477e2a0"
     },
     {
       "path": "formal/BarnesWall/KRRQ16.lean",
@@ -218,18 +223,18 @@
     },
     {
       "path": "formal/LocalAxiomProbe.lean",
-      "bytes": 21197,
-      "sha256": "4e8ee38f566c8be128b852f3548cd11833643568eaa74989089dd3999f21935c"
+      "bytes": 23236,
+      "sha256": "f5732a4eda8870206bf93cfa156f56a9cf62b567d2d6c8e9fceb1b30329c2d54"
     },
     {
       "path": "formal/PauliPresentation-notes.md",
-      "bytes": 5455,
-      "sha256": "f8d32897163601f1a1415cb529636dac56c5bbb2147a0db4fa5354c255648d9c"
+      "bytes": 5255,
+      "sha256": "9662b9fb5e1283d0157864a5f9e96731fdac3faa1df020ae7dd4758b9d3cffa9"
     },
     {
       "path": "formal/README.md",
-      "bytes": 19102,
-      "sha256": "8e12a02f3f1e05058349f48a28c2c6091498afb4bdb671ae851e6aceeb3d648d"
+      "bytes": 20101,
+      "sha256": "003c4d4036da25c0b6437f38ee551d828fc8aac6e1a1d4592246f402604eb699"
     },
     {
       "path": "formal/audit_bridge.py",
@@ -238,8 +243,8 @@
     },
     {
       "path": "formal/check_bridge.py",
-      "bytes": 8131,
-      "sha256": "7cfd10aec2364abdb7c8c5a2456fe1104d755493147b90ffb88cd2ab4445853e"
+      "bytes": 8461,
+      "sha256": "69b235db8a53d9fa6cbdef5ae7c1ef4b95e67dc7af45fac5995a010a173cf841"
     },
     {
       "path": "involution-report.json",

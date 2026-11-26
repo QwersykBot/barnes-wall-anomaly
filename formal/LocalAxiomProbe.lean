@@ -17,6 +17,7 @@ import BarnesWall.CentralLift
 import BarnesWall.KRRCentralLift
 import BarnesWall.KRRPauliLift
 import BarnesWall.PauliPresentation
+import BarnesWall.KRRPauliMatrix
 import BarnesWall.KRRPauliAction
 import BarnesWall.BooleanCubic
 
@@ -608,6 +609,54 @@ import BarnesWall.BooleanCubic
 #check BarnesWall.PauliPresentation.toGroup_injective
 #print axioms BarnesWall.PauliPresentation.toGroup_injective
 
+#check BarnesWall.KRRPauliMatrix.centralImage_val
+#print axioms BarnesWall.KRRPauliMatrix.centralImage_val
+
+#check BarnesWall.KRRPauliMatrix.xImage_val
+#print axioms BarnesWall.KRRPauliMatrix.xImage_val
+
+#check BarnesWall.KRRPauliMatrix.zImage_val
+#print axioms BarnesWall.KRRPauliMatrix.zImage_val
+
+#check BarnesWall.KRRPauliMatrix.matrixRelations
+#print axioms BarnesWall.KRRPauliMatrix.matrixRelations
+
+#check BarnesWall.KRRPauliMatrix.centralImage_ne_one
+#print axioms BarnesWall.KRRPauliMatrix.centralImage_ne_one
+
+#check BarnesWall.KRRPauliMatrix.matrixHom
+#print axioms BarnesWall.KRRPauliMatrix.matrixHom
+
+#check BarnesWall.KRRPauliMatrix.matrixHom_central
+#print axioms BarnesWall.KRRPauliMatrix.matrixHom_central
+
+#check BarnesWall.KRRPauliMatrix.matrixHom_x
+#print axioms BarnesWall.KRRPauliMatrix.matrixHom_x
+
+#check BarnesWall.KRRPauliMatrix.matrixHom_z
+#print axioms BarnesWall.KRRPauliMatrix.matrixHom_z
+
+#check BarnesWall.KRRPauliMatrix.matrixHom_injective
+#print axioms BarnesWall.KRRPauliMatrix.matrixHom_injective
+
+#check BarnesWall.KRRPauliMatrix.matrixHom_aWord
+#print axioms BarnesWall.KRRPauliMatrix.matrixHom_aWord
+
+#check BarnesWall.KRRPauliMatrix.matrixHom_bWord
+#print axioms BarnesWall.KRRPauliMatrix.matrixHom_bWord
+
+#check BarnesWall.KRRPauliMatrix.generated
+#print axioms BarnesWall.KRRPauliMatrix.generated
+
+#check BarnesWall.KRRPauliMatrix.matrixHom_range
+#print axioms BarnesWall.KRRPauliMatrix.matrixHom_range
+
+#check BarnesWall.KRRPauliMatrix.matrixEquiv
+#print axioms BarnesWall.KRRPauliMatrix.matrixEquiv
+
+#check BarnesWall.KRRPauliMatrix.matrixEquiv_coe
+#print axioms BarnesWall.KRRPauliMatrix.matrixEquiv_coe
+
 #check BarnesWall.KRRPauliAction.relations
 #print axioms BarnesWall.KRRPauliAction.relations
 
@@ -631,3 +680,12 @@ import BarnesWall.BooleanCubic
 
 #check BarnesWall.KRRPauliAction.action_b_word
 #print axioms BarnesWall.KRRPauliAction.action_b_word
+
+#check BarnesWall.KRRPauliAction.concreteAction
+#print axioms BarnesWall.KRRPauliAction.concreteAction
+
+#check BarnesWall.KRRPauliAction.concreteAction_injective
+#print axioms BarnesWall.KRRPauliAction.concreteAction_injective
+
+#check BarnesWall.KRRPauliAction.concreteAction_matrixEquiv
+#print axioms BarnesWall.KRRPauliAction.concreteAction_matrixEquiv
