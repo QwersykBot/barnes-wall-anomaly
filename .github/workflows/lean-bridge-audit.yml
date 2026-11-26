@@ -1,4 +1,4 @@
-name: Lattice VOA dependency audit
+name: Lattice VOA formal checks
 
 on:
   push:
@@ -26,3 +26,5 @@ jobs:
           persist-credentials: false
       - name: Build pinned lattice VOA bridge and inspect axioms
         run: python3 formal/audit_bridge.py "$RUNNER_TEMP/lean-bridge-audit"
+      - name: Check generic cocycle transport and automorphism lemmas
+        run: python3 formal/check_bridge.py "$RUNNER_TEMP/lean-bridge-audit"

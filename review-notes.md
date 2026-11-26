@@ -74,7 +74,7 @@ Three primary status observations matter:
 
 1. The [published KRR article](https://doi.org/10.1007/JHEP04(2026)009), dated 1 April 2026, still states the anomaly-vanishing conjecture and the conditional central-charge-128 construction.
 2. Ji and Tian, [*CFTs with Large Virasoro Primary Gaps*, arXiv:2611.23231v1](https://arxiv.org/abs/2611.23231v1), 17 November 2026, prove a related full, nonchiral construction. Their Theorem 6.1 inflates the chiral anomaly and cancels it on the left/right fiber-product symmetry. That does not establish that the individual chiral anomaly vanishes. This preprint is context only, not a dependency of the present proof.
-3. Höhn, [*An Extremal Vertex Operator Algebra of Central Charge c=64*, Hexagon 2611.00631v2](https://hexagonmath.org/2611.00631v2), 19 November 2026, claims a different central-charge-64 construction. Its §1.2 explicitly describes the KRR central-charge-128 construction as conditional on anomaly vanishing. We have not independently validated Höhn's full construction and use it only as contemporary status and overlap evidence.
+3. Höhn, [*An Extremal Vertex Operator Algebra of Central Charge c=64*, Hexagon 2611.00631v2](https://hexagonmath.org/2611.00631v2), 20 November 2026, claims a different central-charge-64 construction. Its §1.2 explicitly describes the KRR central-charge-128 construction as conditional on anomaly vanishing. We have not independently validated Höhn's full construction and use it only as contemporary status and overlap evidence.
 
 These related results make “first CFT with gap above two” and similarly broad priority language inappropriate. The proposed result is the specified chiral anomaly statement and its stated orbifold consequence.
 
