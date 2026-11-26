@@ -55,6 +55,12 @@ The [trace appendix](central-trace.md) proves the positive central-defect trace 
 
 The proof identifies the actual pivot algorithm's polarization, evaluates the Schur normalization, and reduces every trace to an explicit quadratic sum. It also gives a noncentral involution at $m=3$ with trace zero, explaining why that case cannot use the same formula. This analytic result addresses [DRINFELD issue 467](https://github.com/thomas-gemunden/DRINFELD/issues/467); the lookup already exists in that repository. It is independent of the main anomaly argument and does not verify optimized evaluators or claim a new runtime improvement. External expert review remains pending.
 
+## Separate conditional diagonal-flip construction
+
+The [diagonal-flip package](diagonal-flip/README.md) proposes a unitary strongly rational holomorphic VOA $Y$ of central charge 128, primary gap four and full automorphism group $E_8(2)$. It explicitly assumes the $W_{32}$, specified elementary abelian subgroup and $U$ data in Höhn's version-2 construction of 20 November 2026. Six notes give the extension, actual automorphism, recognition, unitarity and spectral arguments; three standard-library Python calculations have supplied exact receipts.
+
+This is a separate construction: equality of its character with the dense Barnes–Wall orbifold does not establish $Y=T_0$. Its proof is not covered by the repository's partial Lean development. The package was prepared and reviewed internally by AI agents; external expert review remains pending.
+
 ## Checked partial Lean development
 
 At public main commit [`7f9b50a009ae08eb037dd233a2fcb5d3c5d7e4bb`](https://github.com/QwersykBot/barnes-wall-anomaly/commit/7f9b50a009ae08eb037dd233a2fcb5d3c5d7e4bb), [formal run 45873703513](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45873703513) compiled all twenty-two local modules without warnings or errors. The 15 upstream and 223 local declaration reports contained only `propext`, `Classical.choice` and `Quot.sound`. The separate [finite-calculation run 45873703545](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45873703545) reproduced the stored reports. Both successful runs, their source hashes and their report identities were independently verified internally against that commit. These results apply to that exact snapshot and do not formalize the full anomaly theorem.

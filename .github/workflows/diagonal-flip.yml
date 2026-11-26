@@ -1,0 +1,47 @@
+name: Diagonal-flip finite checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'diagonal-flip/**'
+      - '.github/workflows/diagonal-flip.yml'
+  pull_request:
+    paths:
+      - 'diagonal-flip/**'
+      - '.github/workflows/diagonal-flip.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONOPTIMIZE: '0'
+    defaults:
+      run:
+        working-directory: diagonal-flip
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Verify package hashes and enabled assertions
+        run: |
+          sha256sum --check --strict SHA256SUMS
+          python3 -c 'import sys; sys.exit("Python assertions must be enabled") if sys.flags.optimize else None'
+      - name: Reproduce low-weight character receipt
+        run: |
+          python3 check_character_low_weights.py > "$RUNNER_TEMP/diagonal-flip-character.json"
+          diff -u character-low-weights.json "$RUNNER_TEMP/diagonal-flip-character.json"
+      - name: Reproduce character inner-product receipt
+        run: |
+          python3 e8-minimal-cubic-screen/analyze_e82.py e8-minimal-cubic-screen/E82cl.g > "$RUNNER_TEMP/diagonal-flip-inner-products.json"
+          diff -u e8-minimal-cubic-screen/result.json "$RUNNER_TEMP/diagonal-flip-inner-products.json"
+      - name: Reproduce degree-exhaustion receipt
+        run: |
+          python3 e8-minimal-cubic-screen/exhaust_degree_splits.py e8-minimal-cubic-screen/E82deg.g e8-minimal-cubic-screen/result.json > "$RUNNER_TEMP/diagonal-flip-degree-splits.json"
+          diff -u e8-minimal-cubic-screen/degree-splits-result.json "$RUNNER_TEMP/diagonal-flip-degree-splits.json"

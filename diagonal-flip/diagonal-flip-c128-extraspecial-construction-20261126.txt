@@ -1,0 +1,555 @@
+DIAGONAL EXTENSION, FLIP ORBIFOLD, AND AN ACTUAL EXTRASPECIAL ACTION
+Conditional construction at central charge 128
+26 November 2026 — plain UTF-8 proof note
+
+STATUS AND SCOPE
+
+This note takes the explicitly stated results about the VOA U in Höhn's
+20 November 2026 preprint [H] as input. It does not re-prove that paper.
+It derives a strongly rational holomorphic VOA Y of central charge 128,
+its character, and an actual subgroup 2_+^(1+56) of Aut(Y). Section 8
+separately proves the automorphism/centralizer lemma using the lifting
+theorem [Sh]; its module-permutation issue has been independently checked.
+Section 9 is conditional on an additional, not supplied, three-cycle.
+
+Unitarity is not asserted. The source [H] states strong rationality, and
+the extension/orbifold theorems used below give strong rationality and
+holomorphicity. A compatible positive Hermitian form on all extensions
+has not been supplied here. Likewise, equality of characters below does
+not identify Y with the conditional Barnes–Wall orbifold T_0. No E8(2)
+action, group-recognition conclusion, novelty claim, or splitting of an
+extension written with a dot is asserted.
+
+All fields are C unless F2 is specified. Put e(x)=exp(2 pi i x). Characters
+include the factor q^(-c/24). The letter W below means X^sigma; it is not
+the rank-32 VOA denoted W in [H]. Exact source versions and theorem
+locations are listed in Section 10.
+
+1. INPUT AND NOTATION
+
+Use the VOA U of [H, Theorem 1.1], with c(U)=64. Its simple modules U_d
+are indexed by a nondegenerate plus-type quadratic space
+
+    (D,q_D) = (F2^56,q_+),      q_D(d)=2 h(U_d) mod 2.
+
+Write b(t,d)=q_D(t+d)+q_D(t)+q_D(d). Fusion is addition in D, and
+
+    S_(d,e)=2^(-28) (-1)^b(d,e).
+
+The action of Aut(U)=E7(2) on D is faithful. We only need the following
+low-weight data from [H, Theorem 7.2 and (7.6)]:
+
+    U:       dim U_0=1, U_1=0, dim U_2=dim U_3=1,
+             dim U_4=dim U_5=141988;
+    O_1:     277347807 labels, h(U_d)=2,
+             dim (U_d)_2=dim (U_d)_3=1;
+    others:  lowest weights 3, 4, 7/2, or 9/2.
+
+The value dim U_5 follows from C_0(q)=C_1(q)+w_0(q^2): the second term
+has only even exponents, and the coefficient of q^5 in C_1 is 141988.
+Here C_d(q)=q^(8/3) chi_d(tau).
+
+Identify D with its character group through b, and write gamma_t for
+the corresponding quantum automorphism. This identification is fixed
+throughout; D* in group-shape statements denotes this quantum group.
+
+2. THE DIAGONAL HOLOMORPHIC EXTENSION AND LITERAL FLIP
+
+The subgroup Delta D={(d,d):d in D} in the fusion group D direct-sum D
+is isotropic, because 2h(U_d) is an integer, and is self-perpendicular.
+Every nonvacuum summand U_d tensor U_d has positive lowest weight.
+Theorem 4.2 of [vEMS] therefore gives a strongly rational holomorphic
+extension
+
+    X = direct-sum_(d in D) U_d tensor U_d,       c(X)=128.
+
+Choose the same representative U_d in the two positions. Define sigma
+on each summand by the literal interchange u tensor v -> v tensor u.
+This is an actual order-two VOA automorphism, not just a permutation of
+module labels. To see this, choose an intertwiner I_(d,e) for U_d,U_e.
+Every projected component of the extended vertex operator is a scalar
+multiple of I_(d,e) tensor I_(d,e), since the fusion multiplicity is one.
+The interchange commutes with that expression. This is precisely the
+local argument used in [H, Section 3.2], now applied to U.
+
+The quantum maps gamma_t act on U_d tensor U_d by (-1)^b(t,d). They
+commute with sigma, and form a faithful D*. Moreover sigma is not one
+of them: it interchanges omega tensor 1 and 1 tensor omega, whereas
+every gamma_t fixes U tensor U pointwise. Thus
+
+    Gamma = D* times <sigma> = F2^56 times F2
+
+acts faithfully on X. Write its elements as (t,epsilon), corresponding
+to gamma_t sigma^epsilon.
+
+3. TWISTED CHARACTERS, TYPE, AND THE FLIP ORBIFOLD
+
+On a tensor square the trace of the flip is the character evaluated at
+2 tau. Consequently
+
+    Z_X(gamma_t sigma;tau)
+      = sum_d (-1)^b(t,d) chi_d(2 tau).
+
+Applying S and the displayed Fourier matrix gives the exact identity
+
+    Z_X(gamma_t sigma;-1/tau) = 2^28 chi_t(tau/2).       (3.1)
+
+Indeed the sum over d is zero unless the transformed module label is t,
+and then is 2^56. The usual normalized untwisted-to-twisted S multiplier
+is 1, as in [vEMS, Proposition 5.5]. Hence (3.1) is the character of the
+unique twisted X-module, not an unidentified scalar multiple. Comparing
+the exponent with q^(h-128/24) gives
+
+    h(X(gamma_t sigma)) = 4 + h(U_t)/2.                 (3.2)
+
+In particular the sigma-twisted module M=X(sigma) has lowest weight 4
+and ground dimension 2^28. The cyclic type, 4h mod 2, is zero. Choose
+the canonical sigma action on M to be exp(2 pi i L_0); its + eigenspace
+M^+ consists exactly of the integral-weight vectors. All the ground is
+retained. The type-zero theorem [vEMS, Theorem 5.16] gives
+
+    W = X^sigma,          Y = W direct-sum M^+,
+
+a strongly rational holomorphic VOA of central charge 128. Its quantum
+involution z acts as +1 on W and -1 on M^+.
+
+For later lifting arguments, the four irreducible W-modules and their
+minimum weights are
+
+    W=X^+          0;
+    X^-            2;
+    M^+            4;
+    M^-            11/2.                              (3.3)
+
+For X^-, omega tensor 1 minus 1 tensor omega gives the weight-two vector.
+For M^-, (3.1) with t=0 means that a vector of U-weight k contributes
+M-weight 4+k/2. Since U_1=0 and U_3 is one-dimensional, the first
+half-integral weight is 11/2, not 9/2. The fusion quadratic space of W
+is the hyperbolic group of order four: X^- and M^+ are the two nonzero
+isotropic classes, and M^- is their anisotropic sum.
+
+4. LOW COEFFICIENTS AND THE ENTIRE CHARACTER
+
+At weights 1,2,3, only U tensor U contributes to W. Therefore Y_1=0
+and dim Y_2=dim Y_3=1.
+
+At weight four, the flip-fixed vacuum summand has dimension
+
+    dim U_4 + dim Sym^2(U_2) = 141988+1 = 141989.
+
+Each label in O_1 contributes one symmetric ground tensor, and no other
+nonvacuum label contributes. Thus
+
+    dim W_4 = 141989+277347807 = 277489796,
+    dim Y_4 = 277489796+2^28 = 545925252.               (4.1)
+
+At weight five, the vacuum contribution is dim U_5+dim(U_2 tensor U_3),
+again 141989. Each O_1 label has one flip-fixed tensor of relative level
+one, since both its ground and next level have dimension one. The twisted
+contribution at weight five is 2^28 dim U_2=2^28. Hence
+
+    dim Y_5 = 545925252.                              (4.2)
+
+Equivalently the exact orbifold character is
+
+    Z_Y(tau) = (1/2) [ sum_d chi_d(tau)^2
+                       + sum_d chi_d(2 tau)
+                       + 2^28 chi_0(tau/2)
+                       + 2^28 e(1/3) chi_0((tau+1)/2) ].    (4.3)
+
+The phase in the final term follows from the action exp(2 pi i L_0)
+on M: its twining trace is e(c(X)/24) Z_M(tau+1), and e(16/3)=e(1/3).
+In particular it has positive leading coefficient, as required by the
+ground action. Formula (4.3) is not needed for the coefficient counting.
+
+The conditional dense coherent Barnes–Wall origin T_0 in the separate
+parent work has the same coefficients in weights 0 through 5: 1,0,1,1,
+545925252,545925252. This comparison assumes that parent VOA exists;
+the construction of Y above does not depend on it. The two holomorphic
+characters therefore agree identically. Here is a direct uniqueness
+argument. Their difference is holomorphic on the upper half-plane, has
+no polar term at infinity, and tends to zero there, because c/24=16/3
+and every coefficient through weight five agrees. Its scalar modular
+multiplier has order three. Cubing gives a modular function holomorphic
+on the compactified modular curve and zero at the cusp, hence zero.
+The difference itself is zero.
+
+This is a character identity only. It does not give a VOA isomorphism,
+an identification of automorphisms, or an identification of embeddings.
+
+5. THE ANOMALY OF THE ACTUAL ELEMENTARY GROUP Gamma
+
+For the untwisted quantum action alone,
+
+    Z_X(gamma_t;tau) = sum_d (-1)^b(t,d) chi_d(tau)^2,
+    Z_X(gamma_t;-1/tau) = sum_u chi_u(tau) chi_(u+t)(tau).  (5.1)
+
+The second equality is again finite Fourier orthogonality. All its
+coefficients are nonnegative. Thus the lowest twisted weight is
+min_u(h(U_u)+h(U_(u+t))). It is a positive half-integer for t not zero,
+so its cyclic type 4h mod 2 is zero. Formula (3.2) gives cyclic type
+q_D(t) for gamma_t sigma. Hence the type function on Gamma is
+
+    type(t,epsilon) = epsilon q_D(t).                 (5.2)
+
+All nonidentity twisted minima are positive. Since Gamma is solvable,
+V=X^Gamma is strongly rational. The graded twisted-category theorem
+[GR, Theorem 3.1] gives
+
+    TwMod_Gamma X = Vec_Gamma^alpha,
+    Rep(V) = Z(Vec_Gamma^alpha).
+
+This use is within the proven solvable fixed-point setting; it does not
+assume regularity of arbitrary finite-group orbifolds.
+
+Choose a bilinear f:D times D -> F2 with f(t,t)=q_D(t), so that
+f(t,u)+f(u,t)=b(t,u). For example in hyperbolic coordinates t=(x,y),
+take f((x,y),(x',y'))=y dot x'. Define
+
+    alpha((t,epsilon),(u,eta),(v,zeta))
+       = (-1)^(epsilon f(u,v)).                       (5.3)
+
+Bilinearity verifies the normalized 3-cocycle identity. Restricting to
+the order-two subgroup generated by (t,epsilon) gives type epsilon
+f(t,t), exactly (5.2). The restriction map on H^3 of an elementary
+abelian 2-group to all its order-two subgroups is injective [H, Lemma
+3.2]. Therefore (5.3) represents the actual Gamma anomaly.
+
+This anomaly is generally nonzero. We do not gauge all of Gamma as an
+anomaly-free group. Its restriction to H=<sigma> is trivial; only this
+subgroup is gauged in constructing Y.
+
+6. PARTIAL GAUGING: EXPLICIT BIMODULES AND THEIR ASSOCIATOR
+
+Let C=Vec_Gamma^alpha with the representative (5.3), and let
+A_H=1 direct-sum sigma be the ordinary group algebra object. Its
+multiplication is associative because alpha restricts trivially to H.
+The dual category of the corresponding C-module category is the category
+of A_H-bimodules with relative tensor product. We compute that category,
+including its associator; identifying only its group of simple objects
+would not suffice.
+
+For t in D and r in F2, define X_(t,r) with basis x_epsilon in degrees
+(t,epsilon), epsilon in F2. Its left sigma action shifts epsilon; its
+right sigma action shifts epsilon and multiplies by (-1)^r. The relevant
+associators for the bimodule axioms are all 1, since one argument of f
+is zero. These are the simple bimodules: a simple has support in one
+coset tH, the left action identifies its two homogeneous lines, and the
+remaining right action is one of the two characters of H. There are
+2^57 such simples.
+
+In X_(t,r) tensor_(A_H) X_(u,s), put w_kappa=x_0 tensor y_kappa.
+The balancing relation has no additional associator phase, since
+alpha((t,epsilon),(0,1),(u,eta))=1, and gives
+
+    x_epsilon tensor y_eta = (-1)^(r epsilon) w_(epsilon+eta).
+
+The induced left sigma action on w has factor (-1)^(f(t,u)+r): the
+left reassociation uses alpha((0,1),(t,0),(u,kappa))^(-1).
+The induced right action has factor (-1)^s. On the rescaled basis
+
+    z_kappa=(-1)^(kappa(f(t,u)+r)) w_kappa
+
+the left action is a plain shift and the right label is r+s+f(t,u).
+Consequently the simple-object product is
+
+    (t,r)(u,s) = (t+u, r+s+f(t,u)).                   (6.1)
+
+Choose the tensorators just described, with the degree-(t+u,0) vector
+x_0 tensor y_0 identified with the corresponding degree-zero basis
+vector. On a triple product both parenthesizations carry
+x_0 tensor y_0 tensor z_0 to the same canonical vector; the ambient
+associator is alpha((t,0),(u,0),(v,0))=1. That vector generates the
+simple bimodule under the left H action, so the induced associator is
+identically 1 on the whole simple, not just on one selected component.
+Bilinearity of f also verifies associativity of (6.1) directly. Thus
+
+    C*_(A_H) is tensor-equivalent to Vec_N,
+
+with no remaining associator twist, where N is the group (6.1). A dual
+defined using opposite endofunctor composition can give N^op instead;
+our explicit bimodule-product convention gives (6.1), and the group type
+and square/commutator forms are unchanged by the opposite convention.
+
+Let z_0=(0,1). Then
+
+    (t,r)^2 = z_0^q_D(t),
+    [(t,r),(u,s)] = z_0^b(t,u).
+
+Nondegeneracy of b gives Z(N)=<z_0>, and N/<z_0>=D. Since q_D has plus
+type, this is the extraspecial group
+
+    N = 2_+^(1+56).                                  (6.2)
+
+This calculation has been independently checked, including the balancing
+sign, rescaling, and trivial associator. It is not an inference from a
+matching dimension or a familiar-looking group order.
+
+7. FULL CENTER: WHY N ACTS ON THIS ACTUAL VOA Y
+
+It remains to identify the actual extension Y, not merely an abstract
+category with a candidate group N. As a V-module, Y is supported only
+in the Gamma-fluxes 1 and sigma: W is in the untwisted sector and M^+
+is in the sigma sector, both nonzero. The classification of holomorphic
+extensions of a twisted-double theory [EG, Corollary 2 and (3.5)] assigns
+them a subgroup K of Gamma and a trivialization of alpha restricted to
+K. Its flux support is exactly K. Therefore here K=H. Moreover
+H^2(C2,C*)=0, so there is only one such extension class over V once this
+subgroup is specified. In the chosen representative it is the full
+center of A_H. The required twisted-double identification is supplied
+by [GR]; thus the conjectural qualifications of the older VOA discussion
+in [EG] are not additional assumptions in this solvable case.
+
+More precisely, let L_Y be the connected commutative algebra object of
+Rep(V) representing Y. It is Lagrangian because Y is holomorphic.
+By [DMNO, Proposition 4.8 and Remark 4.9], the full-center correspondence
+identifies L_Y with the module category C_(A_H), and its category of
+modules is the dual category computed in Section 6. Proposition 4.4
+then gives an equivalence of the pair, not only of the ambient categories:
+
+    (Rep(V), L_Y)  =  ( Z(Vec_N), I_N(1) ).            (7.1)
+
+Here I_N is right adjoint to the forgetful functor Vec_N's center ->
+Vec_N. Under Z(Vec_N), I_N(1) is the regular function algebra Fun(N),
+in the symmetric subcategory Rep(N). Right translations of Fun(N)
+are N-equivariant algebra automorphisms and give a faithful group N
+(up to the harmless opposite convention). Transporting these through
+(7.1) gives automorphisms of the algebra object L_Y. The VOA-extension
+correspondence carries them to actual VOA automorphisms of the fixed
+extension Y acting identically on V. This is the same automorphism step
+spelled out in [GR, proof of Theorem 3.2]. It does not require identifying
+Y with some other extension having the same character. In particular,
+
+    N <= Aut(Y),             Y^N=V.                 (7.2)
+
+We also need compatibility with the actual quantum involution and the
+original D* action. Track the electric character
+
+    chi_c(t,epsilon)=(-1)^b(c,t),      c in D,
+
+which is trivial on H. Its action on the coset bimodule X_(t,r) is the
+same scalar (-1)^b(c,t). Hence under the Morita equivalence it becomes
+the one-dimensional N-character (t,r) -> (-1)^b(c,t). The V-modules in
+W are exactly these 2^56 electric classes, each once: this is the
+Gamma-eigenspace decomposition of X with sigma eigenvalue +1. Thus z_0
+fixes W pointwise. In the simple-current extension Y=W direct-sum M^+,
+an automorphism fixing W is scalar on M^+ by Schur's lemma, and its
+square is 1 by the nonzero product M^+ times M^+ -> W. The only two
+possibilities are 1 and the quantum involution z. Faithfulness of the
+N action shows z_0 is not 1, so z_0=z. Consequently N/<z> acts on W
+as the original faithful quantum D*.
+This relative tracking is essential; an abstract group order alone
+would not identify a preimage subgroup in a later exact sequence.
+
+Finally, the sigma ground in Y has dimension 2^28 and z acts by -1.
+The extraspecial group N has one irreducible complex representation on
+which z acts by -1, of dimension 2^28. Complete reducibility therefore
+makes this ground a single copy of that faithful representation.
+
+8. SEPARATE AUTOMORPHISM AND EXACT-CENTRALIZER LEMMA
+
+This section uses the faithful Aut(U)=E7(2) statement in [H] and the
+simple-current lifting theorem [Sh, Theorem 2.1 / Corollary 2.2]. It is
+logically separate from the construction and character calculation.
+The module-permutation and lifting arguments below have been separately
+reviewed. D*.E7(2) denotes an extension; splitting is not assumed.
+
+8.1. The full automorphism group of X.
+
+Because all nonvacuum diagonal modules start at weight at least four,
+
+    X_2 = C omega_1 direct-sum C omega_2,
+    (omega_i)_1 omega_j = 2 delta_(i,j) omega_i.
+
+Its two primitive algebra idempotents are omega_1/2 and omega_2/2.
+Every automorphism of X preserves this unordered pair, so preserves or
+interchanges omega_1 and omega_2. These vectors recover the U factors
+intrinsically:
+
+    ker_X L_0^(2) = U tensor 1,
+    ker_X L_0^(1) = 1 tensor U.
+
+Indeed a nonzero label has strictly positive weight in both positions,
+and in U the zero-weight space is only C1. Thus after composing with
+sigma, an arbitrary automorphism restricts to (a,b) in Aut(U)^2.
+Preservation of the set of diagonal module pairs forces a and b to have
+the same permutation on D. Faithfulness of the action on D forces a=b.
+
+Conversely each diagonal a tensor a preserves the complete set of
+simple-current summands. All hypotheses of [Sh, Theorem 2.1] hold:
+X is simple, its summands are pairwise inequivalent irreducible modules,
+and their fusion is addition in the finite group D. Thus a tensor a
+lifts. An automorphism fixing U tensor U pointwise is scalar on each
+irreducible summand; compatibility with products makes these scalars a
+character of D. Its kernel is exactly D*.
+
+Every such diagonal lift commutes with the literal sigma. On a summand
+U_d tensor U_d it is a scalar multiple of S_d tensor S_d, where S_d is
+any intertwining isomorphism implementing a from U_d to the appropriate
+new U-module. The tensor-product intertwiner space is one-dimensional,
+and the same S_d can be used in both positions. Such a map commutes
+with the flip. The quantum kernel also commutes with the flip.
+
+Let M_X be the subgroup preserving the two conformal vectors individually.
+Then
+
+    1 -> D* -> M_X -> E7(2) -> 1,
+    Aut(X) = M_X times <sigma> = (D*.E7(2)) times <sigma>.   (8.1)
+
+The displayed C2 factor is split and central; this says nothing about
+whether the extension M_X itself splits.
+
+8.2. Lifting every automorphism of W=X^sigma in both directions.
+
+The four simple W-modules are given in (3.3). Any automorphism of W
+preserves their graded characters and hence their lowest weights. Their
+three nonvacuum minima 2,4,11/2 are distinct, so every automorphism fixes
+each module class. In fact fixing either nonzero isotropic label in the
+hyperbolic fusion plane would already fix the other, but the different
+minima also establish that their full stabilizer is all of Aut(W).
+
+Apply [Sh, Corollary 2.2] first to X=W direct-sum X^- and then to
+Y=W direct-sum M^+. Both are simple C2-graded simple-current extensions
+with irreducible inequivalent summands. The restriction homomorphisms
+are onto the pointwise stabilizers of their two module classes, and
+their kernels are exactly the corresponding quantum C2 groups. Thus
+
+    1 -> <sigma> -> C_Aut(X)(sigma) -> Aut(W) -> 1,
+    1 -> <z>     -> C_Aut(Y)(z)     -> Aut(W) -> 1.       (8.2)
+
+By (8.1), C_Aut(X)(sigma)=Aut(X). Hence, canonically through restriction
+to W,
+
+    C_Aut(Y)(z)/<z>  =  Aut(W)  =  Aut(X)/<sigma>.       (8.3)
+
+This proves surjectivity rather than assuming an inverse-orbifold
+correspondence between all automorphisms. A possible permutation of
+the two extension classes is exactly the obstruction removed above.
+
+8.3. Identifying the complete kernel over E7(2).
+
+The actual subgroup N from Section 7 centralizes its center z, and
+its quotient acts on W as the D* subgroup of Aut(W). Therefore it is
+contained in the preimage of D* under (8.2). That preimage has order
+2 times 2^56, equal to |N|, so it is exactly N. Combining (8.1)-(8.3)
+gives
+
+    1 -> N -> C_Aut(Y)(z) -> E7(2) -> 1,
+    C_Aut(Y)(z) has exact shape 2_+^(1+56).E7(2).       (8.4)
+
+The quotient acts on N/<z> as the specified faithful 56-dimensional
+module. Its square form is q_D by Section 6. The centralizer is finite.
+No assertion that this centralizer extension splits is required.
+
+9. CONDITIONAL FINITENESS CRITERION; THE THREE-CYCLE REMAINS SEPARATE
+
+Suppose, in addition to the results above, that there is an actual
+Klein-four subgroup Q_0={1,z,z_1,z_2} of Aut(Y) and an actual automorphism
+cyclically permuting its three nonidentity elements. This is an extra
+hypothesis. A prospective permutation of labels, or a prospective S4
+normalizer of an ancestor, is not by itself such an automorphism of Y.
+
+Then the three full centralizers C_Aut(Y)(z_i) are conjugate to (8.4)
+and finite. C2-cofiniteness implies finite generation of Y: take finitely
+many homogeneous representatives of Y/C2(Y), include the vacuum and
+conformal vector, and induct on weight in expressions u_(-2)v. Apart
+from derivatives involving the vacuum, their positive-weight inputs
+have lower weight. Thus the representatives generate the VOA.
+By [DG, Theorem 2.4], Aut(Y) is a finite-dimensional affine algebraic
+group. Let its complex Lie algebra be a.
+
+For an involution s, Lie C_Aut(Y)(s)=a^s, so the three fixed subspaces
+for z,z_1,z_2 are zero. Decompose a into the four characters of Q_0.
+Every character of Q_0 has a nonidentity element in its kernel; its
+eigenspace is therefore contained in one of these zero fixed spaces.
+Hence a=0. A zero-dimensional complex affine algebraic group is finite,
+so Aut(Y) is finite under the extra hypothesis.
+
+This proves only the implication. It supplies neither the required
+three-cycle nor the preservation/lift of a proposed extension under
+S4. It also supplies no finite-group recognition theorem. In particular,
+no conclusion Aut(Y)=E8(2) is made here. The separately investigated
+Smith recognition source and its precise hypotheses are outside this
+frozen note.
+
+10. PRIMARY SOURCE PINS AND DEPENDENCY LOCATIONS
+
+The following are exact version/theorem pins, not claims of byte hashes.
+Full primary texts were inspected for the indicated statements. The
+two legacy arXiv PDFs were read using already-retrieved primary records
+shared within the review; no alternate-host access workaround was used.
+
+[H] Gerald Höhn, "An extremal vertex operator algebra of central charge
+    c=64", hexagon:2611.00631v2, dated 20 November 2026, 26-page preprint.
+    https://hexagonmath.org/pdf/2611.00631v2
+    Theorem 1.1: U, fusion space, faithful Aut(U)=E7(2).
+    Section 3.2, especially (3.5)-(3.6): literal tensor flip and its
+    Fourier-transformed twining character in the earlier diagonal case.
+    Lemma 3.2, printed pp.6-7: cyclic restriction detects H^3 of an
+    elementary abelian 2-group.
+    Theorem 7.2, printed pp.20-21, (7.6) and the subsequent modular data:
+    module weights, O_1 count, characters, and S matrix.
+    The source states strong rationality; unitarity is not an input.
+
+[vEMS] Jethro van Ekeren, Sven Möller, Nils R. Scheithauer,
+    "Construction and classification of holomorphic vertex operator
+    algebras", arXiv:1507.08142v3, 28 November 2017.
+    https://arxiv.org/pdf/1507.08142v3
+    Theorem 4.2, printed p.11: isotropic simple-current extension.
+    Proposition 5.5: normalization of the twisted S transformation.
+    Theorems 5.13 and 5.16, with the inverse-orbifold discussion on
+    printed p.21: type, fusion labels, and holomorphic cyclic extension.
+
+[GR] Terry Gannon and Andrew Riesen, "Orbifolds of Pointed Vertex
+    Operator Algebras I", arXiv:2410.00809v1, submitted 1 October 2024;
+    manuscript dated 2 October 2024.
+    https://arxiv.org/pdf/2410.00809v1
+    Theorem 3.1, printed p.11: graded twisted category and center.
+    Proof of Theorem 3.2, printed p.12: the regular Lagrangian algebra
+    and its genuine VOA automorphisms. The latter proof uses the
+    VOA/algebra-object extension correspondence; only that step is
+    used, not its separate existence/reconstruction problem.
+
+[EG] David E. Evans and Terry Gannon, "Reconstruction and Local
+    Extensions for Twisted Group Doubles, and Permutation Orbifolds",
+    arXiv:1804.11145v1, submitted 30 April 2018; manuscript 1 May 2018.
+    https://arxiv.org/pdf/1804.11145v1
+    Corollary 2, printed pp.16-17, equation (3.5): maximal extensions
+    specified by subgroup and cocycle, with their flux support.
+    Section 3.2 states the VOA qualifications. In this note strong
+    rationality follows from solvability, and [GR] supplies the center.
+
+[DMNO] Alexei Davydov, Michael Müger, Dmitri Nikshych, Victor Ostrik,
+    "The Witt group of non-degenerate braided fusion categories",
+    arXiv:1009.2117v2, 6 September 2011.
+    https://arxiv.org/pdf/1009.2117
+    Corollary 4.1 and Proposition 4.4, printed p.16: the equivalence
+    retaining a specified Lagrangian algebra.
+    Proposition 4.8 and Remark 4.9, printed p.17: module categories,
+    full centers, and the identification with the dual category.
+
+[Sh] Hiroki Shimakura, "Lifts of automorphisms of vertex operator
+    algebras in simple current extensions", arXiv:math/0610671v1,
+    23 October 2006.
+    https://arxiv.org/pdf/math/0610671
+    Theorem 2.1, printed p.10; Corollary 2.2 and exact sequences
+    (2.1),(2.2), printed p.11: lifts, normalizers, centralizers.
+    The theorem's grading indices are in A. A corollary sentence prints
+    A* in that position; the unambiguous theorem hypotheses are used.
+
+[DG] Chongying Dong and Robert L. Griess Jr., "Automorphism groups and
+    derivation algebras of finitely generated vertex operator algebras",
+    arXiv:math/0106051v1, 7 June 2001.
+    https://arxiv.org/pdf/math/0106051
+    Theorem 2.4, printed p.7: the automorphism group of a finitely
+    generated VOA is an algebraic group. Only Section 9 uses it.
+
+REVIEW BOUNDARY
+
+The diagonal/flip construction, coefficient identities, representative
+Gamma anomaly, explicit untwisted Vec_N dual, and full-center bridge are
+the mathematical content preserved here. The exact centralizer uses the
+separate, explicit lifting argument in Section 8. The actual three-cycle,
+unitarity, group recognition, and identification with the Barnes–Wall
+VOA remain outside these conclusions. No calculation of a finite initial
+character segment is used as a substitute for a VOA or group action.

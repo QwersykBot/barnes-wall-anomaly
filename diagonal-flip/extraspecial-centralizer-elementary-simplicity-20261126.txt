@@ -1,0 +1,183 @@
+AN ELEMENTARY SIMPLICITY CRITERION FOR AN EXTRASPECIAL INVOLUTION CENTRALIZER
+26 November 2026
+
+Scope
+-----
+This is a finite-group lemma. In its intended VOA application, finiteness of
+the automorphism group, the exact full involution centralizer, its module
+action, and the stated fusion must be established independently. The lemma
+does not establish those inputs and does not identify the resulting simple
+group as E8(2).
+
+The argument uses the ordinary Sylow theorems, with the normalizer condition
+and Frattini argument recalled below, plus elementary group and linear
+algebra. It requires no classification or recognition theorem.
+
+THEOREM
+-------
+Let H be a finite group and z an involution. Put C = C_H(z). Suppose there is
+a normal subgroup Q of C with the following properties:
+
+(1) Q is extraspecial of order 2^(1+2n), where n >= 2, and
+    Z(Q) = Q' = <z>.
+
+(2) C_C(Q) = <z>.
+
+(3) C/Q is a nonabelian simple group.
+
+(4) The conjugation action of C on the F2-vector space Q/<z> is irreducible.
+
+(5) There is an involution t in Q\<z> such that z, t, and zt are all
+    conjugate in H.
+
+Then H is nonabelian simple.
+
+In (5), z and t commute because z is central in Q, so they generate a
+four-group. An element of order three cycling its three nonidentity elements
+is sufficient, but the proof needs only their conjugacy. The plus/minus type
+of Q is immaterial to this lemma.
+
+ELEMENTARY FACTS USED
+--------------------
+A. Normalizer condition. If U is a proper subgroup of a finite p-group P,
+then U < N_P(U). Indeed, let U act by left multiplication on the cosets P/U.
+The number of fixed cosets is |N_P(U):U|; all other orbit lengths are
+divisible by p. Since |P:U| is divisible by p and there is at least one fixed
+coset, there are at least p fixed cosets.
+
+B. Frattini argument. If N is normal in a finite H and S is a Sylow subgroup
+of N, then H = N N_H(S). Conjugation by any element of H sends S to another
+Sylow subgroup of N, and Sylow conjugacy inside N supplies the adjustment
+which normalizes S. Normality also gives H = N_H(S) N.
+
+C. Fixed-point-free involutions. If alpha is an automorphism of a finite
+group A, alpha^2 = 1, and C_A(alpha) = 1, then alpha acts by inversion.
+To prove this, the map f(x) = x^(-1) alpha(x) is injective: equality f(x)=f(y)
+makes y x^(-1) fixed by alpha, hence x=y. It is therefore surjective, and
+alpha(f(x)) = f(x)^(-1). Thus alpha(a)=a^(-1) for every a in A. Inversion
+being an automorphism also forces A to be abelian.
+
+Consequently a four-group cannot act on a nontrivial finite group with all
+three nonidentity elements acting fixed-point-freely: two of the actions
+would both be inversion, and their product would be the identity action.
+
+D. Extraspecial centralizers. If Q is as in (1) and x is noncentral in Q,
+then
+
+    [C_Q(x), C_Q(x)] = Z(Q).
+
+The commutator induces a nondegenerate alternating form on V=Q/Z(Q).
+The image of C_Q(x) is the perpendicular hyperplane of the nonzero vector
+xZ(Q). This hyperplane has radical <xZ(Q)> and restricted symplectic rank
+2n-2. Since n>=2, its restricted form is nonzero. Commutators in C_Q(x)
+therefore attain the nonidentity element of Z(Q), proving the assertion.
+The condition n>=2 is essential to this step: at width one the perpendicular
+hyperplane is one-dimensional and its alternating form is zero.
+
+PROOF OF THE THEOREM
+--------------------
+1. Sylow subgroups of C are Sylow subgroups of H.
+
+Take S in Syl_2(C). Since Q is a normal 2-subgroup of C, Q <= S. Therefore
+
+    Z(S) <= C_C(Q) = <z>.
+
+Conversely z is central in C and belongs to S, so Z(S)=<z>. If a Sylow
+2-subgroup P of H containing S were larger than S, Fact A would give
+N_P(S)>S. Every element of N_P(S) preserves Z(S)=<z> and hence centralizes
+z. Thus N_P(S) would be a 2-subgroup of C properly containing S, contrary
+to the choice of S. It follows that S is Sylow in H.
+
+2. Every nontrivial normal subgroup of H contains Q.
+
+Let 1 != N be normal in H and put R=N cap Q. It is normal in C. By (4),
+the image R<z>/<z> is either zero or all of Q/<z>. In the latter case
+R<z>=Q and, because <z> is central,
+
+    [R,R] = [R<z>,R<z>] = [Q,Q] = <z>.
+
+Thus <z> <= R, and then R=Q. In the former case R is either 1 or <z>.
+Hence the only possibilities are R=1, <z>, or Q.
+
+The possibility R=<z> is excluded by (5): z in N and normality of N imply
+t in N, while t in Q\<z> contradicts R=<z>.
+
+Suppose R=1. The subgroup K=N cap C is normal in C, so [K,Q] <= K cap Q=1.
+By (2), K <= <z>, and its trivial intersection with Q forces K=1.
+Equivalently, C_N(z)=1. By normality of N and the conjugacy in (5), also
+C_N(t)=C_N(zt)=1. The four-group <z,t> would therefore act on the nontrivial
+finite group N with all three nonidentity elements acting fixed-point-freely,
+contrary to Fact C. This excludes R=1 and proves Q <= N.
+
+3. The centralizer of z in N cannot be only Q.
+
+By Step 2, C_N(z)=N cap C is a normal subgroup of C containing Q. Assumption
+(3) leaves just two possibilities:
+
+    C_N(z) = Q, or C_N(z) = C.
+
+Assume C_N(z)=Q. First Q is Sylow in N. Otherwise, if Q<P for some Sylow
+2-subgroup P of N, Fact A supplies N_P(Q)>Q. But an element normalizing Q
+preserves its center <z> and hence lies in C_N(z)=Q, a contradiction.
+
+Moreover N_H(Q)=C: the inclusion C<=N_H(Q) follows from Q normal in C;
+the reverse inclusion follows from Z(Q)=<z>. Fact B now gives
+
+    H = N C = C N.
+
+Thus the H-conjugate t of z is already an N-conjugate: write a conjugating
+element as c u with c in C and u in N, to obtain t=z^u. Put
+
+    Q_t = C_N(t) = Q^u.
+
+The commuting involutions z and t belong to both centralizers where needed,
+and
+
+    R0 = Q cap Q_t = C_Q(t) = C_(Q_t)(z).
+
+Here t is noncentral in Q, whose center is <z>, and z is noncentral in Q_t,
+whose center is <t>. Both extraspecial groups have width n>=2. Fact D
+applied to these two descriptions of the same subgroup gives
+
+    R0' = <z>  and  R0' = <t>,
+
+contradicting t not in <z>. Therefore C_N(z)=C, and C<=N.
+
+4. N is all of H.
+
+Let S be as in Step 1. Since S<=C<=N and S is Sylow in H, it is also Sylow
+in N. Fact B yields H=N N_H(S). Every element normalizing S preserves
+Z(S)=<z>, so N_H(S)<=C<=N. Hence H=N.
+
+Every nontrivial normal subgroup of H is therefore H itself. Since H
+contains the nonabelian extraspecial group Q, H is nonabelian simple. QED.
+
+APPLICATION TO THE PROPOSED VOA AUTOMORPHISM GROUP
+------------------------------------------------
+For the intended application take n=28, Q of plus type and order 2^57,
+and C/Q=E7(2). The hypotheses to import from the separate VOA/group work are:
+
+* H=Aut(Y) is finite;
+* C_H(z) is the full centralizer with the specified normal Q;
+* C_C(Q)=<z>;
+* its quotient is E7(2), and its action on Q/<z> is irreducible;
+* an actual automorphism supplies fusion of z,t,zt for a four-group
+  <z,t><=Q, not merely a permutation of abstract categorical labels.
+
+Faithfulness alone does not replace irreducibility in the normal-subgroup
+argument. The categorical extraspecial identification and actual fusion
+are separate inputs. Once these inputs are established, simplicity is an
+elementary conclusion; recognition of the resulting simple group remains a
+separate theorem application.
+
+Source and review status
+------------------------
+No external theorem beyond the ordinary Sylow theorems is required by this
+proof; the other finite-group facts used are proved above. In particular,
+the finite-simple hypothesis of the Aschbacher ICM1978 classification theorem
+can be discharged by this lemma when the listed inputs hold.
+
+The mathematical argument was independently checked by the coordinating
+agent and a second mathematical agent before this note was written. This
+records an internal mathematical check, not external peer review or a
+computer-formalized proof.

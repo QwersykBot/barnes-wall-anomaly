@@ -1,0 +1,94 @@
+{
+  "V_in_symmetric_square_for_every_split": true,
+  "all_possibilities": [
+    {
+      "all_dimension_splits": [
+        {
+          "exterior_square": {
+            "1": 1,
+            "545925250": 0,
+            "76321227908420": 1,
+            "46453389380074796": 0,
+            "51320060161363500": 0,
+            "97697128859455125": 0,
+            "144074197011621500": 0,
+            "148940867792910204": 1
+          },
+          "symmetric_square": {
+            "1": 0,
+            "545925250": 1,
+            "76321227908420": 0,
+            "46453389380074796": 0,
+            "51320060161363500": 1,
+            "97697128859455125": 1,
+            "144074197011621500": 0,
+            "148940867792910204": 0
+          }
+        },
+        {
+          "exterior_square": {
+            "1": 0,
+            "545925250": 0,
+            "76321227908420": 0,
+            "46453389380074796": 0,
+            "51320060161363500": 1,
+            "97697128859455125": 1,
+            "144074197011621500": 0,
+            "148940867792910204": 0
+          },
+          "symmetric_square": {
+            "1": 1,
+            "545925250": 1,
+            "76321227908420": 1,
+            "46453389380074796": 0,
+            "51320060161363500": 0,
+            "97697128859455125": 0,
+            "144074197011621500": 0,
+            "148940867792910204": 1
+          }
+        }
+      ],
+      "tensor_square": {
+        "1": 1,
+        "545925250": 1,
+        "76321227908420": 1,
+        "46453389380074796": 0,
+        "51320060161363500": 1,
+        "97697128859455125": 1,
+        "144074197011621500": 0,
+        "148940867792910204": 1
+      }
+    }
+  ],
+  "analysis_sha256": "cd694d9ac18b15638ab143f3765f17047f7601b419c207a3cef988eb28c91ea2",
+  "compatible_dimension_splits": 2,
+  "degree": 545925250,
+  "exterior_square_dimension": 149017189020818625,
+  "inner_product_receipt_sha256": "af556875211def71a31460296872794883f53be719ba6b07df2087aa04779bab",
+  "known_tensor_multiplicities": {
+    "1": 1,
+    "545925250": 1
+  },
+  "limitations": "Does not construct a VOA group action or prove equivariance of a proposed product",
+  "published_irreducible_count": 1156,
+  "scope": "Exhaustive degree constraints, conditional on the complete published list and checked tensor inner products",
+  "small_degrees_with_published_multiplicities": {
+    "1": 1,
+    "545925250": 1,
+    "76321227908420": 1,
+    "46453389380074796": 1,
+    "51320060161363500": 1,
+    "97697128859455125": 1,
+    "144074197011621500": 1,
+    "148940867792910204": 1
+  },
+  "source_bytes": 43529,
+  "source_sha256": "1bcd2e7862193f9d406193e856a9c41bf236d683fb11c8cb6e8fb0e04c79e1be",
+  "source_url": "https://www.math.rwth-aachen.de/~Frank.Luebeck/chev/E82deg.g",
+  "split_residual_division_leaves": 19,
+  "symmetric_square_dimension": 149017189566743875,
+  "tensor_residual_division_leaves": 72,
+  "tensor_square_degree_solutions": 1,
+  "tensor_square_dimension": 298034378587562500,
+  "trivial_in_symmetric_square_for_every_split": false
+}

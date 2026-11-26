@@ -1,0 +1,42 @@
+{
+  "all_centralizer_orders_divide_group_order": true,
+  "analysis_sha256": "3b7bad97f5920da61922cad0af0246aff118a79e3527522e3bebd8f24b709187",
+  "arithmetic": "Python standard-library fractions.Fraction; exact rationals",
+  "checks_passed": true,
+  "class_size_sum": "337804753143634806261388190614085595079991692242467651576160959909068800000",
+  "classes": 1156,
+  "degree": 545925250,
+  "first_three_character_values": [
+    545925250,
+    9054338,
+    665730
+  ],
+  "group_order": "337804753143634806261388190614085595079991692242467651576160959909068800000",
+  "not_established": [
+    "Symmetric-cube or exterior-cube multiplicity (power maps not used)",
+    "An E8(2) action or equivariance on any VOA"
+  ],
+  "parser": "Strict integer assignments and JSON integer lists; no GAP execution",
+  "scope": "Tensor powers of the published real-valued irreducible character",
+  "source_bytes": 15478,
+  "source_sha256": "ddc0c0d747652eef78439c0caf3bdf4e92c359671f1b5a093612c60cf0cb8972",
+  "source_url": "https://www.math.rwth-aachen.de/~Frank.Luebeck/chev/E82cl.g",
+  "tensor_power_invariant_dimensions": {
+    "0": {
+      "denominator": "1",
+      "numerator": "1"
+    },
+    "1": {
+      "denominator": "1",
+      "numerator": "0"
+    },
+    "2": {
+      "denominator": "1",
+      "numerator": "1"
+    },
+    "3": {
+      "denominator": "1",
+      "numerator": "1"
+    }
+  }
+}

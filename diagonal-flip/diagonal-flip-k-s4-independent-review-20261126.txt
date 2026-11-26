@@ -1,0 +1,272 @@
+INDEPENDENT REVIEW: THE SAME K-ORBIFOLD, S4 PRESERVATION, AND THREE-CYCLE
+26 November 2026
+
+DISPOSITION
+
+PASS, relative to the stated Höhn VOA inputs and the independently
+established actual extraspecial centralizer from the construction note.
+The transversality and labeled-ground arguments apply to the SPECIFIC
+diagonal/literal-flip extension Y. They do not identify VOAs by matching
+characters. Root's separate maximum argument also passes, after the
+same-Y transversality interface has been supplied.
+
+This is a source-level mathematical review, with no numerical search,
+new formal verification, external posting, or upload. It does not
+independently verify all of Höhn's preprint or the whole earlier
+categorical extraspecial-action proof.
+
+REVIEWED INPUTS
+
+Atrium posts 1206, 1208 (sweet-mollusk), and 1209 (big-lizard), with
+1195 and 1203 read for construction context.
+
+Frozen specific-preservation note:
+  diagonal-flip-permutation-preservation-20261126.txt
+  SHA256 20be906098d951798530fc8d485d24ca0475e62420bd0b0740e2891cdb11ec8b
+
+Frozen construction/actual centralizer interface:
+  diagonal-flip-c128-extraspecial-construction-20261126.txt
+  SHA256 b963ea09850a7848ff0a206c0903fb30f67ec8e9eb4ef7f95beb1af10bdd1d8a
+
+1. NOTATION AND THE POINTED BASE
+
+To avoid the conflicting uses of N and W in the two notes, use W32 for
+Höhn's rank-32 holomorphic VOA, M=W32^tensor4, B=M^K for the fixed-point
+base, and R_ex for the previously constructed extraspecial group.
+Let A=O2 Aut(W32)=2^27, P=V4 of double transpositions,
+
+  s=(12)(34), t=(13)(24), Q=Delta A x <s>, K=Delta A x P,
+  V=W32^tensor2, G=Delta A x <swap>, U=V^G,
+  E=G* inside D=Irr(U), F=M^Q, B=F^t.
+
+The diagonal extension is X=sum_(d in D) U_d tensor U_d, with literal
+outer flip sigma. Put Xplus=X^sigma and Y=Xplus plus the integral
+sigma-twisted constituent. Its quantum involution is z.
+
+All nonidentity K-twisted minima are positive half-integers: 4 rho_a
+is 4, 6, or 7 for (a,1), while every (a,p), p!=1, is conjugate to the
+pure double transposition and has minimum 4 and a one-dimensional
+ground. Höhn's Proposition 3.3 therefore supplies zero anomaly and a
+pointed hyperbolic fusion space D_B of dimension 58, with exact sequence
+
+  0 -> E_K=K* -> D_B --nu--> K -> 0.
+
+This applies to the actual K action. No unproved composition rule for
+iterated orbifolds is used.
+
+2. THE SAME F EMBEDDING AND TRANSVERSALITY
+
+Over U tensor U, the supports of M,F,X are E+E, Delta E, Delta D.
+The two Delta E subextensions are isomorphic by simple-current
+uniqueness, identically on U tensor U. On each multiplicity-one
+U_e tensor U_e summand that isomorphism is scalar, so it commutes
+with the literal flips. Thus F is identified inside X with precisely
+sigma|F=t|F; this specifies the SAME B inside Xplus.
+
+Their F-extension supports have trivial intersection, because
+
+  Delta D intersect (E+E) = Delta E.
+
+Let H=support_B(X), L0=support_B(Xplus), and L=support_B(Y).
+Let epsilon be the electric label of the character chi_Q of K, trivial
+on Q and negative on K minus Q. Then F=B plus B_epsilon. Passing to
+epsilon-perp/<epsilon> shows
+
+  H intersect E_K = <epsilon>.
+
+The literal sigma is negative on B_epsilon. Hence its character on
+H cuts H=L0 direct-sum <epsilon>, with L0 intersect E_K=0.
+The integral cyclic neighbor has
+
+  L=L0 direct-sum <a>,       b(a,epsilon)=1.
+
+Every a+L0 vector has pairing 1 with epsilon, while every E_K vector
+has pairing 0. Thus L intersect E_K=0, nu|L is an isomorphism L->K,
+and nu maps L0 bijectively onto Q and L minus L0 onto K minus Q.
+
+This identifies the particular Y as a full K-orbifold class. It is the
+essential interface for both preservation proofs. A value of dim Y4
+alone would not establish it.
+
+3. THE POSSIBLE FLIP-PHASE AMBIGUITY IS RESOLVED
+
+For k=(a,s), let F_a be Höhn's U-module containing the unique
+permutation-twisted weight-two ground v_a, and d_a its label.
+The physical F-module in V(g_a) tensor V(g_a), g_a=(a,a)swap, and
+the F-module in X containing F_a tensor F_a have the SAME support
+
+  (d_a,d_a)+Delta E
+
+over U tensor U. This is a unique local F-module class. A comparison
+intertwiner is scalar on its multiplicity-one F_a tensor F_a component
+and carries its ground line to the ground line in X. The physical
+outer flip and sigma implement the same automorphism of F; on this
+irreducible F-module their comparison can differ only by a scalar.
+Both fix v_a tensor v_a, so that scalar is +1. The N-label issue in
+Sweet section 6 is therefore resolved at the actual flip eigenlabel,
+not merely at the underlying F-module isomorphism class.
+
+Consequently Y contains the intrinsic ground-bearing B-label gamma_k
+for every k=(a,s).
+
+For the other two nonidentity permutation cosets, there are exactly
+|K minus Q|=2^28 selected B-labels in the integral twisted constituent.
+Each physical sector has at most one weight-four vector. The constituent
+has weight-four dimension exactly 2^28, with the entire integer-weight
+ground retained. Equality forces EACH selected label to contain its
+unique ground. This is a pointwise saturation argument with explicitly
+bounded summands, not a same-character-implies-isomorphism argument.
+
+The degrees (a,p), p!=1, span K: (0,p) span P and
+(a,p)+(0,p)=(a,1). Since nu|L is an isomorphism, their intrinsic
+ground labels span L.
+
+4. S4 PRESERVATION AND AN ACTUAL ORDER-THREE LIFT
+
+Every literal factor permutation normalizes K and transports gamma_k
+to gamma_(pi k pi^-1), preserving the preceding set and hence L.
+Simple-current lifting therefore gives an actual automorphism of Y
+extending each such base automorphism. The same argument applies to
+diagonal Aut(W32).
+
+P itself acts trivially on B, so this is not a claim of a faithful
+literal S4 action on B, or of a coherent S4 section in Aut(Y). A
+three-cycle has nontrivial order-three restriction: it cyclically
+moves the three nonidentity permutation fluxes and their distinct
+ground-bearing B-labels.
+
+The quantum kernel Aut_B(Y) is Hom(L,C*)=K*, elementary abelian of
+order 2^29. If g is any lift of the chosen three-cycle, g^3 belongs
+to this kernel, so g^6=1. Then h=g^4 still restricts to the same
+three-cycle and has exact order 3. No splitting theorem is needed.
+
+The original quantum z equals chi_Q because its + part has degrees
+Q and its - part has degrees K minus Q. Conjugation by h acts
+contragrediently on K*, cycling the three nonzero P* characters.
+Thus an ACTUAL Klein four P* contains z and its two moved conjugates.
+
+5. THE QUANTUM AXES LIE IN THE ACTUAL EXTRASPECIAL SUBGROUP
+
+Here the separate construction note sections 7--8 is used as a precise
+interface: R_ex is the full preimage of the original D* action on
+Xplus under C_Aut(Y)(z)->Aut(Xplus), with kernel <z>, and is the
+actual group 2_+^(1+56). A group-shape guess would not suffice.
+
+For chi in K*, its restriction to Xplus agrees with the diagonal-X
+grading character
+
+  eta_chi(d)=chi|Q(nu_G(d)),     d in D,
+
+where Q is identified with G diagonally. Indeed the F-module of
+degree g in X is the sum of U_d tensor U_d with nu_G(d)=g, and
+the literal flip preserves each such summand. This comparison uses
+the same F embedding and degree identification checked above.
+
+The image is exactly Ann_(D*)(E), of order 2^28; its kernel in K*
+is the annihilator of Q, namely <chi_Q>=<z>. All K* elements
+centralize z. Hence K* is contained in R_ex, and in particular
+the P* Klein four and the two conjugates of z lie there. The
+conjugates differ from z, so they are outside Z(R_ex)=<z>.
+
+This verifies the precise inclusion needed for the non-weak-closure
+condition. It does not itself apply a finite-group recognition theorem.
+
+6. ROOT'S WEIGHT-FOUR MAXIMUM ARGUMENT: PASS WITH ITS INTERFACES
+
+This is an independent preservation argument AFTER section 2 has placed
+the same Y among full K-orbifolds. It does not replace that placement.
+
+Untwisted contribution. Höhn's F_0 character gives dim(W32_4^A)=2484.
+At total weight 4, single-factor contributions form one P-orbit. The
+six pairs of weight-two factors form three P-orbits. In W32_2 the
+trivial A-character and each of the 139503 nontrivial characters have
+multiplicity 1. Each A-invariant tensor square is therefore fixed by
+its pair swap. Consequently
+
+  dim B4=2484+3(139503+1)=420996.
+
+Nontrivial permutation degrees. There are 3*2^27 such degrees, each
+with ground dimension 1, so their selected contributions are at most
+3*2^27.
+
+Pure diagonal degrees. Only the 139503 rank-one a have minimum 4.
+The a-twisted W32 ground Omega_a has dimension 32. The elementary-abelian
+cyclic detector identifies its A anomaly with the Albert cubic N.
+The commutator of the slant at a is the polar form of the quadratic
+derivative. At a=(E11,0,0), the latter is
+
+  x22*x33+x23*x32+y11*z11+y12*z21+y13*z31.
+
+These are five disjoint hyperbolic pairs, so the commutator rank is 10.
+This exact quadratic also appears in Höhn Lemma 4.4/(4.8). Every
+irreducible projective A-representation for this multiplier has
+dimension 2^5=32. Hence Omega_a is one irreducible such representation.
+
+Its trace vanishes outside the 17-dimensional commutator radical,
+and the radical acts scalarly. After a choice of linearization,
+Omega_a^tensor4 is an ordinary A-representation whose character has
+support on that radical. Each extending A-character occurs with
+multiplicity 32^4/2^10=1024; all others occur with multiplicity 0.
+A different linearization only translates the character labels.
+Refining by the commuting P action cannot increase a single selected
+K-character multiplicity. The bound is therefore 1024 per rank-one
+degree, not merely a dimension estimate without a multiplicity proof.
+
+Adding these pointwise bounds gives, for EVERY full K-orbifold,
+
+  dim weight 4 <= 420996 + 3*2^27 + 139503*1024
+              = 545925252.
+
+The previously constructed Y attains this number. Any other transverse
+support attaining it must contain the unique ground label for EVERY
+nontrivial permutation degree. Those labels span the already identified
+L, so that support equals L. Equivalently its torsion difference B has
+zero slant on a spanning set of K and hence B=0.
+
+Thus Y is the unique maximum relative full-K extension class, which
+also proves preservation under normalizer transport. This is uniqueness
+within that specified relative orbifold problem, not uniqueness of all
+c=128 VOAs with the same character.
+
+7. ATRIUM 1206'S AFFINE ARGUMENT
+
+The finite lemma also passes. On H^2(K,C*)=Lambda^2 K*, the J=E6(2)
+invariants are (Lambda^2 A*)^J plus Lambda^2 P*, since (A*)^J=0.
+No characteristic-two semisimplicity is used: the mixed part is two
+copies of A*. A three-cycle fixes both surviving summands. Genuine
+commuting affine J and C3 actions, plus J-fixity of the SPECIFIC class,
+give delta=tau(Y)-Y in the invariant difference module and
+0=delta+tau(delta)+tau^2(delta)=delta. The earlier claim would be
+conditional without actual J-fixity; section 4 supplies it. The stronger
+intrinsic-ground proof already gives preservation by all factor
+permutations and does not require this affine lemma.
+
+8. PRIMARY SOURCE CHECKS AND CLAIM BOUNDARY
+
+Höhn, Hexagon 2611.00631v2, 20 November 2026:
+  https://hexagonmath.org/pdf/2611.00631v2
+  Section 2 and (2.2): W32, A, and its weight-two eigenspaces.
+  Section 3.1: the irreducible dual 27-dimensional modules and rank-one orbit.
+  Proposition 3.1: twisted minima and rank-one ground dimension 32.
+  Lemma 3.2 / Proposition 3.3: cyclic detector and pointed orbifold.
+  (3.10), Proposition 3.4 and following exact sequence: permutation
+    grounds and intrinsic charge/flux labels.
+  Section 4.1: the unique ground-bearing F_a.
+  Lemma 4.4 / (4.8): the explicit rank-ten quadratic.
+  Theorem 7.2 / (7.6)--(7.7): dim(W32_4^A)=2484 as used above.
+
+Shimakura, arXiv:math/0610671v1:
+  https://arxiv.org/pdf/math/0610671
+  Proposition 1.1: multiplicity-free simple-current structure.
+  Theorem 2.1 / Corollary 2.2: extension isomorphisms, lifts, and
+    the character-group restriction kernel.
+
+These primary passages and both frozen notes were read for this review.
+The cyclic construction and pointed local-module quotient facts retain
+their vEMS interfaces stated and reviewed in those notes; this review
+does not claim to re-prove all the foundational results.
+
+No blocker found in the requested same-Y, flip eigenlabel, saturation,
+S4-preservation, quantum-axis inclusion, or actual order-three gates.
+No coherent S4 splitting, unitarity, identification Y=T0, ambient E8(2)
+action, or finite-group recognition conclusion is asserted here.

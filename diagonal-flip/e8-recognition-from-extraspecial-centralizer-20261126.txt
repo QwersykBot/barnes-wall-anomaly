@@ -1,0 +1,391 @@
+RECOGNITION OF E8(2) FROM AN EXTRASPECIAL INVOLUTION CENTRALIZER
+26 November 2026
+
+Scope and conclusion
+--------------------
+This note supplies the finite-group recognition step for a proposed VOA
+automorphism group. It does not prove the VOA construction, finiteness of
+its automorphism group, the full-centralizer identification, or actual
+fusion of involutions. Those are separate inputs. No splitting of an
+extension denoted by a dot is assumed.
+
+THEOREM. Let H be finite, let z be an involution, and put C=C_H(z).
+Suppose Q is normal in C and the following hold:
+
+ (i) Q is extraspecial of order 2^57, with Z(Q)=Q'=<z>;
+ (ii) C_C(Q)=<z> and C/Q is isomorphic to E7(2);
+ (iii) the action of C on V=Q/<z>, a 56-dimensional F2-space, is
+       irreducible;
+ (iv) some involution t in Q\<z> has z,t,zt all conjugate in H.
+
+Then H is isomorphic to E8(2).
+
+The intended Q has plus type. The argument below does not need to assume
+its type separately. An actual order-three automorphism cycling z,t,zt
+is sufficient for (iv), but a permutation of abstract module labels is
+not sufficient. Hypothesis (iii) can be verified from the specific module
+identification in the proposed application by the short argument in
+Section 1. Faithfulness alone is not a substitute for irreducibility.
+
+The proof has three parts: an elementary simplicity reduction, application
+of the standalone classification theorem stated by Aschbacher in ICM1978,
+and elementary order exclusions. The classification theorem, rather than
+centralizer shape alone, is the non-elementary recognition input.
+
+1. VERIFYING THE MODULE HYPOTHESIS IN THE INTENDED APPLICATION
+
+The polar commutator form on V=Q/Z(Q) is nondegenerate alternating and
+C-invariant. In the VOA application, the actual C/Q-action must be
+identified equivariantly with the 56-dimensional fusion-label module D
+in [H], or its dual. The invariant nondegenerate form identifies this
+module with its dual.
+
+[H, Theorem 7.2, printed p.20] gives the five nonzero orbit sizes:
+
+  277347807; 37518401085984; 35991278474747904;
+  18612496260661248; 17416300624084992.
+
+Their minimum is 277347807 > 2^28-1 = 268435455. A nonzero invariant
+subspace W contains an entire nonzero orbit, so dim(W)>=29. If W were
+proper, its perpendicular space W_perp would be a nonzero invariant
+subspace, and nondegeneracy would give
+
+  1 <= dim(W_perp)=56-dim(W) <= 27.
+
+This contradicts the same orbit lower bound. Thus V is irreducible. This
+argument uses the actual orbit data, not just the abstract names E7(2)
+and F2^56.
+
+2. ELEMENTARY SIMPLICITY AND THE SYLOW 2-ORDER
+
+We use the Sylow theorems and two elementary consequences. A proper
+subgroup U of a finite p-group P has U<N_P(U): acting by U on P/U, the
+fixed cosets number |N_P(U):U|, which is positive and divisible by p.
+Also, for N normal in H and S a Sylow subgroup of N, Sylow conjugacy
+inside N gives the Frattini argument H=N N_H(S)=N_H(S)N.
+
+2.1. Let S be Sylow in C at the prime 2. Since Q is normal in C, Q<=S.
+Therefore Z(S)<=C_C(Q)=<z>, while z is central in C. Hence Z(S)=<z>.
+If S lay properly inside a 2-subgroup P of H, N_P(S)>S would preserve
+Z(S)=<z>, and would be a 2-subgroup of C properly containing S. This
+is impossible. Thus S is Sylow in H.
+
+The ATLAS order [A-E7] has 2-part 2^63. Consequently
+
+  |H|_2=|C|_2=|Q| |E7(2)|_2=2^(57+63)=2^120.          (2.1)
+
+2.2. Let 1!=N be normal in H and set R=N intersect Q. Irreducibility
+implies that RZ(Q)/Z(Q) is zero or all of V. In the latter case RZ(Q)=Q,
+and centrality of Z(Q) gives
+
+  [R,R]=[RZ(Q),RZ(Q)]=[Q,Q]=Z(Q),
+
+so R=Q. In the former case R is 1 or <z>. The case R=<z> contradicts
+fusion: z in N forces t in N, while t is in Q\<z>.
+
+If R=1, put K=N intersect C. Then [K,Q]<=K intersect Q=1, so
+K<=C_C(Q)=<z> and K=1. Thus C_N(z)=1, and fusion gives
+C_N(t)=C_N(zt)=1 as well. This is impossible for a nontrivial finite N.
+Indeed a fixed-point-free involutory automorphism alpha acts by inversion:
+the map x -> x^(-1)alpha(x) is injective, hence surjective, and alpha
+inverts every value of this map. Two such involutions both act as
+inversion, so their product acts identically, whereas the third nonidentity
+element of <z,t> was also supposed to act fixed-point-freely. Thus Q<=N.
+
+2.3. Since E7(2) is nonabelian simple, C_N(z)/Q normal in C/Q implies
+C_N(z)=Q or C. Suppose C_N(z)=Q. An element normalizing Q preserves
+Z(Q)=<z>. The normalizer condition therefore makes Q a Sylow 2-subgroup
+of N, and also N_H(Q)=C. The Frattini argument gives H=NC=CN. Hence t,
+being H-conjugate to z, is already N-conjugate to z: t=z^u for some u in N.
+Then Q_t=C_N(t)=Q^u is extraspecial with center <t>, and
+
+  R0=Q intersect Q_t=C_Q(t)=C_(Q_t)(z).
+
+In an extraspecial group of order 2^(1+2n), n>=2, the centralizer of a
+noncentral element has derived subgroup equal to the center of the AMBIENT
+extraspecial group. To see this,
+its image in the symplectic quotient is a perpendicular hyperplane; that
+hyperplane has restricted symplectic rank 2n-2>0, so its commutators attain
+the nonidentity central element. Here n=28. Applying this fact to both
+descriptions of R0 gives R0'=<z> and R0'=<t>, a contradiction. Therefore
+C<=N.
+
+2.4. Now S<=C<=N, and S is Sylow in H and N. Every element of N_H(S)
+preserves Z(S)=<z>, so N_H(S)<=C<=N. The Frattini argument gives H=N.
+Thus H is nonabelian simple. This argument uses no classification theorem.
+
+3. THE PRECISE CLASSIFICATION INPUT AND ITS HYPOTHESES
+
+Primary input [ICM] is the final displayed theorem on printed p.283 of
+Michael Aschbacher, "A Survey of the Classification Program for Finite
+Simple Groups of Even Characteristic",
+Proceedings of the International Congress of Mathematicians, Helsinki
+1978, volume 1, pp.281-284. Its statement is paraphrased here.
+
+A finite simple group with a 2-local subgroup M such that
+C_M(O_2(M))<=O_2(M), and such that O_2(M) has no noncyclic characteristic
+abelian subgroup, belongs to this list:
+
+ * simple groups of Lie type over the field of order two;
+ * G2(3), U4(3), L4(3), Omega8+(3), A9, L2(2^n +/- 1);
+ * M11, M12, M24, HS, He, Sz, J2, J3, J4, Co2, Co1,
+   F24, F5, F3, F2, F1.
+
+This is the standalone final theorem on that page, not the preceding
+characteristic-2-type theorem. No hypothesis of global characteristic
+2-type, rank at least three, or all proper subgroups being known is imported.
+The older names in the sporadic list are decoded in Section 6 below.
+
+All hypotheses hold with M=C:
+
+ * H is finite simple by the assumed finiteness and Section 2.
+ * C=N_H(<z>), so C is a 2-local subgroup.
+ * O_2(C)=Q: the image of a normal 2-subgroup in the nonabelian simple
+   quotient E7(2) is trivial.
+ * C_C(O_2(C))=<z><=Q by hypothesis.
+ * If A is a characteristic abelian subgroup of Q, it is normal in C.
+   The image AZ(Q)/Z(Q) is invariant, so irreducibility makes it zero
+   or all of V. The latter would give AZ(Q)=Q, which is abelian because
+   A is abelian and Z(Q) is central, a contradiction. Thus A<=Z(Q),
+   which is cyclic. There is no noncyclic characteristic abelian subgroup.
+
+The conclusion is now an exact candidate list. The rest of the proof
+eliminates candidates by their orders, without invoking an unpublished
+or inaccessible type-E recognition statement.
+
+4. GROUPS OF LIE TYPE OVER F2
+
+Write ell for Lie rank. For the classical families, the 2-adic exponents
+of the simple-group orders at q=2 are as follows, apart from the familiar
+very small non-simple/derived-group cases, which cannot approach 120:
+
+  Family                         v2(order)          v2(order)=120
+  A_ell(2), ^2A_ell(2)           ell(ell+1)/2        ell=15
+  B_ell(2), C_ell(2)             ell^2              no solution
+  D_ell(2), ^2D_ell(2)           ell(ell-1)          no solution
+
+For A, 15*16/2=120. The integer 120 is not a square. For D,
+11*10=110<120<12*11=132. Consequently the only classical possibilities
+are L16(2)=PSL_16(2) and U16(2)=PSU_16(2).
+
+Here are the underlying order formulas and quotient conventions. Counting
+ordered bases gives
+
+  |GL_n(q)|=q^(n(n-1)/2) product_(i=1..n)(q^i-1).
+
+At q=2, GL_n(2)=SL_n(2)=PSL_n(2). For the full unitary group [FNP,
+Section 2.1],
+
+  |U(n,q)|=q^(n(n-1)/2) product_(i=1..n)(q^i-(-1)^i).
+
+The determinant image has order q+1; passing next to PSU divides by
+gcd(n,q+1). At q=2 both divisions are odd, so they do not change v2.
+For symplectic and even orthogonal groups [FNP, Sections 2.2-2.3],
+
+  |Sp_(2ell)(q)|=q^(ell^2) product_(i=1..ell)(q^(2i)-1),
+  |O_(2ell)^eps(q)|=2 q^(ell(ell-1))(q^ell-eps)
+                         product_(i=1..ell-1)(q^(2i)-1).
+
+At even q, Omega has index two in O [FNP, printed p.75]. The remaining
+projective-center factor is odd (and at q=2 is trivial). Odd-dimensional
+orthogonal groups in characteristic two give the symplectic family.
+These formulas include the minus orthogonal twist ^2D_ell. The unitary
+formula includes ^2A_ell; its parameter q=2 uses matrices over F4.
+
+All exceptional and exceptional-twisted F2 possibilities have these
+2-parts, checked against the cited individual ATLAS order lines:
+
+  Group                  v2(order)    Primary URL
+  G2(2)'=U3(3)           5            https://brauer.maths.qmul.ac.uk/Atlas/v3/clas/U33/
+  F4(2)                  24           https://brauer.maths.qmul.ac.uk/Atlas/v3/exc/F42/
+  E6(2)                  36           https://brauer.maths.qmul.ac.uk/Atlas/v3/exc/E62/
+  ^2E6(2)                36           https://brauer.maths.qmul.ac.uk/Atlas/v3/exc/TE62/
+  E7(2)                  63           https://brauer.maths.qmul.ac.uk/Atlas/v3/exc/E72/
+  E8(2)                  120          https://brauer.maths.qmul.ac.uk/Atlas/v3/exc/E82/
+  ^3D4(2)                12           https://brauer.maths.qmul.ac.uk/Atlas/v3/exc/TD42/
+  ^2F4(2)'               11           https://brauer.maths.qmul.ac.uk/Atlas/v3/exc/TF42/
+
+G2(2) and ^2F4(2) themselves have an additional index-two factor and
+are not simple; their derived simple groups are the entries shown.
+The Suzuki group ^2B2(2) has order 20 and is not nonabelian simple.
+The Ree family ^2G2 has characteristic three and is not an F2 family.
+Small classical derived exceptions likewise have orders below the target.
+For example, the full groups PSL2(2), PSU3(2), and Sp4(2) have 2-parts
+2^1, 2^3, and 2^4 respectively by the displayed formulas; passing to
+any derived subgroup or simple quotient cannot increase those exponents.
+Thus E8(2) is the only exceptional possibility.
+
+5. EXCLUDING L16(2) AND U16(2) BY TWO ODD PRIMES
+
+The exact primary ATLAS order [A-E7] is
+
+  |E7(2)|=2^63 * 3^11 * 5^2 * 7^3 * 11 * 13 * 17 * 19
+                  * 31 * 43 * 73 * 127.
+
+In particular, 19 and 73 divide |C| and therefore must divide |H|.
+
+For L16(2),
+
+  |L16(2)|=2^120 product_(i=2..16)(2^i-1).
+
+The order of 2 modulo 19 is 18. Indeed 2^9=-1 mod 19, while its powers
+at 1,2,3,6 are 2,4,8,7, none equal to 1. These test every proper divisor
+of 18, and 2^18=1. Thus none of the displayed factors is divisible by 19,
+contradicting Lagrange's theorem if H=L16(2).
+
+For U16(2), the determinant factor 3 removes i=1 in the full unitary
+formula, and gcd(16,3)=1, so
+
+  |U16(2)|=2^120 product_(i=2..16)(2^i-(-1)^i).
+
+The order of -2 modulo 73 is 18: 2^9=1 mod 73, hence (-2)^9=-1;
+its powers at 1,2,3,6 are -2,4,-8,64, none equal to 1. The condition
+73 divides 2^i-(-1)^i is exactly (-2)^i=1 mod 73. It never occurs
+for 2<=i<=16, again contradicting Lagrange. No assertion about which
+unipotent class contains z is needed.
+
+6. THE FINITE EXCEPTION LIST
+
+The fixed odd-field/alternating exceptions in [ICM] have these exponents:
+
+  Group          v2(order)    Primary source
+  G2(3)          6            https://brauer.maths.qmul.ac.uk/Atlas/v3/exc/G23/
+  U4(3)          7            https://brauer.maths.qmul.ac.uk/Atlas/v3/clas/U43/
+  L4(3)          7            https://brauer.maths.qmul.ac.uk/Atlas/v3/lin/L43/
+  Omega8+(3)     12           https://brauer.maths.qmul.ac.uk/Atlas/v3/clas/O8p3/
+  A9             6            9!/2; v2=4+2+1-1=6
+
+ATLAS O8+(3) denotes the simple projective orthogonal group, as appropriate
+to the finite-simple classification list. None has 2-part 2^120.
+
+The actual sporadic candidates in [ICM], with historical notation made
+explicit, are the following. Each exponent was read from the individual
+primary ATLAS order page linked in the last column.
+
+  ICM name  Modern name  v2(order)  Primary URL
+  M11       M11          4          https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/M11/
+  M12       M12          6          https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/M12/
+  M24       M24          10         https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/M24/
+  HS        HS           9          https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/HS/
+  He        He           10         https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/He/
+  Sz        Suz          13         https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/Suz/
+  J2        J2           7          https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/J2/
+  J3        J3           7          https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/J3/
+  J4        J4           21         https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/J4/
+  Co2       Co2          18         https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/Co2/
+  Co1       Co1          21         https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/Co1/
+  F24       Fi24'        21         https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/F24/
+  F5        HN           14         https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/HN/
+  F3        Th           15         https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/Th/
+  F2        B            41         https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/B/
+  F1        M            46         https://brauer.maths.qmul.ac.uk/Atlas/v3/spor/M/
+
+Here Sz is the sporadic Suzuki group, not the characteristic-two Suzuki
+family. F24 is the simple Fischer group Fi24', not its index-two full
+3-transposition group. Even that overgroup has only one additional
+factor 2 and would not affect exclusion. The largest exponent among
+the listed sporadic candidates is 46, strictly below 120.
+
+Although only A9 occurs in the exact theorem, there is also a simple
+stronger check excluding every alternating group. Legendre's formula
+gives v2(|A_n|)=n-s_2(n)-1, with s_2 the binary digit sum. This value
+is nondecreasing in n; it is 119 at n=127 and 126 at n=128, and
+therefore never equals 120.
+
+7. EXCLUDING THE L2(2^n +/- 1) FAMILY
+
+In this part of the classification, q=2^n+1 or 2^n-1 must be an odd
+prime power. For n>=2, the elementary formula
+
+  |PSL_2(q)|=q(q^2-1)/2
+
+gives v2(|PSL_2(q)|)=n: one of q-1,q+1 is exactly 2^n, and the other
+has 2-adic valuation one. The case n=1 is too small and gives no
+candidate. Matching (2.1) therefore forces n=120.
+
+Neither resulting number is a prime power:
+
+  2^120-1=(2^60-1)(2^60+1).
+
+The two factors are coprime odd integers greater than one. Similarly,
+
+  2^120+1=(2^40+1)(2^80-2^40+1).
+
+Putting a=2^40, the gcd of a+1 and a^2-a+1 divides 3. But a+1=2 mod 3,
+so the gcd is one, and both factors exceed one. This excludes the whole
+remaining family without a theorem about dihedral involution centralizers.
+
+8. CONCLUSION AND APPLICATION BOUNDARY
+
+The exact classification list has now been exhausted. Among its candidates,
+only E8(2) has compatible order. Hence the group H in the theorem is E8(2).
+For reference, the primary ATLAS E8(2) order is
+
+  2^120 * 3^13 * 5^5 * 7^4 * 11^2 * 13^2 * 17^2 * 19 * 31^2
+        * 41 * 43 * 73 * 127 * 151 * 241 * 331.
+
+This is a recognition result conditional on the explicit group-theoretic
+inputs at the start. It does not turn a subgroup of shape 2^57.E7(2)
+into the full centralizer, does not deduce the correct 56-dimensional
+module merely from that shape, and does not promote categorical label
+permutations to actual automorphisms. In the VOA application those facts,
+actual involution fusion, and finiteness must be supplied by the separate
+construction and lifting arguments. No character-degree coincidence,
+numerical VOA spectrum, or computer search is used in this proof.
+
+9. SOURCE LOCATORS AND AUDIT RECORD
+
+[ICM] Michael Aschbacher, "A Survey of the Classification Program for Finite
+Simple Groups of Even Characteristic", Proceedings ICM Helsinki 1978,
+vol.1, pp.281-284. The relevant
+standalone theorem is the LAST displayed theorem on printed p.283;
+the immediately following discussion and references are on p.284.
+The exact exception list was checked visually against the page scan.
+Official complete volume:
+  https://www.mathunion.org/fileadmin/ICM/Proceedings/ICM1978.1/ICM1978.1.ocr.pdf
+  45,047,839 bytes
+  SHA256 cb90bec860dab4d6aed62a5459b203732f56dadcb1e62fa542c4ed8ebf524838
+Acquisition/read date: 26 November 2026.
+Local three-page source extract (starts at printed p.283):
+  tmp/pdfs/theory-icm-source/official-icm1978-extraspecial-source-extract.pdf
+  294,873 bytes
+  SHA256 c09908598f186e87709971a259ab4307b012a51c0d7d057df8303b4feeecff08
+The standalone theorem is cited as the published classification statement;
+this note does not reproduce the contributing classification proofs.
+
+[H] Gerald Hoehn, "An extremal vertex operator algebra of central
+charge c=64", hexagon:2611.00631v2, PDF dated 20 November 2026.
+  https://hexagonmath.org/pdf/2611.00631v2
+Theorem 1.1 (printed pp.1-2) identifies the fusion module and its action;
+Theorem 7.2 (printed p.20) contains the five orbit sizes used in Section 1.
+This is an imported preprint theorem, not independently reproved here.
+
+[FNP] Jason Fulman, Peter M. Neumann, Cheryl E. Praeger,
+"A generating function approach to the enumeration of matrices in
+classical groups over finite fields", author-hosted research monograph:
+  https://dornsife.usc.edu/jason-fulman/wp-content/uploads/sites/224/2023/06/chapter.pdf
+Full unitary order: Section 2.1, printed p.31 (physical PDF p.34).
+Symplectic order: Section 2.2, printed p.42 (physical PDF p.45).
+Even orthogonal order: Section 2.3, printed p.53 (physical PDF p.56).
+Index [O:Omega]=2 at even q: printed p.75 (physical PDF p.78).
+The determinant and projective-center quotients are stated explicitly
+in Section 4 above to avoid confusing full and simple unitary groups.
+
+[ATLAS] ATLAS of Finite Group Representations, version-3 web pages,
+authors R.A. Wilson, P. Walsh, J. Tripp, I. Suleiman, R.A. Parker,
+S.P. Norton, S. Nickerson, S. Linton, J.N. Bray and R. Abbott.
+  https://brauer.maths.qmul.ac.uk/Atlas/v3/
+Individual primary order pages are linked in the tables above and were
+read on 26 November 2026. These live pages are not represented as
+hash-pinned snapshots.
+[A-E7] https://brauer.maths.qmul.ac.uk/Atlas/v3/exc/E72/
+[A-E8] https://brauer.maths.qmul.ac.uk/Atlas/v3/exc/E82/
+
+The elementary simplicity argument was previously frozen separately as
+  extraspecial-centralizer-elementary-simplicity-20261126.txt
+  SHA256 6d5dc5aaaa6b229c870a924023ecce49c7ca5db1e98e93c7a887ab998750ed2c.
+It was independently read by two other agents; Section 2 includes the
+argument here so recognition does not depend on opening that note.
+This is an internal mathematical/source audit, not external peer review
+or a machine-formalized proof. No source theorem is inferred from a search
+snippet, and no inaccessible type-E theorem is used as an unstated input.

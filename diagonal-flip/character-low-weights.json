@@ -1,0 +1,35 @@
+{
+  "character_coefficients_weights_0_to_8": [
+    1,
+    0,
+    1,
+    1,
+    545925252,
+    545925252,
+    76322319758924,
+    51396383027047674,
+    198735599368523610832
+  ],
+  "hypothetical_multiplicity_primary4_in_primary6": 141986,
+  "hypothetical_trivial_multiplicity_primary6": -1192514638080,
+  "input_coefficients_weights_0_to_5": [
+    1,
+    0,
+    1,
+    1,
+    545925252,
+    545925252
+  ],
+  "polynomial_in_j_coefficients_by_degree": {
+    "0": -11824040348928,
+    "1": 470623467780,
+    "2": -2798220719,
+    "3": 5346369,
+    "4": -3968,
+    "5": 1
+  },
+  "primary4_dimension": 545925250,
+  "primary6_dimension": 76321227908420,
+  "quantum_involution_trace_primary4": 9054338,
+  "quantum_involution_trace_primary6": 93074597188
+}

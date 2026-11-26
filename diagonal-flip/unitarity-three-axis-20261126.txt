@@ -1,0 +1,268 @@
+UNITARITY OF THE ACTUAL DIAGONAL-FLIP VOA Y
+26 November 2026
+
+DISPOSITION AND SCOPE
+
+PASS under the previously reviewed construction and Höhn inputs listed
+below. The actual strongly rational holomorphic VOA Y admits a positive
+unitary structure. The proof uses its actual Klein four and an actual
+three-cycle, not a proposed E8(2) action or a group-recognition theorem.
+
+This is an addendum: the earlier frozen notes accurately did not assert
+unitarity at the time they were written. Their bytes are unchanged.
+No general assertion that rationality implies unitarity, or that arbitrary
+solvable orbifolds preserve complete unitarity, is used. Strong locality,
+energy bounds, and a conformal-net realization are not asserted.
+
+1. INPUTS AND NOTATION
+
+Use W32 for the standard holomorphic (-1)-orbifold of V_BW32 and
+A=O2 Aut(W32). Let
+
+  U=(W32 tensor W32)^(Delta A x <swap>),
+  X=direct-sum_(d in D) U_d tensor U_d,
+  sigma=the literal outer flip on X,
+  Z=X^sigma,
+  Y=Z direct-sum the integral sigma-twisted constituent.
+
+The following are inherited from the frozen construction/preservation
+arguments, before any use of unitarity:
+
+  (i) U, X, Z, and Y are strongly rational of CFT type; X and Y are
+      holomorphic. Rep(U) is pointed, and Aut(U)=E7(2) is finite.
+  (ii) Aut(X)=(D*.E7(2)) x <sigma>, and
+       Aut(Z)=Aut(X)/<sigma>. In particular both groups are finite.
+  (iii) There is an ACTUAL Klein four H=P* in Aut(Y), with nonidentity
+        elements z0,z1,z2, and Y^z0=Z. An ACTUAL automorphism r of
+        order three cycles z0,z1,z2 by conjugation.
+
+For (i) and the U-module representatives used below, the external input
+is Höhn [H]. For (ii) and (iii), the precise internal interfaces are:
+
+  diagonal-flip-c128-extraspecial-construction-20261126.txt
+  SHA256 b963ea09850a7848ff0a206c0903fb30f67ec8e9eb4ef7f95beb1af10bdd1d8a
+  especially Sections 8.1 and 8.2 for the two finite automorphism groups.
+
+  diagonal-flip-permutation-preservation-20261126.txt
+  SHA256 20be906098d951798530fc8d485d24ca0475e62420bd0b0740e2891cdb11ec8b
+  especially Sections 6--8 for the actual quantum axes and three-cycle.
+
+  diagonal-flip-k-s4-independent-review-20261126.txt
+  SHA256 8d332d80033c9430748bc239a4f65a700aa66d457bfbb529fb197610d6284da5
+
+No identification Y=T0, finite-group recognition, or unitarity claim in
+those notes is needed as an additional premise.
+
+2. TWO ELEMENTARY FINITE-AUTOMORPHISM LEMMAS
+
+Let V be a simple unitary CFT-type VOA with finite Aut(V). Normalize its
+positive Hermitian form h by h(1,1)=1, taking h linear in its first
+argument. Write theta for the unitary PCT involution. Let B be the unique
+normalized invariant symmetric bilinear form, so
+
+  h(x,y)=B(x,theta y),             B(1,1)=1.
+
+The uniqueness and relation are recalled in [L, Remark 2.2]. Every VOA
+automorphism preserves B, since its pullback is again normalized and
+invariant.
+
+Lemma 2.1. Every element of Aut(V) is unitary for h.
+
+For g in Aut(V), its h-adjoint is
+
+  g^dagger = theta g^(-1) theta.
+
+Indeed h(gx,y)=B(x,g^(-1)theta y)=h(x,theta g^(-1)theta y).
+Thus g^dagger is itself a complex-linear VOA automorphism. Consequently
+g^dagger g is in the finite group Aut(V). On each finite-dimensional
+energy space it is positive definite and self-adjoint, hence diagonalizable
+with positive real eigenvalues. Finite order makes those eigenvalues
+roots of unity, so every eigenvalue is 1. Thus g^dagger g=1 on V.
+Equivalently g commutes with theta. In particular its fixed-point algebra
+inherits the unitary structure.
+
+Lemma 2.2. The normalized unitary structure on V is unique, not merely
+unique up to an unspecified isomorphism.
+
+Suppose h1,h2 are two normalized unitary forms with PCT involutions
+theta1,theta2. Both use the SAME normalized invariant bilinear form B.
+The complex-linear map
+
+  p=theta1 theta2
+
+is a VOA automorphism, and
+
+  h2(x,y)=h1(x,p y).
+
+Hermitian symmetry implies that p is h1-self-adjoint. Positivity of h2
+implies that p is h1-positive definite on each finite energy space: in
+an h1-orthonormal basis the matrix representing h2 has the same positive
+eigenvalues as p. Since p lies in finite Aut(V), the preceding eigenvalue
+argument gives p=1. Hence theta1=theta2 and h1=h2.
+
+This argument compares compatible PCT involutions using B. It does not
+average arbitrary positive forms and assume that VOA invariance survives.
+
+3. UNITARITY OF W32 AND STRONG UNITARITY OF U
+
+The standard positive-definite lattice VOA and its (-1)-twisted module
+are unitary by [L, Theorem 3.1 and Lemma 3.8]. Restriction gives unitary
+V_BW32^+-modules. The integral twisted summand is a simple current,
+and the standard holomorphic W32 extension is therefore preunitarizable.
+Gui's simple-current extension theorem [G, Theorem 11.5] gives a unitary
+structure on this same W32. Alternatively [L, Theorem 5.1 and the
+following paragraph] states this lattice Z2-orbifold conclusion directly;
+the underlying theorem has no central-charge-24 restriction.
+
+Aut(W32) is finite by [H, (2.1)]. Lemma 2.1 makes its entire actual
+automorphism group unitary. Therefore Delta A and the tensor swap are
+unitary on W32 tensor W32, and U inherits a unitary structure.
+
+To establish strong unitarity of U, use actual modules, not character
+coincidence alone. The pure-swap-twisted W32 tensor W32 module is unitary
+by [G, Proposition 10.13]. Its restriction to U contains representatives
+of every nonvacuum Aut(U)-orbit: [H, Theorem 7.2, proof of the character
+formulas, and (7.6)] explicitly identifies its simultaneous eigenspaces
+as irreducible U-constituents. Their lowest weights include
+
+  2, 3, 4, 7/2, 9/2,
+
+which distinguish the five nonvacuum orbits. Thus every orbit has a
+unitarizable representative. Since Aut(U) is finite, Lemma 2.1 makes
+all its automorphisms unitary for the inherited form. Transport of a
+unitary module along these automorphisms preserves its adjoint identity.
+Every irreducible U-module is therefore unitarizable.
+
+Tensor products of the resulting unitary U-modules give unitary
+U tensor U-module structures on every summand U_d tensor U_d of X.
+No assertion of complete unitarity of U is needed in the proof.
+
+4. THE ACTUAL X AND ITS FIXED ALGEBRA Z ARE UNITARY
+
+Rep(U) is pointed, so the diagonal summands U_d tensor U_d are simple
+currents and X is a finite simple-current extension of U tensor U.
+The preceding tensor-product forms and their orthogonal direct sum make
+X preunitarizable as a module over the one fixed unitary base U tensor U.
+That base is of CFT type, rational, and C2-cofinite. [G, Theorem 11.5]
+therefore supplies a unitary structure on the ACTUAL X extending the
+base structure; no change of VOA multiplication is required.
+
+Aut(X) is finite by input (ii). Thus Lemma 2.1 makes the literal sigma
+unitary. Its fixed algebra Z is unitary. Aut(Z) is finite by the same
+input, so all automorphisms of Z preserve this unitary structure.
+
+The final step is not an invocation of a general orbifold-positivity
+theorem. Such an invocation would require a unitary sigma-twisted module
+or strong unitarity of Z, neither of which has been assumed here.
+
+5. THREE AXES GIVE A COMMON UNITARY BASE
+
+Put D0=Y^H. This is strongly rational by the solvable fixed-point theorem,
+since H is a finite abelian group acting on the already constructed
+strongly rational Y. No positive form on Y is used for this conclusion.
+
+Quantum Galois theory gives
+
+  Y=direct-sum_(chi in H*) M_chi,    M_1=D0,
+  M_chi fusion M_psi = M_(chi psi).
+
+Here all four M_chi are nonzero, pairwise inequivalent irreducible
+D0-modules. The fusion assertion follows from the symmetric tensor
+subcategory Rep(H) in [M, Corollary 4.8 and Example 4.13]. Thus Y is a
+finite simple-current extension of D0. For each nonidentity zi in H,
+
+  Y^zi = D0 direct-sum M_(chi_i),
+
+where chi_i is the unique nontrivial character trivial on zi. In
+particular Z=Y^z0 is a C2 simple-current extension of D0.
+
+The restriction of z1 to Z is a VOA automorphism. By finite Aut(Z) and
+Lemma 2.1 it is unitary. Therefore D0=Z^(z1|Z) inherits a unitary form h0.
+
+We next prove Aut(D0) finite; no general theorem asserting that weight
+one zero implies finite automorphism group is required. Rationality and
+C2-cofiniteness give finitely many irreducible D0-module classes. Let
+S be the stabilizer in Aut(D0) of the two-label support of Z. This is a
+finite-index subgroup. By [S, Theorem 2.1 / Corollary 2.2], restriction
+from the normalizer of the quantum C2 in Aut(Z) is onto S. Aut(Z) is
+finite, so S is finite. A group with a finite, finite-index subgroup is
+finite. Hence Aut(D0) is finite.
+
+Transport the unitary structure of Z to Y^z1 and Y^z2 using r and r^2.
+Because r normalizes H, it preserves D0. Each transported PCT preserves
+D0, and the resulting restriction is a normalized unitary structure on
+the SAME D0. Lemma 2.2 shows that both restrictions equal h0, with the
+same PCT. Equivalently r|D0 is unitary by Lemma 2.1.
+
+Each nontrivial character chi of H has a kernel of order two. Thus each
+M_chi is a submodule of exactly one of the three unitary fixed algebras
+Y^zi. Restrict its positive form there to obtain a unitary D0-module
+structure. The base structure is h0 in ALL THREE cases. The trivial
+module D0 is itself unitary. Taking an orthogonal direct sum therefore
+makes Y unitarizable as a D0-module.
+
+6. APPLICATION OF THE PRECISE EXTENSION THEOREM
+
+Every hypothesis of [G, Theorem 11.5] now holds with base D0 and extension Y:
+
+  - D0 is of CFT type, unitary, rational, and C2-cofinite;
+  - Y is the existing simple VOA and a finite simple-current extension;
+  - Y is unitarizable as a D0-module for the one fixed base form h0.
+
+That theorem extends h0 uniquely to a unitary VOA form on Y. Each h in H
+fixes D0 pointwise, so pulling back the final form by h gives another
+unitary extension of h0. Uniqueness therefore makes every h in H unitary,
+and the final PCT preserves each Y^zi. Its restriction there is consequently
+a unitary extension of h0. Theorem 11.5 applied to each two-summand
+extension now shows that these restrictions agree with the transported
+forms on all three Y^zi.
+
+In particular this supplies unitarity of the actual Y and positivity
+of its integral sigma-twisted constituent as a Z-module, without having
+postulated that positivity in the argument. Since Y is holomorphic,
+complete unitarity also follows immediately from its sole irreducible
+module being itself. No conclusion about strong locality follows here.
+
+7. SOURCE LOCATORS AND LIMITS
+
+[H] Gerald Höhn, An extremal vertex operator algebra of central charge
+    c=64, Hexagon 2611.00631v2, 20 November 2026.
+    https://hexagonmath.org/pdf/2611.00631v2
+    (2.1); Theorems 1.1, 6.2, 7.2; (7.6) and the proof on printed p.21.
+    The latter explicitly identifies the pure-swap irreducible
+    constituents, rather than merely giving matching formal characters.
+
+[G] Bin Gui, Geometric Positivity of the Fusion Products of Unitary
+    Vertex Operator Algebra Modules, arXiv:2306.11856v2, 5 March 2024.
+    https://arxiv.org/pdf/2306.11856v2
+    Proposition 10.13 (printed p.63): unitary permutation-twisted modules.
+    Theorem 11.5 (printed p.64): preunitarizable simple-current extensions.
+    Its base need not be completely unitary. The stronger hypothesis
+    in cyclic-orbifold Theorem 10.4 has not been silently discarded.
+
+[L] Ching Hung Lam, Unitary forms for holomorphic vertex operator
+    algebras of central charge 24, arXiv:2211.15952v1, 29 November 2022.
+    https://arxiv.org/pdf/2211.15952v1
+    Remark 2.2; Lemma 2.6; Theorem 3.1; Lemma 3.8; Theorem 5.1.
+    Only its general lattice/unitary statements are used, not a
+    central-charge-24 classification or a rank-128 extrapolation.
+
+[M] Robert McRae, On the tensor structure of modules for compact
+    orbifold vertex operator algebras, arXiv:1810.00747v5, 23 February 2021.
+    https://arxiv.org/pdf/1810.00747v5
+    Theorem 3.2; Corollary 4.8; Example 4.13. For an actual VOA and
+    finite abelian H these give the ordinary electric Rep(H) subcategory.
+    Strong rationality of D0 uses the previously established solvable
+    fixed-point theorem, also recalled in this source.
+
+[S] Hiroki Shimakura, Lifts of automorphisms of vertex operator algebras
+    in simple current extensions, arXiv:math/0610671v1, 23 October 2006.
+    https://arxiv.org/pdf/math/0610671v1
+    Theorem 2.1 / Corollary 2.2, printed pp.10--11: support-preserving
+    automorphisms lift; restriction kernel is the grading character group.
+
+The cited primary passages were read for this addendum. No new simulation,
+enumeration, software build, external posting, or ambient group action
+is part of this proof. The result is relative to the already specified
+Höhn and actual-construction inputs, with no remaining independent
+positivity hypothesis for Y.
