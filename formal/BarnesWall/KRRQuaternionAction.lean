@@ -45,7 +45,7 @@ theorem one_isometry : (1 : Mat) * G * (1 : Mat)ᵀ = G := by
 private theorem one_supported : KRRCanonical.BlockSupported (1 : Mat) := by
   intro i j h
   have hij : i ≠ j := fun he => h (congrArg KRRBlocks.block he)
-  simp [Matrix.one_apply, hij]
+  simp [hij]
 
 /-- Identity is forced by the proved composition theorem and cancellation in `Aut`. -/
 theorem lift_one : KRRCanonical.lift (1 : Matˣ) one_isometry = 1 := by
@@ -76,6 +76,7 @@ private theorem pow_supported (R : Matˣ)
       change KRRCanonical.BlockSupported (1 : Mat)
       exact one_supported
   | succ n ih =>
+      unfold KRRCanonical.BlockSupported
       simpa only [pow_succ, Units.val_mul] using
         KRRQ16.block_support_mul (↑(R ^ n) : Mat) (R : Mat) ih hR
 
@@ -183,6 +184,13 @@ theorem bLift_sq : bLift ^ 2 = gLift ^ 4 := by
     _ = gLift ^ 4 :=
       lift_pow KRRQ16.gUnit KRRQ16.g_block_support KRRQ16.g_isometry 4
 
+private theorem mul_eq_mul_inv_of_products {Γ : Type*} [Group Γ]
+    (a b c : Γ) (hcb : c = b * a) (hac : a * c = b) :
+    a * b = b * a⁻¹ := by
+  apply (_root_.eq_mul_inv_iff_mul_eq (a := a * b) (b := b) (c := a)).mpr
+  exact (_root_.mul_assoc a b a).trans
+    ((congrArg (fun x : Γ => a * x) hcb.symm).trans hac)
+
 /-- Two full-state anti-compositions transport the actual palindrome `g b g = b`. -/
 theorem gLift_mul_bLift : gLift * bLift = bLift * gLift⁻¹ := by
   let U : Matˣ := KRRQ16.gUnit * KRRQ16.bUnit
@@ -202,15 +210,10 @@ theorem gLift_mul_bLift : gLift * bLift = bLift * gLift⁻¹ := by
       gLift * KRRCanonical.lift U hU :=
     KRRCanonical.lift_mul U KRRQ16.gUnit hUb KRRQ16.g_block_support hU KRRQ16.g_isometry
   have heq : KRRCanonical.lift (U * KRRQ16.gUnit) hUg = bLift :=
-    lift_eq_of_unit_eq _ _ hUg KRRQ16.b_isometry gUnit_bUnit_gUnit
-  have hpal : gLift * bLift * gLift = bLift := by
-    calc
-      gLift * bLift * gLift = gLift * (bLift * gLift) := mul_assoc _ _ _
-      _ = gLift * KRRCanonical.lift U hU :=
-        congrArg (fun F : Aut128 => gLift * F) hfirst.symm
-      _ = KRRCanonical.lift (U * KRRQ16.gUnit) hUg := hsecond.symm
-      _ = bLift := heq
-  exact eq_mul_inv_iff_mul_eq.mpr hpal
+    lift_eq_of_unit_eq (U * KRRQ16.gUnit) KRRQ16.bUnit
+      hUg KRRQ16.b_isometry gUnit_bUnit_gUnit
+  exact mul_eq_mul_inv_of_products (Γ := Aut128) gLift bLift
+    (KRRCanonical.lift U hU) hfirst (hsecond.symm.trans heq)
 
 /-- The center cannot collapse: equality of full lifts would force `-I = I`. -/
 theorem gLift_four_ne_one : gLift ^ 4 ≠ 1 := by

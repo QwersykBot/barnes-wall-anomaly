@@ -2,13 +2,17 @@
 
 Date: 2026-11-26.
 
-**Status: written and source-reviewed only; combined Lean checking and axiom
-reports are pending.** No compiler, dependency acquisition, cache change, or
-public mutation was performed for this adapter. The source is
+**Status: integration repairs await public Lean checking and axiom reports.**
+Public run 45861216253 compiled its prerequisites but reported a block-predicate
+elaboration mismatch and a group-rearrangement timeout in this adapter. The
+repair exposes the predicate and performs the final rearrangement in a private
+abstract-group lemma, with explicit unit arguments and unchanged public
+statements. No heartbeat budget or imports were added. The source is
 `BarnesWall/KRRQuaternionAction.lean`, SHA256
-`54c0a48f9fd6b5c14db043f565242ebd7981dff477847b643636bdf092d16bf4`.
+`5ee6641589238c91f83c5306734c9f99d3823c68cd5f8b012fd989e8a0eeb377`.
 The actual generic `QuaternionLift` source signatures were inspected and match
-every call in this adapter. That module is being checked separately by its author.
+every call in this adapter. That module passed its separate local kernel and
+seven-axiom-report check and compiled in the same public integration run.
 
 ## Endpoint and convention
 

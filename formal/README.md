@@ -4,7 +4,8 @@ This directory contains a pinned dependency audit, a concrete rank-128 even
 positive lattice, concrete integral quaternion matrices, and canonical full-state
 lifts toward sections 4.2–4.3 of the accompanying proof. A faithful quaternion
 action and equality of its central lift with the prescribed lattice involution
-are included as integration candidates. The anomaly theorem is separate work.
+are included as integration candidates. A separate Boolean-cubic factorization
+lemma supplies one combinatorial ingredient. The anomaly theorem is separate work.
 
 The complete five-module baseline passed in
 [run 45854804934](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45854804934),
@@ -14,19 +15,22 @@ declarations had only the standard axioms listed below. That run includes
 `LatticeComposition`.
 
 The latest completed integration,
-[run 45859088010](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45859088010)
-at commit 26559d56bfec5b55b094756e6999ca7d69bf9e09, passed the upstream audit
-including Jacobi and compiled the first ten local modules through
-`CanonicalFaithfulness`. It then failed on a multiline proof-term layout in
-`KRRCanonical`, before the action modules or combined local axiom probe ran.
-This increment repairs that layout and removes four reported unused arguments
-or section instances; the mathematical content is unchanged.
+[run 45861216253](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45861216253)
+at commit 89228fac0c031431fd5aacae6063842f8e47cc12, passed the upstream audit
+including Jacobi and compiled the first twelve local modules through
+`QuaternionLift`. It found a block-predicate elaboration mismatch and group
+rearrangement timeout in `KRRQuaternionAction`, plus a pointwise-negation cast
+goal in `CentralLift`. The dependent `KRRCentralLift` and combined axiom probe
+did not run. This increment repairs those proof terms and two reported unused
+simp arguments; their mathematical statements are unchanged.
 
 `KRRQ16` has passed a separate local kernel check and twenty standard-axiom
 reports. `QuaternionLift` has likewise passed its local check and seven reports.
 `KRRBlocks` and `KRRPauli` also passed separate local kernel and axiom checks.
+`BooleanCubic` passed a separate local kernel check and eight standard-axiom
+reports at the same pins. Its integration copy adds only an MIT license header.
 The action and two central-comparison modules remain source-reviewed candidates.
-The public workflow now checks fifteen modules in a second stage; each result
+The public workflow now checks sixteen modules in a second stage; each result
 applies to its exact source commit. Earlier runs do not certify the additions
 or the latest repairs.
 
@@ -37,7 +41,7 @@ b63f6e8a68d220e3b3bc4f3792bb53650d375f24 and Lean 4.35.0-rc3.
 The upstream source is downloaded at execution time and left unchanged.
 
 The local modules use Apache 2.0, except `BlockPhase.lean`,
-`IntegerPhase.lean` and `QuaternionLift.lean`, which use the repository's MIT
+`IntegerPhase.lean`, `QuaternionLift.lean` and `BooleanCubic.lean`, which use the repository's MIT
 license. The upstream notice is retained for the adapted automorphism wrapper.
 The Apache license
 is included in `LICENSE-Apache-2.0.txt`; additions and generalizations are
@@ -199,9 +203,30 @@ Gram and integral-unit hypotheses.
 quaternion action: its `centralLift`, and hence the image of `a 4`, is exactly
 `thetaAut` on this lattice VOA. Both comparison modules await combined CI.
 
-`check_bridge.py` runs after the dependency audit. It compiles all fifteen local
+## Boolean-cubic factorization
+
+`BarnesWall/BooleanCubic.lean` represents a squarefree Boolean polynomial by a
+coefficient for each finite support. Evaluation sums the coefficients of all
+subsets of the input support. For every m ≥ 2, a polynomial of degree at most
+three that vanishes wherever Q(x,y) = Σᵢ xᵢyᵢ is zero has a unique affine
+multiplier: F = Q(δ + Σᵢ βᵢxᵢ + Σᵢ γᵢyᵢ). Both the function identity and
+equality of reduced squarefree coefficient families are proved. The latter
+uses Boolean reduction of repeated variables, not an unreduced polynomial
+identity.
+
+The version using only nonzero singular inputs retains the explicit condition
+that the constant coefficient is zero. The source proves this uniform theorem
+schematically; it does not enumerate a fixed dimension's input table.
+[BooleanCubic-notes.md](BooleanCubic-notes.md) records the representation,
+verification provenance and the remaining cohomological interfaces. In
+particular, this module does not identify cohomology classes with the represented
+polynomials or prove anomaly detection.
+
+## Combined local check
+
+`check_bridge.py` runs after the dependency audit. It compiles all sixteen local
 modules into the audited environment, prints the types and transitive axioms of
-159 local declarations, and checks source pins and unchanged inputs again.
+167 local declarations, and checks source pins and unchanged inputs again.
 It continues independent module checks after a source failure, skips affected
 dependents, and fails before the axiom stage if any module failed or was skipped.
 Its parser applies the same standard-axiom restriction. The mathematical

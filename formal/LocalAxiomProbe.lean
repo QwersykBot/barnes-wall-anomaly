@@ -13,6 +13,7 @@ import BarnesWall.QuaternionLift
 import BarnesWall.KRRQuaternionAction
 import BarnesWall.CentralLift
 import BarnesWall.KRRCentralLift
+import BarnesWall.BooleanCubic
 
 #check BarnesWall.transportDiscrepancy_symm_even
 #print axioms BarnesWall.transportDiscrepancy_symm_even
@@ -490,3 +491,27 @@ import BarnesWall.KRRCentralLift
 
 #check BarnesWall.KRRCentralLift.action_a_four_eq_thetaAut
 #print axioms BarnesWall.KRRCentralLift.action_a_four_eq_thetaAut
+
+#check BarnesWall.BooleanCubic.eval_injective
+#print axioms BarnesWall.BooleanCubic.eval_injective
+
+#check BarnesWall.BooleanCubic.coeff_eq_zero_of_pairFree
+#print axioms BarnesWall.BooleanCubic.coeff_eq_zero_of_pairFree
+
+#check BarnesWall.BooleanCubic.eval_productCoeff
+#print axioms BarnesWall.BooleanCubic.eval_productCoeff
+
+#check BarnesWall.BooleanCubic.affine_multiplier_unique
+#print axioms BarnesWall.BooleanCubic.affine_multiplier_unique
+
+#check BarnesWall.BooleanCubic.exists_productCoeff
+#print axioms BarnesWall.BooleanCubic.exists_productCoeff
+
+#check BarnesWall.BooleanCubic.boolean_cubic_factor_unique
+#print axioms BarnesWall.BooleanCubic.boolean_cubic_factor_unique
+
+#check BarnesWall.BooleanCubic.boolean_cubic_eval_factor_unique
+#print axioms BarnesWall.BooleanCubic.boolean_cubic_eval_factor_unique
+
+#check BarnesWall.BooleanCubic.boolean_cubic_factor_unique_of_nonzero
+#print axioms BarnesWall.BooleanCubic.boolean_cubic_factor_unique_of_nonzero

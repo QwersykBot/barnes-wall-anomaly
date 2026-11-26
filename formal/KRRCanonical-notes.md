@@ -2,11 +2,10 @@
 
 Date: 2026-11-26.
 
-**Status: source-only specialization; combined Lean checking and axiom reports
-are pending. No compiler, download, or dependency build was used for this
-increment.** `BarnesWall/KRRCanonical.lean` has SHA256
+**Status: this exact source compiled in public run 45861216253; the combined
+local axiom gate remains pending because two downstream modules failed.**
+`BarnesWall/KRRCanonical.lean` has SHA256
 `f1e5306b4014813bbcc26285dc5d642f273d133fef1eb8eec92f732a66c3ca44`.
-The existing sources and notes were left unchanged.
 
 ## Independent Pauli source review
 
@@ -70,5 +69,7 @@ Suggested CI theorem reports, all under `BarnesWall.KRRCanonical`, are
 The faithfulness adapter compiled in public run 45859088010; the combined
 axiom gate was not reached. Its two linter-only cleanups have SHA256
 `2af31cd1c9ae471488614f0f1c1bf8d661e64c9dcaaf7fb1f7d8630f4b390ee1`.
-That run stopped at a multiline proof-term layout error in this specialization.
-The source hash above includes its parenthesization repair, awaiting CI.
+That earlier run stopped at a multiline proof-term layout error in this
+specialization. The source hash above includes its parenthesization repair,
+which compiled without local warnings in
+[run 45861216253](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45861216253).

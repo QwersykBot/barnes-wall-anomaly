@@ -54,6 +54,9 @@ private theorem latMatrix_neg (f : L.carrier →ₗ[ℤ] L.carrier) :
     latMatrix L L (-f) = -latMatrix L L f := by
   ext j i
   simp [latMatrix, coordR, coord]
+  change ((-((latticeBasis L).repr (f (latticeBasis L i)) j) : ℤ) : ℝ) =
+    -(((latticeBasis L).repr (f (latticeBasis L i)) j : ℤ) : ℝ)
+  exact Int.cast_neg _
 
 private theorem oscMatrix_neg (f : L.carrier →ₗ[ℤ] L.carrier) :
     oscMatrix L L (-f) = -oscMatrix L L f := by
@@ -73,7 +76,7 @@ private theorem fockMap_neg_one {r : ℕ} (p : FockN r) :
     rw [fockMap_X, sigmaAlg_X, Finset.sum_eq_single a]
     · simp
     · intro b _ hb
-      simp [Matrix.one_apply, hb]
+      simp [hb]
     · intro ha
       exact False.elim (ha (Finset.mem_univ a))
   rw [sigmaN_apply, h]
