@@ -40,7 +40,7 @@ Section 4 supplies an analytic proof of the lift compatibility. The half-Gram fo
 
 The primary checker uses arbitrary-precision integer arithmetic, verifies the cocycle-lift identity, and checks every coefficient of the quadratic phase differences for the four stated relations. This is a complete finite check of those identities; it is not a sample of lattice vectors. The alternative code starts in Cartesian coordinates, converts through the lattice basis and reaches matching matrix hashes without importing the primary implementation. Its NumPy signed-integer arithmetic is secondary evidence; the arbitrary-precision checker is the minimal finite certificate.
 
-The cohomology, standardness, block-lift, anomaly naturality, VOA extension and unitarity steps remain mathematical arguments requiring reading and assessment. They have not been encoded in a formal proof kernel. The reports do not establish a generic theorem about Barnes–Wall dimensions, the full normalizer, a unitary extension or uniqueness. The exact-primary-gap argument uses the kernel of L1 and L2 on invariant weight-four Heisenberg states, so it does not implicitly assume unitarity.
+The cohomology, standardness, block-lift, anomaly naturality, VOA extension, unitarity and spectrum steps remain mathematical arguments requiring reading and assessment. They have not been encoded in a formal proof kernel. The finite reports concern width seven; they do not establish the uniform theorem, unitarity or uniqueness. Section 9 establishes the parameter dependence analytically. The exact-gap witness in Section 6 is an explicit invariant harmonic quartic, so its primary property does not implicitly assume a unitary extension.
 
 The finite code contains no generic inhomogeneous linear-system solver. The exploratory solver and large search outputs were omitted rather than added to the proof's trusted components.
 
@@ -50,7 +50,21 @@ Section 7 proves unitarity of the same full-group extension, with the anomaly tr
 
 The central decomposition is checked using the actual multiplication of the fixed algebra C[E]. There are two possible fixed-point resolutions for each relevant induced module; the multiplication chooses one consistently, and the proof does not claim uniqueness of those choices. The 16,384 selected currents form E/<z>, including the intermediate vacuum. Neither complete unitarity of the nonabelian fixed algebra nor a VOA–conformal-net comparison is assumed. The commutator lemma is proved in full, not attributed to Lam or Gui; no literature-priority claim is made for it.
 
-The earlier public snapshot at commit `d9c670eb89152df19705c988c4fd33763f3e9633` explicitly omitted a unitarity claim. This revision adds that argument; it does not change the exact finite checkers or their reports.
+The first public snapshot, commit `d9c670eb89152df19705c988c4fd33763f3e9633`, explicitly omitted a unitarity claim. The second, commit `10bd32467e1353652c1accf3877d7c934066e4f2`, added Section 7. This third revision adds the multiplicity bound and uniform-family results below. The exact finite checkers and their stored reports are unchanged.
+
+## Multiplicity bound and uniform family
+
+Section 8 bounds the lightest-state multiplicity over a globally coherent family of inflated discrete-torsion cocycles in one fixed orbifold-compatible category. Every member is unitary by the central simple-current argument and contains the same fixed algebra. Consequently
+$$
+4\,925\,572\le\min_B\dim(T_B)_4\le5\,057\,652,
+$$
+with at most $5\,057\,650$ weight-four primaries for some member. The upper bound combines the minimal-vector count and orbit structure, an explicit 64-pair defect calculation, and uniform averaging over 4096 distinct centralizer characters for each relevant class. It assumes neither a trivial ground-space centralizer representation nor independence between classes. It does not identify an optimizing cocycle, determine a full character, or count inequivalent theories. Separate agents audited the actual algebra and unitarity, the character-multiplicity average, and the lattice and defect inputs.
+
+Those counting inputs use Griess, [*Pieces of $2^d$*](https://doi.org/10.1016/j.aim.2004.08.014), and Bakalov–Kac, [*Twisted Modules over Lattice Vertex Algebras*](https://doi.org/10.1142/9789812702562_0001). Griess's Notation 8.7 and Proposition 8.9 are cited in the author manuscript dated 11 August 2004; the numbering differs between versions. The later [correction, arXiv:math/0511277v1](https://arxiv.org/pdf/math/0511277v1), was also read: it revises uniqueness and generation arguments and an appendix lemma, without replacing the minimal-vector count or orbit statement used here. All consulted versions are pinned in `sources.json`.
+
+Section 9 extends the action-specific anomaly proof to every odd parameter $m\ge5$, with an actual order-four cyclic obstruction at $m=3$. Its unitary full orbifolds have gap four for odd $m\ge7$ and exactly $(2^m+1)(2^m+2)/6$ weight-four primaries for odd $m\ge9$. The boundary checks matter: the block lemma requires even half-Gram restrictions, already valid at $m=5$; the exterior standardness proof needs only $m-1>2$; and the cited cohomology filtration applies for $m\ge3$. Two separate agents reviewed those thresholds and the resulting spectrum. No finite enumeration at higher ranks is a premise.
+
+Higher-charge existence alone is already available by iterating a swap orbifold of a suitable gap-four seed. The comparison in Section 9.4 uses [Barron–Dong–Mason, arXiv:math/9803118v2](https://arxiv.org/pdf/math/9803118v2), proof of Theorem 3.9, and [van Ekeren–Möller–Scheithauer, arXiv:1507.08142v3](https://arxiv.org/pdf/1507.08142v3), Theorem 5.16 and its type-zero specialization. Both are published sources, and the cyclic extension theorem applies at general central charge. One fixed sparse full-$E(7)$ seed has between $4\,925\,570$ and $5\,057\,650$ weight-four primaries; each swap increases that number by one. This proves nonisomorphism with the direct family for every odd $m\ge9$. The lower bound is specific to full-$E(7)$ seeds retaining the stated fixed algebra, and the comparison is limited to this sequence of constructions. It is not an exhaustive novelty result.
 
 ## Current-literature and duplicate-resolution check
 
@@ -66,6 +80,6 @@ These related results make “first CFT with gap above two” and similarly broa
 
 ## Questions for external review
 
-The most valuable review would independently examine four interfaces: whether the exact lift conventions agree with KRR on the common Q8 subgroup; whether the cohomological detection argument and inflation-kernel identification apply exactly as stated; whether the positive ribbon/extension hypotheses yield the intended full-group orbifold; and whether the formal adjoint and leading-commutator argument proves the needed intermediate-module unitarity. The analytic standardness derivation merits a separate close reading because it removes a source-coverage issue.
+The most valuable review would independently examine the exact lift conventions on the common Q8 subgroup; the cohomological detection and inflation-kernel arguments; the positive ribbon and full-group extension hypotheses; the formal adjoint and leading-commutator proof of intermediate-module unitarity; and the global character average in Section 8. The analytic standardness derivation and its parameter threshold merit a separate close reading because they remove a source-coverage issue.
 
 A specialist may also know an existing resolution or an earlier compatible lift construction not found by the bounded search. Such overlap would change attribution or significance even if the calculation is correct. No external reviewer has yet endorsed this packet.

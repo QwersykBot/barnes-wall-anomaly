@@ -4,9 +4,9 @@
 
 ## Abstract and attribution
 
-Keller, Ashley Winter Roberts and Jeremy Roberts constructed a holomorphic orbifold of the rank-128 Barnes–Wall lattice VOA conditional on the vanishing of an extraspecial-group anomaly [KRR, Conjecture 5.2]. We give a candidate argument for that vanishing. A compatible lift of a specific generalized quaternion group of order 16 removes the residual anomaly that cyclic tests alone cannot detect. We also give a direct proof that all involutions in the prescribed extraspecial action are standard lifts. A block argument proves the compatibility of the quaternion lift analytically. Exact finite calculations corroborate this argument and the source phase formulas; a separate implementation reconstructs them by a different method. A final argument equips the resulting full orbifold with a unitary structure by two simple-current extensions and an explicit positivity lemma.
+Keller, Ashley Winter Roberts and Jeremy Roberts constructed a holomorphic orbifold of the rank-128 Barnes–Wall lattice VOA conditional on the vanishing of an extraspecial-group anomaly [KRR, Conjecture 5.2]. We give a candidate argument for that vanishing. A compatible lift of a specific generalized quaternion group of order 16 removes the residual anomaly that cyclic tests alone cannot detect. We also give a direct proof that all involutions in the prescribed extraspecial action are standard lifts. A block argument proves the compatibility of the quaternion lift analytically. Exact finite calculations corroborate this argument and the source phase formulas; a separate implementation reconstructs them by a different method. Two simple-current extensions and an explicit positivity lemma equip the resulting full orbifold with a unitary structure. A global discrete-torsion average gives a member with at most $5\,057\,652$ weight-four states. The anomaly argument extends to every odd parameter $m\ge5$, with a genuine obstruction at $m=3$; the resulting family has exact primary gap four for odd $m\ge7$ and an exact weight-four count for odd $m\ge9$.
 
-The Barnes–Wall action, proposed orbifold, twisted-module calculations and spectral analysis are due to KRR. The contribution proposed here is the compatible quaternion lift and its use with established group cohomology, together with the explicit standardness argument. The resulting proposed construction is a unitary strongly rational holomorphic VOA of central charge 128 with primary gap four. It does not concern the existence of an extremal VOA at central charge 48.
+The Barnes–Wall action, proposed orbifold, twisted-module calculations and spectral analysis are due to KRR. The contribution proposed here is the compatible quaternion lift and its use with established group cohomology, together with the standardness, unitarity, discrete-torsion bound and uniform-family arguments below. The resulting proposed construction is a unitary strongly rational holomorphic VOA of central charge 128 with primary gap four. It does not concern the existence of an extremal VOA at central charge 48.
 
 ## 1. Statement and conventions
 
@@ -22,7 +22,7 @@ Thus a lift of $a\in A$ has square $z^{Q(a)}$. We identify $H^3(G,U(1))$ with $H
 
 **Proposed theorem.** The anomaly $\alpha\in H^3(E,U(1))$ of the specified action on $V_{BW(7)}$ is zero.
 
-The theorem is about this particular action, including its lattice-VOA phases. Lattice isometries without their compatible lifts would not suffice.
+The theorem is about this particular action, including its lattice-VOA phases. Lattice isometries without their compatible lifts would not suffice. Sections 6–7 give the unitary full-orbifold consequence. Section 8 bounds its lightest-state multiplicity for some coherent discrete-torsion choice. Section 9 states and proves the extension to the family $E_m=2_+^{1+2m}$.
 
 All matrices below act on row lattice coordinates from the right. Products of lifts are read in the corresponding order. The quotient quadratic form $Q$, the conformal weight $\rho$, and the quadratic sign exponents $q_R$ are different objects.
 
@@ -291,12 +291,11 @@ $$
 $$
 The extension correspondence [HKL, Theorems 3.2, 3.4–3.6; GR, §2.2] therefore gives a strongly rational holomorphic VOA extension of $W$. Equivalently, it is the $K=E$, trivial-discrete-torsion case of [EG, Corollary 2 and (3.5)]. It shares the conformal vector and central charge 128. This identifies the particular full-group orbifold, rather than the parent-VOA extension corresponding to $K=1$.
 
-The no-low-weight-state analysis in [KRR, (5.3.3)] now applies: below weight four, the extension contains only the vacuum and its Virasoro descendants. To see that the primary gap is exactly four without assuming a unitary extension, let $F_r$ be the $E$-invariant Heisenberg space of weight $r$. KRR §6.2 gives $\dim F_2=\dim F_3=1$ and $\dim F_4=2797$. The last count also follows directly from the defining representation $U=\mathbb C^{128}$:
+The no-low-weight-state analysis in [KRR, (5.3.3)] now applies: below weight four, the extension contains only the vacuum and its Virasoro descendants. Here is an explicit witness that the gap is exactly four, without assuming a unitary extension. In orthonormal Cartesian Heisenberg coordinates $x_i=a_i(-1)$, put $P=Z_1=\operatorname{diag}(I_{64},-I_{64})$, $q=x^TPx$ and $r=x^Tx$. The state
 $$
-\dim(\operatorname{Sym}^4 U)^E
- =\frac{2\binom{131}{4}+(32768-2)\binom{65}{2}}{32768}=2795,
+\Phi=(65q^2-r^2)\mathbf1
 $$
-with one further invariant from each of $U\otimes U$ and $\operatorname{Sym}^2 U$ in the weight-four Heisenberg decomposition. Since $L_1:F_4\to F_3$ and $L_2:F_4\to F_2$, their common kernel has dimension at least 2795. The positive Virasoro algebra is generated by $L_1,L_2$, so every vector in that kernel is primary. The full orbifold therefore has primary gap four. Section 7 establishes a unitary structure on this extension. No uniqueness claim for the VOA is made.
+is $E$-invariant: every Pauli generator conjugates $P$ to $\pm P$, and $r$ is orthogonally invariant. On polynomials in the $a_i(-1)$, $L_1=0$ and $L_2=\frac12\Delta$. Since $\Delta q^2=8r$ and $\Delta r^2=520r$, both $L_1\Phi$ and $L_2\Phi$ vanish. The positive Virasoro algebra is generated by $L_1,L_2$, so $\Phi$ is primary. It is nonzero because its $x_1^4$ coefficient is $64$. This makes concrete the weight-four obstruction for lattice orbifolds in [KRR, §5.1]. The full orbifold therefore has primary gap four. Section 7 establishes a unitary structure on this extension. No uniqueness claim for the VOA is made.
 
 ## 7. Unitarity of the full $E$-orbifold
 
@@ -420,6 +419,256 @@ T=\bigoplus_{a\in A}R_a
 $$
 is preunitarizable as a $W_1$-module. It is already a simple VOA, by §6, and is a finite simple-current extension of the unitary strongly rational VOA $W_1$. A second application of [Gui, Theorem 11.5] therefore equips this same $T$ with a positive invariant Hermitian form extending the one on $W_1$, hence on $W$. This proves the proposed strengthening. $\square$
 
+## 8. A bound on the weight-four multiplicity
+
+Discrete torsion gives a family of full $E$-orbifolds within which one can bound the number of lightest states without determining any centralizer action explicitly.
+
+**Proposition.** There exists a unitary strongly rational holomorphic full $E$-orbifold $T$ with inflated discrete torsion, of central charge 128 and primary gap four, such that
+$$
+\dim T_4\le5\,057\,652.
+\tag{22}
+$$
+It has at most $5\,057\,650$ Virasoro primary states of weight four.
+
+### 8.1 A global family of unitary extensions
+
+Fix one anomaly trivialization and its orbifold-compatible equivalence
+$\operatorname{Rep}(W)\simeq Z(\mathrm{Vec}_E)$, where $W=V_L^E$.
+Retain $A=E/\langle z\rangle\cong\mathbb F_2^{14}$, its quadratic form $Q$, and its polar form $B_Q$. Fix an ordered basis of $A$. For each alternating bilinear form $B$ on $A$, put
+$$
+c_B(a,b)=\sum_{i<j}B_{ij}a_i b_j,
+\qquad
+\psi_B(g,h)=(-1)^{c_B(\bar g,\bar h)}.
+\tag{23}
+$$
+Bilinearity makes $\psi_B$ a normalized two-cocycle on $E$.
+
+Construct an algebra object $\mathcal B_B=\mathbb C_{\psi_B}[E]$ in this fixed center, with degree-$g$ basis vector $e_g$, by
+$$
+e_ge_h=\psi_B(g,h)e_{gh},
+\qquad
+x\cdot e_g
+=\frac{\psi_B(x,g)}{\psi_B(xgx^{-1},x)}e_{xgx^{-1}}
+=(-1)^{B(\bar g,\bar x)}e_{xgx^{-1}}.
+\tag{24}
+$$
+The action is inner conjugation in the twisted group algebra, hence is an honest action preserving multiplication. For the center braiding
+$c(e_g\otimes e_h)=g\cdot e_h\otimes e_g$, the multiplication is braided-commutative. The twist is trivial because $g\cdot e_g=e_g$. The algebra is connected and separable: a separability element is
+$|E|^{-1}\sum_g e_g\otimes e_g^{-1}$, which is graded and $E$-invariant. It is simple as an algebra object because every nonzero homogeneous basis element is invertible. Its dimension is $|E|$. Thus [EG, Corollary 2 and (3.5)] and the extension correspondence of §6 give an actual holomorphic VOA $T_B$, with
+$$
+T_B\downarrow_W=\bigoplus_{[g]}[g,\beta_g^B],
+\qquad
+\beta_g^B(h)=(-1)^{B(\bar g,\bar h)}\quad(h\in C_E(g)).
+\tag{25}
+$$
+All these objects use the same fixed identification with $\operatorname{Rep}(W)$.
+
+The unitarity argument of §7 applies to every member of this family. Indeed,
+$\psi_B(z,g)=\psi_B(g,z)=1$ and $\beta_z^B=1$, so
+$D=\mathbb C[\langle z\rangle]=\mathbf1\oplus J$
+and the intermediate unitary VOA $W_1=W\oplus J$ are unchanged. For each nonzero $a\in A$, the class span $R_a^B=\operatorname{span}\{e_g,e_{gz}\}$ is an actual local $D$-module whose restriction to $W$ is the single simple module $[g,\beta_g^B]$. Multiplication induces isomorphisms
+$R_a^B\otimes_D R_b^B\cong R_{a+b}^B$:
+both class spans are free of rank one over $D$, and the two product images form a basis of the target. Thus they are the selected simple currents over $W_1$, with $R_0^B=D$. Strong unitarity of $W$ and the irreducible-restriction lemma in §7 make them unitary $W_1$-modules. The second application of [Gui, Theorem 11.5] makes $T_B$ unitary. Every $T_B$ retains primary gap four: its nontrivial twisted sectors begin at weight at least four, and its unchanged subalgebra $W$ contains the weight-four primary of §6.
+
+### 8.2 The counting inputs
+
+First compute $\dim W_4$. Let $U=\mathbb C^{128}$ be the defining Heisenberg representation. The weight-four Fock pieces with invariants are $U\otimes U$, $\operatorname{Sym}^2U$, and $\operatorname{Sym}^4U$. The first two each contribute one invariant. On $\operatorname{Sym}^4U$, the two central elements have trace $\binom{131}{4}$; every noncentral element has trace $\binom{65}{2}$, whether its eigenvalues are $\pm1$ or $\pm i$, each with multiplicity 64. Therefore the Molien average gives
+$$
+\dim(\operatorname{Sym}^4U)^E
+=\frac{2\binom{131}{4}+(32768-2)\binom{65}{2}}{32768}
+=2795.
+$$
+The invariant Heisenberg contribution is consequently $2797$.
+
+The other weight-four states of $V_L$ are its minimal momentum states $e^\lambda$, with $(\lambda,\lambda)=8$. By [Griess, Notation 8.7 and Proposition 8.9 in the cited author version], there are $1\,260\,230\,400$ minimal vectors and every orbit of the distinguished extraspecial subgroup $R=E$ has size $256$. Each such orbit contributes exactly one invariant even for the prescribed signed lifts. To see this, a nonidentity element fixing a nonzero lattice vector must be a noncentral involution: $z=-I$ and the order-four isometries have no fixed vectors. The standardness established in §3 makes every such stabilizer element act trivially on $e^\lambda$. Its signed orbit representation therefore has a one-dimensional invariant space. Hence
+$$
+\dim W_4
+=2797+\frac{1\,260\,230\,400}{256}
+=4\,925\,572.
+\tag{26}
+$$
+Only the geometric lattice action is used in this orbit count.
+
+Next consider a noncentral involution $g$. Its twisted ground weight is four. The full unprojected weight-four space has dimension $2^{16}$; a short defect calculation establishes the number. For $g=X_1$, pair the integral basis vectors as $u=w_i$, $v=w_{i+64}$ for $0\le i<64$. By [KRR, (A.2.5)],
+$g(u)=-u+2^p v$, $g(v)=v$, with $p=0$ and $p=1$ on 32 pairs each. For $p=0$, the integral minus-eigenlattice in the pair is $\mathbb Z(2u-v)$, equal to the image of $1-g$. For $p=1$, it is $\mathbb Z(u-v)$, while the image is $2\mathbb Z(u-v)$. Consequently
+$$
+L^-/(1-g)L\cong(\mathbb Z/2)^{32},
+\qquad d(g)^2=2^{32},\qquad d(g)=2^{16},
+\tag{27}
+$$
+where the defect formula is [BK, (4.53)] for the even unimodular lattice $L$. All noncentral involutions have the same quotient by the geometric conjugacy in [KRR, Proposition 3.1]. The standard lift has zero momentum shift. In the Fock–momentum–defect decomposition [BK, Remark 4.4], every nonzero momentum and every oscillator excitation adds positive energy. Thus weight four consists exactly of the zero-momentum oscillator-vacuum fiber of dimension $2^{16}$.
+
+The nonzero singular vectors of $(A,Q)$ index these conjugacy classes. Their number is
+$2^{13}+2^6-1=8255$.
+The order-four sectors begin at weight six and the central-involution sector at weight eight, so neither contributes to $T_{B,4}$.
+
+### 8.3 Averaging the selected characters
+
+For a fixed noncentral involution representative $g$, put $a=\bar g\ne0$ and
+$C_g=C_E(g)$. Its image in $A$ is
+$a^\perp=\{b:B_Q(a,b)=0\}$.
+As $B$ varies, its slant character in (25) factors through
+$C_g/\langle g,z\rangle\cong a^\perp/\langle a\rangle$.
+The linear map
+$$
+\operatorname{Alt}^2(A^*)\longrightarrow
+\bigl(a^\perp/\langle a\rangle\bigr)^*,
+\qquad
+B\longmapsto B(a,\cdot)|_{a^\perp}
+\tag{28}
+$$
+is surjective. Indeed, extend any functional on the quotient to $\ell\in A^*$ with $\ell(a)=0$, choose $t\in A^*$ with $t(a)=1$, and take
+$B(x,y)=t(x)\ell(y)+\ell(x)t(y)$.
+It is alternating and has the prescribed restriction. Since the target has dimension 12, uniformly sampling the $2^{91}$ forms $B$ makes $\beta_g^B$ uniform over $2^{12}=4096$ distinct linear characters of $C_g$.
+
+Use the centralizer linearizations associated with the single fixed anomaly trivialization. Let $\Omega_g=V_L(g)_4$ be the entire unprojected weight-four space of the $g$-twisted module, with its resulting linear $C_g$-action. The actual twisted-module decomposition [GR, Theorems 2.2 and 3.1 and the discussion following (3.1)] identifies
+$$
+\dim[g,\chi]_4
+=\dim\operatorname{Hom}_{C_g}(\chi,\Omega_g)
+$$
+for each linear character $\chi$. The multiplicities of distinct linear characters sum to at most $\dim\Omega_g$. If $\mathcal X_g$ denotes the 4096 characters reached in (28), this gives
+$$
+\mathbb E_B\,\dim[g,\beta_g^B]_4
+=\frac1{4096}\sum_{\chi\in\mathcal X_g}
+  \dim\operatorname{Hom}_{C_g}(\chi,\Omega_g)
+\le\frac{65536}{4096}=16.
+\tag{29}
+$$
+This inequality imposes no assumption that $g$ or $z$ acts as $+1$ on $\Omega_g$, or that its centralizer representation is trivial.
+
+The same global $B$ is used in every class. Linearity of expectation, which requires no independence between classes, now yields
+$$
+\mathbb E_B\,\dim T_{B,4}
+\le4\,925\,572+8255\cdot16
+=5\,057\,652.
+\tag{30}
+$$
+At least one member of the family satisfies (22). At weight four, the vacuum descendant space is spanned by $L_{-4}\mathbf1$ and $L_{-2}^2\mathbf1$. These are independent at $c=128$: their Gram determinant is $c^2(5c+22)/2>0$. Since there are no lower-weight nonvacuum primaries and $T_B$ is unitary, its weight-four primary space has dimension $\dim T_{B,4}-2$. This proves the stated bound $5\,057\,650$. $\square$
+
+Every member contains $W$, so $4\,925\,572$ is also a lower bound for its weight-four dimension. The argument therefore bounds the minimum multiplicity in this family between $4\,925\,572$ and $5\,057\,652$. It gives an existential bound over a globally coherent family of cocycles. It specifies neither an optimizing cocycle nor the full character of the resulting VOA. The $2^{91}$ forms are a parameter family; the proof does not require them to give inequivalent theories.
+
+## 9. The uniform Barnes–Wall family
+
+The argument has a uniform range that is larger than the width-seven case motivating it. Here the parameter is the number of tensor factors; the lattice rank is $2^m$.
+
+**Uniform theorem.** Let $m\ge3$ be odd, let $L_m=BW(m)$ in the exact normalization of [KRR, (A.1.1)], and let $E_m=2_+^{1+2m}$ act by the prescribed canonical generator lifts. Then its anomaly $\alpha_m$ vanishes for every odd $m\ge5$, whereas $\alpha_3\ne0$. For odd $m\ge5$, a coherent anomaly trivialization yields a unitary strongly rational holomorphic full $E_m$-orbifold $T_m$ of central charge $n=2^m$. Its primary gap is exactly four for odd $m\ge7$. For odd $m\ge9$,
+$$
+\dim(T_m)_4=\frac{(n+1)(n+2)}6+2,
+\qquad P_4(T_m):=\dim\operatorname{Prim}_4(T_m)
+=\frac{(n+1)(n+2)}6.
+\tag{31}
+$$
+These counts also hold after any inflated discrete-torsion choice constructed as in §8. No gap-four assertion is made at $m=5$, and no uniqueness of these VOAs is asserted.
+
+### 9.1 The parameter dependence of the anomaly proof
+
+The cohomological input [JFT, §3.3] is valid for $m\ge3$. With
+$r_m=\binom{2m}{2}+\binom{2m}{3}$, it gives
+$$
+H^4(E_m,\mathbb Z)\cong(\mathbb Z/2)^{r_m-1}\oplus\mathbb Z/4,
+\qquad \operatorname{im}\pi^*=H^4(E_m,\mathbb Z)[2].
+\tag{32}
+$$
+The inflation kernel is again the span of $\beta(\ell Q)$ for linear $\ell$. The anisotropic $Q_8$ calculation of §2 detects the unique nonzero divisible-by-two class. The Boolean cubic argument uses only three distinct coordinate indices. Thus the detection lemma holds throughout this range.
+
+Standardness is uniform for odd $m\ge5$. In §3 replace the six-dimensional exterior space by the space on $e_2,\ldots,e_m$, of dimension $d=m-1$. The half-Gram decomposition in [KRR, Lemmas A.1, A.3–A.4] gives the same first-factor phases $q_{X_1}=\mathfrak q(x)$ and $q_{Z_1}=\mathfrak q(y)$, with the other generator phases zero. The $H_2$ contribution vanishes because the binary generator increments take $V_0$ into $V_1$ and kill $V_1$; one must not assume that the entire half-Gram matrix interchanges parity. The identity $\mathfrak q(Cu)=Q_0\mathfrak q(u)$ follows exactly as in (8): two one-bit neighbors cannot be complementary when $d>2$. The fixed-vector equations then prove standardness for every prescribed involution, including at $m=5$.
+
+For the compatible quaternion lift, write $m=2k+1$ and $p_i=(m-|i|)\bmod2$. Directly from the ordered lattice basis,
+$$
+G_{ij}=2^{k-d(i,j)/2+(p_i+p_j)/2},
+\qquad H_{ii}=2^{k-1+p_i},
+\tag{33}
+$$
+where $d(i,j)$ is Hamming distance and $H$ is the half-Gram matrix of §4. In a block obtained by fixing bits $4,\ldots,m$, the off-diagonal Gram entries have valuation at least $k-1$. The diagonal entries of $H$ are also even for $k\ge2$. Hence every such eight-coordinate block has $H|_{\mathrm{block}}=0$ modulo two. At $m=5$ the diagonal entries are $2$ or $4$; divisibility by four is unnecessary.
+
+Keep $a=Y_1$, $b=Z_1Y_2$ and $g=(I+Y_1)(X_3+Z_3)/2$. In the width-$m$ basis its rows are
+$$
+w_i g=\begin{cases}
+2^{p_i}w_{i^{\{3\}}}-w_{i^{\{1,3\}}},&i_1=0,\\
+w_{i^{\{1,3\}}},&i_1=1.
+\end{cases}
+\tag{34}
+$$
+Thus $g$ and its inverse $g^7$ are integral. The tensor identities of §4 still give $\langle g,b\rangle\cong Q_{16}$. All the relevant generators preserve these blocks, so the block-cocycle lemma gives their exact lift relations and agreement with the prescribed common $Q_8$. There is no character correction or full-normalizer lifting assumption.
+
+The standard-lift ground weights and cyclic-type tests are:
+
+| Element | Actual order $N$ | Ground weight $\rho$ | $N\rho$ |
+| --- | ---: | ---: | ---: |
+| $z$ | $2$ | $n/16$ | $2^{m-3}$ |
+| Noncentral involution | $2$ | $n/32$ | $2^{m-4}$ |
+| Order-four element of $E_m$ | $4$ | $3n/64$ | $3\cdot2^{m-4}$ |
+| $g$ | $8$ | $11n/256$ | $11\cdot2^{m-5}$ |
+
+The first three rows use [KRR, Proposition 3.1 and §3.2]; order-four elements square to $-I$ and are fixed-point-free. For $g$, each primitive eighth root has multiplicity $n/4$. Every displayed $N\rho$ is integral when $m\ge5$, so the corresponding type $N^2\rho\bmod N$ is zero. The common restriction kernel from $Q_{16}$ to $C_8$ and $Q_8$, followed by the detection lemma, proves $\alpha_m=0$.
+
+At $m=3$, [KRR, Proposition 3.4 and Theorem 3.5] still supplies the prescribed order-preserving action. An order-four element is fixed-point-free and has $\rho=3/8$. Its cyclic type is $16\rho=6\equiv2\pmod4$, so $\alpha_3\ne0$. This is an actual obstruction, making five the sharp lower boundary among the odd parameters under consideration.
+
+### 9.2 Existence and unitarity in the uniform range
+
+For odd $m\ge5$, $L_m$ is positive definite, even and unimodular. The fixed algebra $W_m=V_{L_m}^{E_m}$ is strongly rational by [CM, Corollary 5.25]. Every nontrivial twisted sector starts at weight at least $2^{m-5}\ge1$; every nonvacuum untwisted constituent also has positive weight. Hence the positivity and ribbon hypotheses in §6 apply. After a coherent anomaly trivialization, the actual algebra $\mathbb C[E_m]$ gives the strongly rational holomorphic full-group extension by [GR, HKL, EG].
+
+The unitarity proof in §7 has no additional rank restriction. Lam's lattice statements and [Gui, Proposition 10.9] make $W_m$ strongly unitary. The central constituent $J_m=[z,\mathbf1]$ has order two and positive integral weight, at least $n/16\ge2$. The first application of [Gui, Theorem 11.5] makes $W_m\oplus J_m$ unitary. Each noncentral conjugacy class is still $\{g,gz\}$, so its selected module restricts irreducibly to $W_m$ and the explicit lemma of §7.2 applies unchanged. The actual multiplication gives the $2^{2m}$ selected simple currents over the intermediate extension. The second application of Gui's theorem makes $T_m$ unitary. The same argument applies to formula (23) with $A$ replaced by $\mathbb F_2^{2m}$; these inflated cocycles have trivial restrictions involving $z$.
+
+### 9.3 The gap and exact weight-four spectrum
+
+For odd $m\ge7$, nonzero lattice momenta start at weight $2^{(m-3)/2}\ge4$, and all nontrivial twisted sectors start at $2^{m-5}\ge4$. Below four, only the invariant zero-momentum Heisenberg space contributes; its dimensions at weights one, two and three are $0,1,1$. The latter two states are vacuum descendants. The explicit primary of §6 generalizes to
+$$
+\Phi_m=\left(\frac{n+2}{2}q^2-r^2\right)\mathbf1,
+\qquad P=\operatorname{diag}(I_{n/2},-I_{n/2}),
+$$
+with $q=x^TPx$ and $r=x^Tx$. Here $\Delta q^2=8r$ and $\Delta r^2=4(n+2)r$, so it is primary; its $x_1^4$ coefficient is $n/2\ne0$. Thus the gap is exactly four.
+
+For odd $m\ge9$, the momentum and nontrivial twisted thresholds are at least eight and sixteen, respectively. Only the invariant Heisenberg space $F^{E_m}$ contributes at weight four. The character average in §8.2 becomes
+$$
+M=\dim(\operatorname{Sym}^4\mathbb C^n)^{E_m}
+=\frac{2\binom{n+3}{4}+(2n^2-2)\binom{n/2+1}{2}}{2n^2}
+=\frac{(n+1)(n+2)}6.
+\tag{35}
+$$
+The two other invariant oscillator partitions give $\dim F_4^{E_m}=M+2$. To count primaries directly, the map $(L_1,L_2)$ on $L_{-4}\mathbf1,L_{-2}^2\mathbf1$, in the target bases $L_{-3}\mathbf1,L_{-2}\mathbf1$, has matrix
+$$
+\begin{pmatrix}5&3\\6&n+8\end{pmatrix},
+\qquad \det=5n+22>0.
+$$
+The target has dimension two, and the kernel is precisely the primary subspace. This proves (31) independently of a Virasoro semisimplicity assumption. The absence of twisted states at weight four also makes the count independent of the inflated discrete-torsion choice.
+
+### 9.4 Distinction from iterated swap orbifolds
+
+Write $P_4(V)$ for the dimension of the weight-four Virasoro-primary space. Fix once and for all a sparse full $E(7)$ orbifold $T_0$ supplied by §8, and put $P_0=P_4(T_0)$. Then
+$$
+4\,925\,570\le P_0\le5\,057\,650.
+$$
+The lower bound comes from the common fixed-point subalgebra $V_{BW(7)}^{E(7)}$ of these full $E(7)$ orbifolds; it is not asserted for arbitrary central-charge-128 seeds.
+
+Let $S(V)$ be the type-zero swap orbifold of $V\otimes V$. At a stage with $c(V)=c_j=128\cdot2^j$, [BDM, proof of Theorem 3.9, printed p. 23] gives
+$$
+L_0^\sigma=\tfrac12L_0+\frac{c_j}{16},
+\qquad \rho_\sigma=8\cdot2^j,
+\qquad 4\rho_\sigma\equiv0\pmod2.
+$$
+The nontrivial untwisted eigenspace contains no vacuum, and both twisted constituents have positive ground weight. Thus [vEMS, Theorem 5.16 and its type-zero specialization] supplies a strongly rational holomorphic extension. Its twisted summand contributes nothing through weight four. The swap preserves the dimensions $0,1,1$ at weights one, two, and three; at weight four, the untwisted invariants gain exactly the one-dimensional $V_2\otimes V_2$ contribution. Subtracting the two vacuum descendants therefore gives
+$$
+P_4(S(V))=P_4(V)+1.
+$$
+Thus swaps preserve primary gap four, and $P_4(S^r(T_0))=P_0+r$. The comparison uses these algebraic properties of the swap extensions.
+
+For odd $m\ge9$, the direct orbifold $T_m$ has $D_m=P_4(T_m)=(2^m+1)(2^m+2)/6$. Matching central charges requires $r=m-7$:
+
+| $m$ | $D_m$ | Bounds for $P_4(S^{m-7}(T_0))$ |
+|---:|---:|---:|
+| $9$ | $43\,947$ | $[4\,925\,572,\ 5\,057\,652]$ |
+| $11$ | $700\,075$ | $[4\,925\,574,\ 5\,057\,654]$ |
+| $13$ | $11\,188\,907$ | $[4\,925\,576,\ 5\,057\,656]$ |
+
+The first two rows separate using the seed lower bound; the third uses its upper bound. For $n=2^m$,
+$$
+D_{m+2}-D_m=\frac{5n^2+3n}{2}>2,
+$$
+whereas the swap count increases by two. The strict separation at $m=13$ therefore persists. Consequently, for every odd $m\ge9$, $T_m$ and $S^{m-7}(T_0)$ are nonisomorphic as conformal VOAs. The same fixed seed works throughout.
+
+This distinguishes the direct family from the stated sequence of swap orbifolds; it does not establish novelty against all previously known VOAs. Higher-central-charge existence alone already follows from a gap-four seed by this permutation construction. The uniform contribution is the anomaly calculation for the prescribed action, its sharp odd-parameter threshold, and the direct construction with its exact low-weight count.
+
 ## References
 
 **[KRR]** Christoph A. Keller, Ashley Winter Roberts, Jeremy Roberts. *CFTs with Large Gap from Barnes-Wall Lattice Orbifolds*. JHEP 04 (2026), 009. [arXiv:2411.13646v2](https://arxiv.org/pdf/2411.13646v2), 17 March 2026. [DOI](https://doi.org/10.1007/JHEP04(2026)009).
@@ -439,5 +688,13 @@ is preunitarizable as a $W_1$-module. It is already a simple VOA, by §6, and is
 **[Lam]** Ching Hung Lam. *Unitary forms for holomorphic vertex operator algebras of central charge 24*. Letters in Mathematical Physics **113** (2023), 28. [DOI](https://doi.org/10.1007/s11005-023-01652-4). The cited preliminary results are in [arXiv:2211.15952v1](https://arxiv.org/pdf/2211.15952v1), 29 November 2022: Lemma 2.4, Theorem 3.1, Lemmas 3.3 and 3.8.
 
 **[Gui]** Bin Gui. *Geometric Positivity of the Fusion Products of Unitary Vertex Operator Algebra Modules*. Communications in Mathematical Physics **405** (2024), 72. [DOI](https://doi.org/10.1007/s00220-024-04959-y). The numbering is that of [arXiv:2306.11856v2](https://arxiv.org/pdf/2306.11856v2), 5 March 2024, the final revision: Proposition 10.9, the proof of Lemma 10.12, and Theorem 11.5.
+
+**[Griess]** Robert L. Griess Jr. *Pieces of $2^d$: existence and uniqueness for Barnes–Wall and Ypsilanti lattices*. Advances in Mathematics **196** (2005), 147–192. [DOI](https://doi.org/10.1016/j.aim.2004.08.014). The numbering cited here is specifically that of the [author-hosted manuscript dated 11 August 2004](https://sites.lsa.umich.edu/rlg/wp-content/uploads/sites/1335/2024/09/pottd.pdf): Notation 8.7, p. 26, and Proposition 8.9, p. 27.
+
+**[BK]** Bojko Bakalov, Victor G. Kac. *Twisted Modules over Lattice Vertex Algebras*. In *Lie Theory and Its Applications in Physics V*, World Scientific (2004), 3–26. [DOI](https://doi.org/10.1142/9789812702562_0001). The cited numbering is that of [arXiv:math/0402315v3](https://arxiv.org/pdf/math/0402315v3), 31 March 2004: equation (4.53), p. 16, and Remark 4.4, p. 18.
+
+**[BDM]** Katrina Barron, Chongying Dong, Geoffrey Mason. *Twisted Sectors for Tensor Product Vertex Operator Algebras Associated to Permutation Groups*. Communications in Mathematical Physics **227** (2002), 349–384. [DOI](https://doi.org/10.1007/s002200200633). The formula used here is in the proof of Theorem 3.9, printed p. 23 of [arXiv:math/9803118v2](https://arxiv.org/pdf/math/9803118v2), 16 December 1999.
+
+**[vEMS]** Jethro van Ekeren, Sven Möller, Nils R. Scheithauer. *Construction and Classification of Holomorphic Vertex Operator Algebras*. Journal für die reine und angewandte Mathematik **759** (2020), 61–99. [DOI](https://doi.org/10.1515/crelle-2017-0046). The cited Theorem 5.16 and its type-zero specialization are on printed pp. 20–21 of [arXiv:1507.08142v3](https://arxiv.org/pdf/1507.08142v3), 28 November 2017.
 
 The recent Ji–Tian and Höhn preprints are status/context references only, as described in the review notes. They are not assumptions in the vanishing proof.

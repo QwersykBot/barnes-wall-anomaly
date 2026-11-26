@@ -142,6 +142,114 @@
         "sha256_of_consulted_pdf": "43a285bd1748bb78873e3605776854a0b0c5c7ddde1534ffb12735a6bcb073a6",
         "comparison": "Whitespace-normalized full Proposition 10.9 passage and full Theorem 11.5 passage, including proof, agree with the pinned arXiv v2 text. The author PDF and arXiv PDF have different bytes."
       }
+    },
+    {
+      "label": "Griess",
+      "authors": [
+        "Robert L. Griess Jr."
+      ],
+      "title": "Pieces of 2^d: existence and uniqueness for Barnes-Wall and Ypsilanti lattices",
+      "role": "Minimal-vector orbit cardinality and minimal-vector count for BW(7)",
+      "source_url": "https://sites.lsa.umich.edu/rlg/wp-content/uploads/sites/1335/2024/09/pottd.pdf",
+      "checked_version": "Author-hosted 57-page PDF; title-page date 11 August 2004",
+      "publication_url": "https://doi.org/10.1016/j.aim.2004.08.014",
+      "source_status": "Published in Advances in Mathematics 196(1) (2005), 147-192. The consulted PDF is an author manuscript, not the journal-layout version.",
+      "results_used": [
+        "Notation 8.7, printed page 26 / PDF page 26: For a minimal vector x, the extraspecial-group orbit x^R is a double orthogonal basis of cardinality 2^(d+1); at d=7 this is 256.",
+        "Proposition 8.9, printed page 27 / PDF page 27: Minimal-vector count product_{j=1}^d(2^j+2); the table explicitly lists 1,260,230,400 for d=7.",
+        "Theorem 11.2, printed page 31 / PDF page 31: The geometric normalizer group acts transitively on minimal vectors; supplementary route to uniform orbit length."
+      ],
+      "scope_check": "These item numbers refer only to this exact author PDF. No VOA lift of the full normalizer is assumed. The separately pinned correction notice was read.",
+      "sha256_of_consulted_pdf": "04a6deb61024698b5466c47b1c53f4309ab7f5628ce2fc9c737c85d3b58099ed",
+      "bytes_of_consulted_pdf": 435700
+    },
+    {
+      "label": "BK",
+      "authors": [
+        "Bojko Bakalov",
+        "Victor G. Kac"
+      ],
+      "title": "Twisted Modules over Lattice Vertex Algebras",
+      "role": "Twisted lattice defect dimension, fixed-momentum fibers and Fock decomposition",
+      "source_url": "https://arxiv.org/pdf/math/0402315v3",
+      "checked_version": "arXiv:math/0402315v3, 31 March 2004; 18 pages; internal manuscript date 19 February 2004",
+      "publication_url": "https://doi.org/10.1142/9789812702562_0001",
+      "source_status": "Published as a chapter in Lie Theory and Its Applications in Physics V, World Scientific (2004), pp. 3-26. Numbering here is pinned to arXiv v3.",
+      "results_used": [
+        "Equation (4.53), printed page 16 / PDF page 16: The squared defect dimension is the order of the relevant finite nondegenerate quotient.",
+        "Proposition 4.3 and equations (4.54)-(4.55), printed page 16 / PDF page 16: The twisted module is induced from its oscillator-vacuum subspace and has the corresponding symmetric Fock factor.",
+        "Lemma 4.7, printed page 17 / PDF page 17: Momentum fibers are translated by projected lattice vectors and carry the irreducible finite defect representation.",
+        "Theorem 4.2 and Remark 4.4, printed page 18 / PDF page 18: Classification and explicit Heisenberg-module decomposition S(hat h_sigma^+) tensor e^(lambda_0) C[pi_0 Q] tensor C^d(sigma). The source uses plus for negative-mode creation operators."
+      ],
+      "scope_check": "For the even unimodular lattice and standard lift, the momentum shift is zero. The claim that weight four consists only of the zero-momentum oscillator-vacuum fiber also uses rho_g=4 and positive definiteness. The dimension 2^16 is derived independently from KRR (A.2.5), not asserted for arbitrary unrelated lattices.",
+      "sha256_of_consulted_pdf": "40ce87ba4635d3837dff38bc6fefef6657dbfff4579393b44fc2308408cc1c7f",
+      "bytes_of_consulted_pdf": 218433
+    },
+    {
+      "label": "GriessCorr",
+      "authors": [
+        "Robert L. Griess Jr."
+      ],
+      "title": "Corrections and additions to Pieces of 2^d: existence and uniqueness for Barnes-Wall and Ypsilanti lattices",
+      "role": "Correction-notice check for the Griess minimal-vector source",
+      "source_url": "https://arxiv.org/pdf/math/0511277v1",
+      "checked_version": "arXiv:math/0511277v1, 10 November 2005; 7 pages; title-page manuscript date 9 November 2005",
+      "publication_url": "https://doi.org/10.1016/j.aim.2006.09.003",
+      "source_status": "Published in Advances in Mathematics 211(2) (June 2007), 819-824. Consulted copy is the pinned arXiv v1.",
+      "results_used": [
+        "Sections 1-3, printed/PDF pages 1-7: Adds a projection condition to the uniqueness hypothesis and revises generation-equivalence and uniqueness proofs.",
+        "Section 4, printed page 7 / PDF page 7: Lists remaining corrections, including an incorrect unused Appendix Lemma 15.9 on involutions."
+      ],
+      "scope_check": "The complete notice was read. Its listed changes do not explicitly revise the minimal-vector orbit or count statements used here. The unused Appendix Lemma 15.9 is not used in the sparse-orbifold argument.",
+      "sha256_of_consulted_pdf": "2cd3fee79c8b22f3cff8607ce4cf0a796cbe4982aafba4b8d3225f0e0e4a72d8",
+      "bytes_of_consulted_pdf": 110942
+    },
+    {
+      "label": "BDM",
+      "authors": [
+        "Katrina Barron",
+        "Chongying Dong",
+        "Geoffrey Mason"
+      ],
+      "title": "Twisted Sectors for Tensor Product Vertex Operator Algebras Associated to Permutation Groups",
+      "role": "Permutation-twisted module construction and swap ground-weight comparison",
+      "source_url": "https://arxiv.org/pdf/math/9803118v2",
+      "checked_version": "arXiv:math/9803118v2, 16 December 1999, 21:29:48 UTC; 34 pages",
+      "publication_url": "https://doi.org/10.1007/s002200200633",
+      "publication_metadata_url": "https://link.springer.com/article/10.1007/s002200200633",
+      "source_status": "Published in Communications in Mathematical Physics 227 (May 2002), 349-384; cited numbering audited in pinned arXiv v2",
+      "sha256_of_consulted_pdf": "ac34ded7fb4c70be9faf43e71342f2eaef797d141f2b3f44228bfb1148eeafc5",
+      "bytes_of_consulted_pdf": 354960,
+      "results_used": [
+        "Equation (3.6), printed page 14 / PDF page 14: the transformed single-factor conformal field, including its central-charge correction.",
+        "Theorem 3.9, printed/PDF pages 22-23, explicit formula on page 23: L_g(0)=L(0)/k+(k^2-1)c/(24k) for the k-cycle-twisted module constructed from a V-module; c is the central charge of one factor V, not of V tensor k.",
+        "Theorem 4.4, printed/PDF pages 26-27: equivalence of ordinary V-modules with ordinary k-cycle-twisted tensor-product modules, preserving irreducibility."
+      ],
+      "scope_check": "For a holomorphic CFT-type seed U of charge c_seed, its unique ordinary module has ground weight zero. The swap of U tensor U therefore has twisted ground weight c_seed/16, at least 8 when c_seed is at least 128. The theorem is not restricted to lattice VOAs. It supplies the twisted spectrum; it does not itself assert existence or unitarity of the holomorphic orbifold extension."
+    },
+    {
+      "label": "vEMS",
+      "authors": [
+        "Jethro van Ekeren",
+        "Sven Möller",
+        "Nils R. Scheithauer"
+      ],
+      "title": "Construction and Classification of Holomorphic Vertex Operator Algebras",
+      "role": "General-central-charge type-zero cyclic holomorphic orbifold theorem and positivity hypotheses",
+      "source_url": "https://arxiv.org/pdf/1507.08142v3",
+      "checked_version": "arXiv:1507.08142v3, 28 November 2017, 22:35:42 UTC; 37 pages; Section 5 numbering is version-specific",
+      "publication_url": "https://doi.org/10.1515/crelle-2017-0046",
+      "publication_metadata_url": "https://www.degruyterbrill.com/document/doi/10.1515/crelle-2017-0046/html",
+      "source_status": "Published in Journal für die reine und angewandte Mathematik (Crelle's Journal) 759 (2020), 61-99; publisher gives online publication date 16 November 2017; cited numbering audited in pinned arXiv v3",
+      "sha256_of_consulted_pdf": "ddd2cfd617a3cb2cd1d673587a857072269f4dba40445810fcad6191acd51fce",
+      "bytes_of_consulted_pdf": 553194,
+      "results_used": [
+        "Theorems 5.1-5.2, printed/PDF pages 11-12: rationality and C2-cofiniteness of the cyclic fixed algebra, and its n^2 simple modules W^(i,j) from twisted-sector eigenspaces.",
+        "Theorem 5.11 and the following definition, printed/PDF pages 17-18: rho_g lies in (1/n^2)Z and the automorphism type is t=n^2 rho_g modulo n.",
+        "Theorem 5.16, printed/PDF pages 20-21: a simple, rational, C2-cofinite, holomorphic CFT-type parent with positive conformal weights for all nonvacuum W^(i,j) admits the isotropic-subgroup extension; H=H^perp gives a holomorphic extension, retaining these finiteness properties and self-contragredience.",
+        "Type-zero specialization after Theorem 5.16, printed page 21 / PDF page 21: the compatible labels have fusion group Z_n times Z_n, quadratic form ij/n, and holomorphic extension direct_sum_i W^(i,0)."
+      ],
+      "scope_check": "Section 5 applies to general central charge, independently of the later charge-24 classification. Apply it to the parent U tensor U, whose charge is 2*c_seed. BDM gives type 4*rho_swap=c_seed/4 modulo 2, hence zero for c_seed=128*2^k. The antisymmetric untwisted module has positive weight because the unique weight-zero vector is swap-invariant; both twisted eigenspaces have weight at least c_seed/16, so all three nonvacuum fixed-algebra modules satisfy the required positivity. This theorem establishes the strongly rational holomorphic extension, not unitarity; preservation of the primary gap is a separate low-weight argument."
     }
   ]
 }
