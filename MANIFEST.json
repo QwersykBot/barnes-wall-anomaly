@@ -33,8 +33,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10630,
-      "sha256": "4402530f00c299f462b412a3b5b3b05b79818968b5810168f6f53d1c801d7de4"
+      "bytes": 11056,
+      "sha256": "0f725f02ba86ba8fcf82eb4df03df3fb2e43a6d566a53382f16848e4a311626a"
     },
     {
       "path": "alternate-report.json",
@@ -117,6 +117,11 @@
       "sha256": "8a86c02482b286a3c250e8a89aae04639eac14b25e213a165e96a4e5c1bbafca"
     },
     {
+      "path": "formal/BarnesWall/KRRPauliAction.lean",
+      "bytes": 3879,
+      "sha256": "11404478c63d95a6f1f2b12bec03a88a388e3452b76938a5f63fc6ce4831e2c3"
+    },
+    {
       "path": "formal/BarnesWall/KRRPauliLift.lean",
       "bytes": 12200,
       "sha256": "c58805d25d3180159d73cd024e6276e7faa70ee68ea4ccd8cdd16cc3d32c7206"
@@ -150,6 +155,11 @@
       "path": "formal/BarnesWall/LatticeComposition.lean",
       "bytes": 5139,
       "sha256": "8b7599ec237b3119c406c3b97a177445f7e46810410ec66ba4c98c91ffd3771d"
+    },
+    {
+      "path": "formal/BarnesWall/PauliPresentation.lean",
+      "bytes": 24385,
+      "sha256": "91b097232b5272020848cd106854e882eab7df29a5c32177c97edf3a07dbea3f"
     },
     {
       "path": "formal/BarnesWall/QuaternionLift.lean",
@@ -208,13 +218,18 @@
     },
     {
       "path": "formal/LocalAxiomProbe.lean",
-      "bytes": 19360,
-      "sha256": "c7f3594709f7852e03fc582af217355763c7d26d2092f223d295afa08b0740b0"
+      "bytes": 21197,
+      "sha256": "4e8ee38f566c8be128b852f3548cd11833643568eaa74989089dd3999f21935c"
+    },
+    {
+      "path": "formal/PauliPresentation-notes.md",
+      "bytes": 5455,
+      "sha256": "f8d32897163601f1a1415cb529636dac56c5bbb2147a0db4fa5354c255648d9c"
     },
     {
       "path": "formal/README.md",
-      "bytes": 16979,
-      "sha256": "71fedacc83e80b66436c11884457e16d4bb3f73104ed57a8dba8acec3692a9a4"
+      "bytes": 19102,
+      "sha256": "8e12a02f3f1e05058349f48a28c2c6091498afb4bdb671ae851e6aceeb3d648d"
     },
     {
       "path": "formal/audit_bridge.py",
@@ -223,8 +238,8 @@
     },
     {
       "path": "formal/check_bridge.py",
-      "bytes": 7865,
-      "sha256": "eee9a9fdbbccc8065bc139c147837891386ad7b773adb9d23816bcacd29349f3"
+      "bytes": 8131,
+      "sha256": "7cfd10aec2364abdb7c8c5a2456fe1104d755493147b90ffb88cd2ab4445853e"
     },
     {
       "path": "involution-report.json",

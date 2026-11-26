@@ -7,20 +7,23 @@ action is faithful, and its central lift equals the prescribed lattice involutio
 A separate Boolean-cubic factorization lemma supplies one combinatorial
 ingredient. The anomaly theorem is separate work.
 
-The complete eighteen-module integration passed in
-[run 45864728408](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45864728408)
-at commit c8030261ec42a8d9554b8a831c40c01894091303. All 15 upstream reports,
-including Jacobi, and all 172 requested local declaration reports contained
+The latest complete public integration passed nineteen modules in
+[run 45866546569](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45866546569)
+at commit 2677b16b8f547fd09eb5a2345ce6a994e59050b7. All 15 upstream reports,
+including Jacobi, and all 187 requested local declaration reports contained
 only the standard axioms listed below. The local modules compiled without
 warnings or errors; their source hashes and the probe hash match the public
 commit. This includes the faithful quaternion action, its exact central
 comparison and `BooleanCubic`, as well as arbitrary small-support composition
-and their lattice and lift prerequisites.
+and the concrete full-state Pauli relations in `KRRPauliLift`.
 
-This increment adds the source-reviewed concrete relation adapter
-`KRRPauliLift`. The public workflow now checks nineteen modules in a second
-stage. Each result applies to its exact source commit; the eighteen-module run
-does not certify this addition.
+The next candidate adds `PauliPresentation` and `KRRPauliAction`: twenty-one
+modules and 204 local declaration reports, adding nine generic and eight
+concrete reports. The repaired generic presentation passed a separate local
+compile and axiom audit. The full twenty-one-module public integration and
+concrete adapter check are still pending; the nineteen-module run does not
+certify these additions. See [PauliPresentation-notes.md](PauliPresentation-notes.md)
+for the exact source and verification provenance.
 
 The audited dependency is [LeanVOA](https://github.com/Fedor-Popov/Lean_VOA)
 at commit faedf8eb9e3fe275d3ac09e645aac694e496e965, by Fedor K. Popov
@@ -210,9 +213,30 @@ all seven positions. It derives their squares and commutators, including the
 same-position sign given by the actual `thetaAut`, from the checked matrix
 relations and one-/two-position composition. It proves that theta has order
 two and states the literal reversed-word expressions for the common Q8
-generators. This relation adapter awaits compilation; it does not yet construct
-the full extraspecial group or its action. See
-[KRRPauliLift-notes.md](KRRPauliLift-notes.md).
+generators. These relations passed the nineteen-module public integration.
+The module itself supplies relations, not a full-group construction. Its
+earlier source-review record is [KRRPauliLift-notes.md](KRRPauliLift-notes.md);
+the current integration status is recorded above.
+
+`BarnesWall/PauliPresentation.lean` uses Mathlib's existing `PresentedGroup`
+with a central generator and two families indexed by `Fin n`. Its eight
+relation families impose squares, central commutation, same-family
+commutation, and the central sign in equal-index cross commutation. It proves
+existence of reduced-list words, the universal homomorphism and its uniqueness,
+and injectivity whenever the central image is nonidentity. The normal-form
+existence required by the kernel argument is proved, not assumed; sorted
+normal-form uniqueness and group cardinality are not asserted.
+
+`BarnesWall/KRRPauliAction.lean` specializes that presentation to `n = 7`.
+Its generator images are literally `thetaAut`, `xLift` and `zLift`, with all
+relations and central nontriviality supplied by `KRRPauliLift`. It constructs
+an injective ordinary homomorphism into the full lattice-VOA automorphism
+group. The named quaternion words are `z 6 * x 6` and `(z 5 * x 5) * z 6`;
+their images are the existing `aLift` and `bLift`. This candidate is a faithful
+action of the presented `Pauli 7`; it does not identify that presentation
+with the prescribed matrix-generated E. The concrete adapter still awaits
+the full public integration. [PauliPresentation-notes.md](PauliPresentation-notes.md)
+records its source review and the separate generic local PASS.
 
 ## Boolean-cubic factorization
 
@@ -235,9 +259,11 @@ polynomials or prove anomaly detection.
 
 ## Combined local check
 
-`check_bridge.py` runs after the dependency audit. It compiles all nineteen local
-modules into the audited environment, prints the types and transitive axioms of
-187 local declarations, and checks source pins and unchanged inputs again.
+`check_bridge.py` runs after the dependency audit. The next candidate compiles
+twenty-one local modules into the audited environment, prints the types and
+transitive axioms of 204 local declarations, and checks source pins and unchanged
+inputs again. This expanded public result is pending; the latest completed
+public run checked nineteen modules and 187 local declarations.
 It continues independent module checks after a source failure, skips affected
 dependents, and fails before the axiom stage if any module failed or was skipped.
 Its parser applies the same standard-axiom restriction. The mathematical
@@ -255,14 +281,17 @@ LeanVOA's lattice basis is chosen noncomputably; its cocycle and oscillator
 frame are not definitionally the KRR coordinate conventions. The checked
 coordinate specialization and global cocycle transport connect those conventions
 for the stated lattice and quaternion action. Arbitrary small-support
-composition has also passed the combined check. The new Pauli relation
-adapter still requires its combined check and a full-group construction.
+composition and the concrete Pauli relations have also passed the combined
+check. The next presentation/action candidate still requires its full public
+integration; its generic presentation has a separate local PASS.
 
 The wrapper supplies conformal preservation and bijectivity from its explicit
 hypotheses, and the charge-state argument supplies generic matrix faithfulness.
-Literal common-Q8 generator images are checked in the action, but
-agreement with an independently formalized prescribed extraspecial-group
-action remains to be established. The general group
+The new adapter supplies literal common-Q8 word images in the presented
+`Pauli 7` action. Identification with the prescribed matrix-generated E,
+including its cardinality and extraspecial plus type, remains to be formalized.
+No global multiplicativity of the canonical section on arbitrary matrix words
+is assumed or proved by this increment. The general group
 cohomology, anomaly and orbifold arguments are not formalized by this increment.
 
 Passing this dependency audit alone establishes none of those specialized

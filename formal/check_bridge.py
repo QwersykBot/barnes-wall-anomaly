@@ -36,6 +36,8 @@ MODULES = (
     "BarnesWall.CentralLift",
     "BarnesWall.KRRCentralLift",
     "BarnesWall.KRRPauliLift",
+    "BarnesWall.PauliPresentation",
+    "BarnesWall.KRRPauliAction",
     "BarnesWall.BooleanCubic",
 )
 UPSTREAM_IMPORTS = {TARGET, "VOA.Foundations.Lattices", "Lean.Elab.Tactic.Omega"}
@@ -149,7 +151,7 @@ def main() -> None:
         "modules_sha256": inputs,
         "probe_sha256": probe_hash,
         "axioms": reports,
-        "scope": "Concrete rank-128 even positive coordinate lattice, integral quaternion matrices, canonical phases, coherent full-state lifts and a faithful ordinary quaternion action whose central element is the prescribed lattice involution; the separate uniform Boolean-cubic factorization lemma.",
+        "scope": "Concrete rank-128 even positive coordinate lattice, integral quaternion matrices, canonical phases, coherent full-state lifts, faithful ordinary quaternion and Pauli-presentation actions with the prescribed central lattice involution, and the separate uniform Boolean-cubic factorization lemma.",
         "concrete_coordinate_lattice_formalized": True,
         "krr_tensor_formula_identification_formalized": False,
         "krr_pauli_isometries_formalized": True,
@@ -163,6 +165,9 @@ def main() -> None:
         "boolean_cubic_factorization_formalized": True,
         "krr_small_support_lift_composition_formalized": True,
         "krr_full_pauli_lift_relations_formalized": True,
+        "pauli_presentation_normal_forms_formalized": True,
+        "canonical_pauli_presentation_action_formalized": True,
+        "canonical_pauli_presentation_action_faithful": True,
         "cohomological_boolean_cubic_identification_formalized": False,
         "krr_full_extraspecial_action_formalized": False,
         "barnes_wall_anomaly_theorem_formalized": False,

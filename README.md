@@ -34,13 +34,16 @@ Section 4 proves the lift relations by a block-cocycle argument, directly from t
 
 ## Checked partial Lean development
 
-[Public run 45864728408](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45864728408), at commit [`c8030261ec42a8d9554b8a831c40c01894091303`](https://github.com/QwersykBot/barnes-wall-anomaly/commit/c8030261ec42a8d9554b8a831c40c01894091303), compiled all eighteen local modules without warnings or errors. The 15 upstream and 172 local declaration reports contained only `propext`, `Classical.choice` and `Quot.sound`; the checked source and probe hashes matched that commit. This result applies to that exact snapshot.
+[Public run 45866546569](https://github.com/QwersykBot/barnes-wall-anomaly/actions/runs/45866546569), at commit [`2677b16b8f547fd09eb5a2345ce6a994e59050b7`](https://github.com/QwersykBot/barnes-wall-anomaly/commit/2677b16b8f547fd09eb5a2345ce6a994e59050b7), compiled all nineteen local modules without warnings or errors. The 15 upstream and 187 local declaration reports contained only `propext`, `Classical.choice` and `Quot.sound`; the checked source and probe hashes matched that commit. This result applies to that exact snapshot.
 
 The checked scope includes:
 
 - The explicit rank-128 integral coordinate lattice, its evenness and positive definiteness, the integral Pauli and quaternion isometries, and canonical composition on the full lattice-VOA state space under explicit isometry and block-support hypotheses.
 - A faithful ordinary `QuaternionGroup 4` action with the stated generator images and central element equal to the prescribed `thetaAut`. Matrix-to-lift composition retains the documented right-action reversal.
+- The exact relations of every canonical Pauli lift, including the nontrivial central involution and the two stated quaternion words.
 - The Boolean-cubic factorization lemma and lift composition for matrices preserving a common support of at most three numerical bit positions. The Boolean lemma is a combinatorial result, without a formal identification of its polynomials with cohomology classes.
+
+The current source adds the general Pauli presentation and a thin faithful VOA-action adapter. The generic presentation passed a separate local kernel and axiom check; the combined twenty-one-module public check is pending. The nineteen-module result above does not certify these additions.
 
 See [formal/README.md](formal/README.md) for the exact hypotheses, conventions, dependency pins, trust boundary and reproduction commands. The remaining formal work includes the full prescribed extraspecial-group action and its compatibility, cohomological detection and anomaly vanishing, and the twisted-module, orbifold-extension and unitarity arguments. The analytic spectrum and uniform-family consequences are also outside this checked development. Passing the Lean checks does not certify the complete proposed proof or provide external specialist review.
 

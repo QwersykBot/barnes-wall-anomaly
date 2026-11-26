@@ -1,0 +1,99 @@
+/-
+SPDX-License-Identifier: Apache-2.0
+See ../LICENSE-Apache-2.0.txt.
+-/
+import BarnesWall.PauliPresentation
+import BarnesWall.KRRPauliLift
+
+/-!
+# The concrete faithful action of the Pauli presentation
+
+This file only specializes the existing presentation universal property.
+`Pauli7` is an abbreviation, not a new quotient. The generator images are the
+literal canonical Pauli lifts, and the central image is upstream `thetaAut`.
+Every relation and central nontriviality come from `KRRPauliLift`.
+
+The domain and target use ordinary group multiplication. The named Q8 words
+therefore retain the reversed labels `z 6 * x 6` and `z 5 * x 5 * z 6`.
+No matrix-group identification, cardinality, global canonical-word
+multiplicativity, cohomology, or anomaly result is claimed by this adapter.
+-/
+
+set_option autoImplicit false
+
+noncomputable section
+
+namespace BarnesWall.KRRPauliAction
+
+open VOA.LatGen BarnesWall.Lattice128
+
+abbrev Pauli7 := PauliPresentation.Pauli 7
+abbrev Aut128 := KRRPauliLift.Aut128
+
+/-- The presentation premises are discharged by the actual full-state lift theorems. -/
+theorem relations :
+    PauliPresentation.Relations (thetaAut lattice lattice_even lattice_posDef)
+      KRRPauliLift.xLift KRRPauliLift.zLift := by
+  refine
+    { c_sq := ?_
+      x_sq := ?_
+      z_sq := ?_
+      c_comm_x := KRRPauliLift.theta_commute_xLift
+      c_comm_z := KRRPauliLift.theta_commute_zLift
+      x_comm_x := KRRPauliLift.xLift_commute_xLift
+      z_comm_z := KRRPauliLift.zLift_commute_zLift
+      x_mul_z := ?_ }
+  · simpa only [pow_two] using KRRPauliLift.theta_sq
+  · intro i
+    simpa only [pow_two] using KRRPauliLift.xLift_sq i
+  · intro i
+    simpa only [pow_two] using KRRPauliLift.zLift_sq i
+  · intro i j
+    by_cases hij : i = j
+    · subst j
+      simpa using KRRPauliLift.xLift_mul_zLift i
+    · simpa only [ite_eq_right hij, one_mul] using
+        (KRRPauliLift.xLift_commute_zLift_of_ne i j hij).eq
+
+/-- The ordinary homomorphism supplied by the existing presentation universal property. -/
+def action : Pauli7 →* Aut128 :=
+  PauliPresentation.toGroup relations
+
+@[simp] theorem action_central :
+    action (PauliPresentation.central 7) = thetaAut lattice lattice_even lattice_posDef :=
+  PauliPresentation.toGroup_central relations
+
+@[simp] theorem action_x (i : Fin 7) :
+    action (PauliPresentation.x i) = KRRPauliLift.xLift i :=
+  PauliPresentation.toGroup_x relations i
+
+@[simp] theorem action_z (i : Fin 7) :
+    action (PauliPresentation.z i) = KRRPauliLift.zLift i :=
+  PauliPresentation.toGroup_z relations i
+
+/-- Faithfulness follows from the proved presentation theorem and actual central nontriviality. -/
+theorem action_injective : Function.Injective action :=
+  PauliPresentation.toGroup_injective relations KRRPauliLift.theta_ne_one
+
+/-- Literal image of the reversed word for the existing first quaternion generator. -/
+theorem action_a_word :
+    action (PauliPresentation.z (6 : Fin 7) * PauliPresentation.x 6) =
+      KRRQuaternionAction.aLift := by
+  calc
+    action (PauliPresentation.z (6 : Fin 7) * PauliPresentation.x 6) =
+        KRRPauliLift.zLift 6 * KRRPauliLift.xLift 6 := by
+      simp only [map_mul, action_z, action_x]
+    _ = KRRQuaternionAction.aLift := KRRPauliLift.aLift_eq_zLift_mul_xLift.symm
+
+/-- Literal image of the reversed word for the existing second quaternion generator. -/
+theorem action_b_word :
+    action ((PauliPresentation.z (5 : Fin 7) * PauliPresentation.x 5) *
+      PauliPresentation.z 6) = KRRQuaternionAction.bLift := by
+  calc
+    action ((PauliPresentation.z (5 : Fin 7) * PauliPresentation.x 5) *
+        PauliPresentation.z 6) =
+        (KRRPauliLift.zLift 5 * KRRPauliLift.xLift 5) * KRRPauliLift.zLift 6 := by
+      simp only [map_mul, action_z, action_x]
+    _ = KRRQuaternionAction.bLift := KRRPauliLift.bLift_eq_zLift_mul_xLift_mul_zLift.symm
+
+end BarnesWall.KRRPauliAction

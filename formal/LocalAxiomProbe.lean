@@ -16,6 +16,8 @@ import BarnesWall.KRRQuaternionAction
 import BarnesWall.CentralLift
 import BarnesWall.KRRCentralLift
 import BarnesWall.KRRPauliLift
+import BarnesWall.PauliPresentation
+import BarnesWall.KRRPauliAction
 import BarnesWall.BooleanCubic
 
 #check BarnesWall.transportDiscrepancy_symm_even
@@ -578,3 +580,54 @@ import BarnesWall.BooleanCubic
 
 #check BarnesWall.KRRPauliLift.bLift_eq_zLift_mul_xLift_mul_zLift
 #print axioms BarnesWall.KRRPauliLift.bLift_eq_zLift_mul_xLift_mul_zLift
+
+#check BarnesWall.PauliPresentation.relations
+#print axioms BarnesWall.PauliPresentation.relations
+
+#check BarnesWall.PauliPresentation.toGroup
+#print axioms BarnesWall.PauliPresentation.toGroup
+
+#check BarnesWall.PauliPresentation.toGroup_central
+#print axioms BarnesWall.PauliPresentation.toGroup_central
+
+#check BarnesWall.PauliPresentation.toGroup_x
+#print axioms BarnesWall.PauliPresentation.toGroup_x
+
+#check BarnesWall.PauliPresentation.toGroup_z
+#print axioms BarnesWall.PauliPresentation.toGroup_z
+
+#check BarnesWall.PauliPresentation.toGroup_unique
+#print axioms BarnesWall.PauliPresentation.toGroup_unique
+
+#check BarnesWall.PauliPresentation.exists_normalWord
+#print axioms BarnesWall.PauliPresentation.exists_normalWord
+
+#check BarnesWall.PauliPresentation.injective_of_central_ne_one
+#print axioms BarnesWall.PauliPresentation.injective_of_central_ne_one
+
+#check BarnesWall.PauliPresentation.toGroup_injective
+#print axioms BarnesWall.PauliPresentation.toGroup_injective
+
+#check BarnesWall.KRRPauliAction.relations
+#print axioms BarnesWall.KRRPauliAction.relations
+
+#check BarnesWall.KRRPauliAction.action
+#print axioms BarnesWall.KRRPauliAction.action
+
+#check BarnesWall.KRRPauliAction.action_central
+#print axioms BarnesWall.KRRPauliAction.action_central
+
+#check BarnesWall.KRRPauliAction.action_x
+#print axioms BarnesWall.KRRPauliAction.action_x
+
+#check BarnesWall.KRRPauliAction.action_z
+#print axioms BarnesWall.KRRPauliAction.action_z
+
+#check BarnesWall.KRRPauliAction.action_injective
+#print axioms BarnesWall.KRRPauliAction.action_injective
+
+#check BarnesWall.KRRPauliAction.action_a_word
+#print axioms BarnesWall.KRRPauliAction.action_a_word
+
+#check BarnesWall.KRRPauliAction.action_b_word
+#print axioms BarnesWall.KRRPauliAction.action_b_word
